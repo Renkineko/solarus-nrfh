@@ -20,6 +20,13 @@ end
 function hole_eater:on_moved()
     hero:freeze()
     hole_eater_moving = true
+    
+    m = sol.movement.create("straight")
+    function m:on_position_changed(x, y)
+        if x % 16 == 0 and y % 16 == 0 then
+            
+        end
+    end
 end
 
 function map:on_command_pressed(command)

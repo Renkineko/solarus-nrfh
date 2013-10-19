@@ -105,22 +105,23 @@ function enemy:on_custom_attack_received(attack, sprite)
 	end
 end
 
+-- used when the enemy:immobilize did not exists, now is only used to immobilize children
 function enemy:immobilize()
-	local sprite = self:get_sprite()
-	sol.timer.stop_all(enemy)
-	sprite:set_animation("immobilized")
-	self:stop_movement()
-    self:set_can_attack(false)
+	--local sprite = self:get_sprite()
+	--sol.timer.stop_all(enemy)
+	--sprite:set_animation("immobilized")
+	--self:stop_movement()
+	--self:set_can_attack(false)
 	immobilize_children()
 
-	sol.timer.start(enemy, 5000, function()
-		sprite:set_animation("shaking")
-		sol.timer.start(enemy, 2000, function()
-			sprite:set_animation("walking")
-			self:on_restarted()
-			self:set_can_attack(true)
-		end)
-	end)
+	--sol.timer.start(enemy, 5000, function()
+	--	sprite:set_animation("shaking")
+	--	sol.timer.start(enemy, 2000, function()
+	--		sprite:set_animation("walking")
+	--		self:on_restarted()
+	--		self:set_can_attack(true)
+	--	end)
+	--end)
 end
 
 function enemy:on_dying()
