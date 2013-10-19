@@ -3,7 +3,7 @@ item.somaria_block = nil  -- The block created if any.
 
 function item:on_created()
 
-  self:set_savegame_variable("i1109")
+  self:set_savegame_variable("item_somaria")
   self:set_assignable(true)
 end
 
@@ -16,7 +16,7 @@ function item:on_using()
 
     local x, y, layer = self:get_block_position_from_hero()
 
-    if self.somaria_block == nil then
+    if self.somaria_block == nil or not self.somaria_block:exists() then
 
       sol.audio.play_sound("cane")
       sol.audio.play_sound("magic_bar")

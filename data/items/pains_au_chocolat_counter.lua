@@ -2,9 +2,9 @@ local item = ...
 
 function item:on_created()
 
-  self:set_savegame_variable("i1111")
+  self:set_savegame_variable("item_pains_au_chocolat_counter")
   self:set_assignable(true)
-  self:set_amount_savegame_variable("i1026")
+  self:set_amount_savegame_variable("item_pain_au_chocolat")
   self:set_max_amount(10)
 end
 

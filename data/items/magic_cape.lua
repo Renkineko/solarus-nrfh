@@ -2,7 +2,7 @@ local item = ...
 
 function item:on_created()
 
-  self:set_savegame_variable("i1119")
+  self:set_savegame_variable("item_magic_cape")
 end
 
 function item:on_variant_changed(variant)

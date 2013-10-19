@@ -1,7 +1,7 @@
 quest{
-  solarus_version = "1.1",
-  write_dir = "zsrenk",
-  title_bar = "Zelda Mystery of Solarus DX - Renk Edition",
+  solarus_version = "1.2",
+  write_dir = "nrfh",
+  title_bar = "Zelda No Rest For Hero",
   normal_quest_size = "320x240",
   min_quest_size = "320x200",
   max_quest_size = "400x240",

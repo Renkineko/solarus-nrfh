@@ -2,7 +2,7 @@ local item = ...
 
 function item:on_created()
 
-  self:set_savegame_variable("i1128")
+  self:set_savegame_variable("item_tunic")
 end
 
 function item:on_obtained(variant, savegame_variable)

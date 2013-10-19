@@ -2,8 +2,8 @@ local item = ...
 
 function item:on_created()
 
-  self:set_savegame_variable("i1102")
-  self:set_amount_savegame_variable("i1025")
+  self:set_savegame_variable("item_bow")
+  self:set_amount_savegame_variable("item_arrow")
   self:set_assignable(true)
 end
 

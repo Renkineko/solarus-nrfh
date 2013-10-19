@@ -2,7 +2,7 @@ local item = ...
 
 function item:on_created()
 
-  self:set_savegame_variable("i1107")
+  self:set_savegame_variable("item_pegasus_shoes")
   self:set_assignable(true)
 
   -- Let the hero also run with the action key with old savegames.

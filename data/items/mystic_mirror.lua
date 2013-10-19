@@ -8,7 +8,7 @@ local timer
 
 function item:on_created()
 
-  self:set_savegame_variable("i1108")
+  self:set_savegame_variable("item_mystic_mirror")
   self:set_assignable(true)
 end
 

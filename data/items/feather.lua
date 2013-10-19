@@ -1,7 +1,7 @@
 local item = ...
 
 function item:on_created()
-  self:set_savegame_variable("i1100")
+  self:set_savegame_variable("item_feather")
   self:set_assignable(true)
 end
 
