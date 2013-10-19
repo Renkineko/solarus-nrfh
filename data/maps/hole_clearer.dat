@@ -2,7 +2,7 @@ properties{
   x = 0,
   y = 0,
   width = 320,
-  height = 240,
+  height = 480,
   world = "inside",
   tileset = "9",
   music = "same",
@@ -11,10 +11,262 @@ properties{
 tile{
   layer = 1,
   x = 40,
-  y = 40,
+  y = 280,
   width = 240,
   height = 160,
   pattern = 319,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 432,
+  width = 224,
+  height = 8,
+  pattern = 236,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 216,
+  width = 240,
+  height = 24,
+  pattern = 52,
+}
+
+tile{
+  layer = 1,
+  x = 160,
+  y = 408,
+  width = 32,
+  height = 32,
+  pattern = 401,
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 400,
+  width = 32,
+  height = 40,
+  pattern = 399,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 256,
+  width = 24,
+  height = 24,
+  pattern = 45,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 256,
+  width = 24,
+  height = 24,
+  pattern = 46,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 440,
+  width = 24,
+  height = 24,
+  pattern = 47,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 440,
+  width = 24,
+  height = 24,
+  pattern = 48,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 256,
+  width = 240,
+  height = 24,
+  pattern = 49,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 280,
+  width = 24,
+  height = 160,
+  pattern = 50,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 440,
+  width = 240,
+  height = 24,
+  pattern = 52,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 280,
+  width = 24,
+  height = 160,
+  pattern = 51,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 440,
+  width = 16,
+  height = 16,
+  pattern = 336,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 440,
+  width = 8,
+  height = 16,
+  pattern = 334,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 440,
+  width = 8,
+  height = 16,
+  pattern = 335,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 416,
+  width = 32,
+  height = 24,
+  pattern = 329,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 456,
+  width = 16,
+  height = 32,
+  pattern = 319,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 464,
+  width = 8,
+  height = 16,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 464,
+  width = 8,
+  height = 16,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 408,
+  width = 8,
+  height = 32,
+  pattern = 400,
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 400,
+  width = 64,
+  height = 8,
+  pattern = 400,
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 408,
+  width = 8,
+  height = 32,
+  pattern = 400,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 264,
+  width = 16,
+  height = 16,
+  pattern = 76,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 264,
+  width = 8,
+  height = 16,
+  pattern = 73,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 264,
+  width = 8,
+  height = 16,
+  pattern = 72,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 232,
+  width = 16,
+  height = 32,
+  pattern = 319,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 216,
+  width = 24,
+  height = 24,
+  pattern = 47,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 216,
+  width = 24,
+  height = 24,
+  pattern = 48,
 }
 
 tile{
@@ -37,24 +289,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 16,
-  y = 200,
-  width = 24,
-  height = 24,
-  pattern = 47,
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 200,
-  width = 24,
-  height = 24,
-  pattern = 48,
-}
-
-tile{
-  layer = 1,
   x = 40,
   y = 16,
   width = 240,
@@ -67,17 +301,8 @@ tile{
   x = 280,
   y = 40,
   width = 24,
-  height = 160,
+  height = 176,
   pattern = 50,
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 200,
-  width = 240,
-  height = 24,
-  pattern = 52,
 }
 
 tile{
@@ -85,17 +310,978 @@ tile{
   x = 16,
   y = 40,
   width = 24,
-  height = 160,
+  height = 176,
   pattern = 51,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 240,
+  height = 176,
+  pattern = 3,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 216,
+  width = 16,
+  height = 16,
+  pattern = 77,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 216,
+  width = 8,
+  height = 16,
+  pattern = 74,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 216,
+  width = 8,
+  height = 16,
+  pattern = 75,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 14,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 280,
+  width = 8,
+  height = 8,
+  pattern = 14,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 15,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 280,
+  width = 8,
+  height = 8,
+  pattern = 15,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 208,
+  width = 8,
+  height = 8,
+  pattern = 16,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 432,
+  width = 8,
+  height = 8,
+  pattern = 16,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 208,
+  width = 8,
+  height = 8,
+  pattern = 17,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 432,
+  width = 8,
+  height = 8,
+  pattern = 17,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 280,
+  width = 224,
+  height = 8,
+  pattern = 179,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 40,
+  width = 224,
+  height = 8,
+  pattern = 179,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 48,
+  width = 8,
+  height = 160,
+  pattern = 237,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 288,
+  width = 8,
+  height = 144,
+  pattern = 237,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 288,
+  width = 8,
+  height = 144,
+  pattern = 238,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 48,
+  width = 8,
+  height = 160,
+  pattern = 238,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 208,
+  width = 224,
+  height = 8,
+  pattern = 236,
 }
 
 destination{
   layer = 1,
-  x = 168,
-  y = 189,
+  x = 160,
+  y = 453,
   name = "from_weaponry",
   direction = 1,
   default = true,
+}
+
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 464,
+  width = 16,
+  height = 16,
+  transition = 1,
+  destination_map = "the_hub",
+  destination = "default_dest",
+}
+
+block{
+  layer = 1,
+  x = 160,
+  y = 181,
+  name = "hole_eater",
+  direction = 1,
+  sprite = "entities/torch",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_64",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_63",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_60",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_59",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_58",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_55",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_54",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_53",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_52",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_51",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_50",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_49",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_48",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_47",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_46",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_45",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_44",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_56",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_57",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_61",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_62",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_12",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_13",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_14",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_20",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_21",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_22",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_43",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_42",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_41",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_40",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_39",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_38",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_37",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_23",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_24",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_19",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_16",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_15",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_10",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_11",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_8",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_9",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_17",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_18",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_25",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_26",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_36",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_35",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_34",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_33",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_32",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_31",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_30",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_29",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_28",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_27",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_2",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_3",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_4",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_5",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_6",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear_7",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "hole_to_clear",
+  pattern = 303,
+  enabled_at_start = true,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 240,
+  width = 320,
+  height = 16,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 464,
+  width = 320,
+  height = 16,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 0,
+  width = 16,
+  height = 464,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 0,
+  width = 16,
+  height = 464,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 136,
+  y = 456,
+  width = 32,
+  height = 8,
+  pattern = 438,
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 456,
+  width = 32,
+  height = 8,
+  pattern = 432,
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 256,
+  width = 32,
+  height = 8,
+  pattern = 429,
 }
 
 tile{
@@ -109,28 +1295,19 @@ tile{
 
 tile{
   layer = 2,
+  x = 144,
+  y = 232,
+  width = 32,
+  height = 8,
+  pattern = 430,
+}
+
+separator{
+  layer = 2,
   x = 0,
-  y = 224,
+  y = 240,
   width = 320,
   height = 16,
-  pattern = 170,
-}
-
-tile{
-  layer = 2,
-  x = 0,
-  y = 16,
-  width = 16,
-  height = 208,
-  pattern = 170,
-}
-
-tile{
-  layer = 2,
-  x = 304,
-  y = 16,
-  width = 16,
-  height = 208,
-  pattern = 170,
+  name = "separator_entrance_trial",
 }
 

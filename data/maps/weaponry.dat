@@ -620,7 +620,7 @@ teletransporter{
 tile{
   layer = 2,
   x = 0,
-  y = -16,
+  y = 0,
   width = 432,
   height = 16,
   pattern = 170,

@@ -2435,3 +2435,18 @@ Bonne chance.
 ]]
 }
 
+-----------------------
+
+-- Epreuve Mange-Trou
+dialog{
+  id= "reset_trial",
+  question = true,
+  text = [[
+Cette épreuve a déjà
+trouvé son maître en
+vous. Voulez-vous
+la réinitialiser ?
+Non
+Oui
+]]
+}
