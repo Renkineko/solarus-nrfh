@@ -11,6 +11,15 @@ properties{
 tile{
   layer = 1,
   x = 40,
+  y = 40,
+  width = 240,
+  height = 176,
+  pattern = 319,
+}
+
+tile{
+  layer = 1,
+  x = 40,
   y = 280,
   width = 240,
   height = 160,
@@ -316,15 +325,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 40,
-  width = 240,
-  height = 176,
-  pattern = 3,
-}
-
-tile{
-  layer = 1,
   x = 152,
   y = 216,
   width = 16,
@@ -511,7 +511,7 @@ block{
   y = 181,
   name = "hole_eater",
   direction = 1,
-  sprite = "entities/torch",
+  sprite = "entities/block",
   pushable = true,
   pullable = false,
   maximum_moves = 1,
@@ -1219,6 +1219,27 @@ dynamic_tile{
   name = "hole_to_clear",
   pattern = 303,
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "hole_eater_launcher",
+  pattern = 319,
+  enabled_at_start = true,
+}
+
+switch{
+  layer = 1,
+  x = 152,
+  y = 184,
+  name = "hole_eater_launcher_switch",
+  subtype = "0",
+  needs_block = false,
+  inactivate_when_leaving = true,
 }
 
 tile{
