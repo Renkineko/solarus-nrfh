@@ -5,7 +5,7 @@ properties{
   height = 272,
   world = "hub",
   tileset = "19",
-  music = "same",
+  music = "great_fairy",
 }
 
 tile{

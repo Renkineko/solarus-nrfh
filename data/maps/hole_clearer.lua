@@ -22,29 +22,30 @@ function separator_entrance_trial:on_activated()
         -- restart the trial
         map:set_entities_enabled("hole_to_clear", true)
         hole_eater:set_enabled(true)
-        hole_eater:set_position(160, 181)
+        hole_eater:reset()
     else
         map:remove_entities("hole_to_clear")
     end
 end
 
-function hole_eater_launcher_switch:on_activated()
+function hole_eater_launcher_enable_sensor:on_activated()
     map:get_entity("hole_eater_launcher"):set_enabled(true)
 end
 
-function hole_eater_launcher_switch:on_inactivated()
+function hole_eater_launcher_disable_sensor:on_activated()
     map:get_entity("hole_eater_launcher"):set_enabled(false)
 end
 
 function hole_eater:on_moved()
-    hero:freeze()
+    --hero:freeze()
     hole_eater_moving = true
-    local holes_to_clear = map:get_entities(hole_to_clear)
+    local holes_to_clear = map:get_entities("hole_to_clear")
     local hole_disabled = 0
     local hole_eater = map:get_entity("hole_eater")
     
-    m = sol.movement.create("straight")
+    m:start(hole_eater)
     function m:on_position_changed(x, y)
+        hero:freeze()
         -- the bloc has an origin point of 8,13 and dynamic tile of 0,0, so we affect the new position to
         origin_x, origin_y = hole_eater:get_origin()
         x = x - origin_x
@@ -95,6 +96,7 @@ function hole_eater:on_moved()
             m:set_angle(next_angle)
         end
     end
+    m = sol.movement.create("straight")
 end
 
 function map:on_command_pressed(command)

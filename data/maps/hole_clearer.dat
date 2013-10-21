@@ -5,7 +5,7 @@ properties{
   height = 480,
   world = "inside",
   tileset = "9",
-  music = "same",
+  music = "dark_world_dungeon",
 }
 
 tile{
@@ -503,18 +503,6 @@ teletransporter{
   transition = 1,
   destination_map = "the_hub",
   destination = "default_dest",
-}
-
-block{
-  layer = 1,
-  x = 160,
-  y = 181,
-  name = "hole_eater",
-  direction = 1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
 }
 
 dynamic_tile{
@@ -1232,14 +1220,34 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-switch{
+block{
   layer = 1,
-  x = 152,
-  y = 184,
-  name = "hole_eater_launcher_switch",
-  subtype = "0",
-  needs_block = false,
-  inactivate_when_leaving = true,
+  x = 160,
+  y = 181,
+  name = "hole_eater",
+  direction = 1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+sensor{
+  layer = 1,
+  x = 160,
+  y = 189,
+  width = 16,
+  height = 32,
+  name = "hole_eater_launcher_enable_sensor",
+}
+
+sensor{
+  layer = 1,
+  x = 144,
+  y = 157,
+  width = 48,
+  height = 32,
+  name = "hole_eater_launcher_disable_sensor",
 }
 
 tile{
