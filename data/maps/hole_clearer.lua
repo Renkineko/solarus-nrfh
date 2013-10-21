@@ -5,9 +5,9 @@ local movement
 local next_angle = 90
 local angles = {
     right = 0,
-    up = 90,
-    left = 180,
-    down = 270
+    up = math.pi / 2,
+    left = math.pi,
+    down =  3 * math.pi / 2
 }
 local calcul_next_coords = {
     [0] = {x = 16, y = 0},
@@ -42,7 +42,7 @@ function hole_eater:on_moved()
     local holes_to_clear = map:get_entities("hole_to_clear")
     local hole_disabled = 0
     local hole_eater = map:get_entity("hole_eater")
-    
+    sol.audio.play_sound("ok")
     m:start(hole_eater)
     function m:on_position_changed(x, y)
         hero:freeze()
