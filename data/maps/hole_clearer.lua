@@ -47,12 +47,12 @@ function hole_eater:on_moved()
     --movement:set_path({0,0})
     local movement = sol.movement.create("straight")
     movement:set_angle(next_angle)
-    movement:set_max_distance(16)
     movement:set_speed(48)
-    function movement:on_position_changed(x, y)
+    function movement:on_position_changed()
         hero:freeze()
         -- the bloc has an origin point of 8,13 and dynamic tile of 0,0, so we affect the new position to
-        origin_x, origin_y = hole_eater:get_origin()
+        local origin_x, origin_y = hole_eater:get_origin()
+        local x, y = movement:get_xy()
         x = x - origin_x
         y = y - origin_y
         
@@ -102,7 +102,7 @@ function hole_eater:on_moved()
         end
     end
     
-    movement:start(map:get_entity("hole_eater"))
+    movement:start(hole_eater)
 end
 
 function map:on_command_pressed(command)
