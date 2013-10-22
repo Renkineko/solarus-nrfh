@@ -1,8 +1,7 @@
 local map = ...
 local game = map:get_game()
 local hole_eater_moving = false
-local movement
-local next_angle = 90
+local next_angle = math.pi / 2
 local angles = {
     right = 0,
     up = math.pi / 2,
@@ -11,9 +10,9 @@ local angles = {
 }
 local calcul_next_coords = {
     [0] = {x = 16, y = 0},
-    [90] = {x = 0, y = -16},
-    [180] = {x = -16, y = 0},
-    [270] = {x = 0, y = 16},
+    [math.pi / 2] = {x = 0, y = -16},
+    [math.pi] = {x = -16, y = 0},
+    [3 * math.pi / 2] = {x = 0, y = 16},
 }
 
 function separator_entrance_trial:on_activated()
@@ -43,8 +42,14 @@ function hole_eater:on_moved()
     local hole_disabled = 0
     local hole_eater = map:get_entity("hole_eater")
     sol.audio.play_sound("ok")
-    m:start(hole_eater)
-    function m:on_position_changed(x, y)
+    
+    --local movement = sol.movement.create("path")
+    --movement:set_path({0,0})
+    local movement = sol.movement.create("straight")
+    movement:set_angle(next_angle)
+    movement:set_max_distance(16)
+    movement:set_speed(48)
+    function movement:on_position_changed(x, y)
         hero:freeze()
         -- the bloc has an origin point of 8,13 and dynamic tile of 0,0, so we affect the new position to
         origin_x, origin_y = hole_eater:get_origin()
@@ -75,7 +80,7 @@ function hole_eater:on_moved()
             
             -- Stop movement if next step is not a hole and play sound, make a chest appear, anything...
             if #holes_to_clear == hole_disabled then
-                m:stop()
+                movement:stop()
                 sol.audio.play_sound('secret')
                 game:set_value("hole_clearer", true)
                 hole_eater:set_enabled(false)
@@ -85,7 +90,7 @@ function hole_eater:on_moved()
             
             -- Stop movement if next step is not a hole and play sound wrong
             if not is_hole_next then
-                m:stop()
+                movement:stop()
                 sol.audio.play_sound('wrong')
                 hole_eater:set_enabled(false)
                 hero:unfreeze()
@@ -93,10 +98,11 @@ function hole_eater:on_moved()
             end
             
             -- if this code is executed, it's because we have a hole in the next direction and the puzzle is not finished, so we set the potentially new angle
-            m:set_angle(next_angle)
+            movement:set_angle(next_angle)
         end
     end
-    m = sol.movement.create("straight")
+    
+    movement:start(map:get_entity("hole_eater"))
 end
 
 function map:on_command_pressed(command)
@@ -105,9 +111,9 @@ function map:on_command_pressed(command)
         local angle = angles[command]
         local angle_diff = next_angle - angle
         -- If player does not make a 180 turn, set the next dir for the hole_eater
-        if math.abs(angle_diff / 180) ~= 1 then
-            next_angle = angle
-        end
+        --if math.abs(angle_diff / math.pi) ~= 1 then
+        --    next_angle = angle
+        --end
     end
 end
 
