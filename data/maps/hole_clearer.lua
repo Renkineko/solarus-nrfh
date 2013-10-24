@@ -1,6 +1,7 @@
 local map = ...
 local game = map:get_game()
 local hole_eater_moving = false
+local holes_to_clear = map:get_entities("hole_to_clear")
 local hole_disabled = 0
 local next_angle = 2
 local movement
@@ -58,23 +59,26 @@ local function movement_finished(m)
             hole_disabled = hole_disabled + 1
             break
         end
-        
+    end
+    
+    for entity in map:get_entities("hole_to_clear") do
         -- check if the next step is a hole
-        if hole_x == next_x and hole_y == next_y then
+        local hole_x, hole_y, _ = entity:get_position()
+        if entity:is_enabled() and hole_x == next_x and hole_y == next_y then
             is_hole_next = true
         end
     end
-    --
-    ---- Stop movement if next step is not a hole and play sound, make a chest appear, anything...
-    --if #holes_to_clear == hole_disabled then
-    --    movement:stop()
-    --    sol.audio.play_sound('secret')
-    --    game:set_value("hole_clearer", true)
-    --    hole_eater:set_enabled(false)
-    --    hero:unfreeze()
-    --    return
-    --end
-    --
+    
+    -- Stop movement if next step is not a hole and play sound, make a chest appear, anything...
+    if #holes_to_clear == hole_disabled then
+        movement:stop()
+        sol.audio.play_sound('secret')
+        game:set_value("hole_clearer", true)
+        hole_eater:set_enabled(false)
+        hero:unfreeze()
+        return
+    end
+    
     -- Stop movement if next step is not a hole and play sound wrong
     if not is_hole_next then
         movement:stop()
