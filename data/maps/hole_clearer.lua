@@ -1,6 +1,7 @@
 local map = ...
 local game = map:get_game()
 local hole_eater_moving = false
+local new_move = false
 local hole_eater_coord = {x = nil, y = nil}
 local holes_to_clear = {}
 local hole_disabled = 0
@@ -23,15 +24,20 @@ local function check_next_hole(x, y)
     -- get next coord by the angle
     local next_x = x + calcul_next_coords[next_angle].x
     local next_y = y + calcul_next_coords[next_angle].y
-    
+    local file = sol.file.open("debug.txt", "w")
+    file:write("Base : "..x.." "..y.."\tCalcul : "..next_x.." "..next_y.."\n")
     for i, entity in pairs(holes_to_clear) do
         -- check if the next step is a hole
         local hole_x, hole_y, _ = entity:get_position()
+        file:write(entity:get_name().." : "..hole_x.." "..hole_y.."\n")
         if entity:is_enabled() and hole_x == next_x and hole_y == next_y then
+            file:write("yay")
+            file:close()
             return true
         end
     end
-    
+    file:write("shit")
+    file:close()
     return false
 end
 
@@ -114,26 +120,35 @@ function hole_eater_controller:on_interaction()
     hole_eater_moving = true
     sol.audio.play_sound("ok")
     map:get_entity("hole_eater_launcher"):set_enabled(true)
-    
+    new_move = true
     sol.timer.start(250, function()
         local hole_eater = map:get_entity("hole_eater")
         local x, y = hole_eater:get_position()
+        local origin_x, origin_y = hole_eater:get_origin()
+        x = x - origin_x
+        y = y - origin_y
         local is_next_hole = check_next_hole(x, y)
         
-        --if is_next_hole then
+        if is_next_hole then
+            new_move = false
             movement = sol.movement.create("path")
             movement:set_path({next_angle, next_angle})
             movement.on_finished = movement_finished
             movement:start(hole_eater)
-        --else
-        --    trial_failed()
-        --end
+        else
+            trial_failed()
+        end
     end)
 end
 
 function map:on_command_pressed(command)
     if hole_eater_moving and angles[command] ~= nil then
         -- Check for the next angle possibility
+        if new_move then
+            next_angle = angles[command]
+            return    
+        end
+        
         local angle = angles[command]
         local angle_diff = next_angle - angle
         -- If player does not make a 180 turn, set the next dir for the hole_eater
