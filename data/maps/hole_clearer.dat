@@ -487,8 +487,8 @@ tile{
 
 destination{
   layer = 1,
-  x = 160,
-  y = 301,
+  x = 72,
+  y = 205,
   name = "from_weaponry",
   direction = 1,
   default = true,
@@ -1211,10 +1211,10 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 152,
-  width = 16,
-  height = 16,
+  x = 72,
+  y = 56,
+  width = 192,
+  height = 112,
   name = "hole_eater_launcher",
   pattern = 319,
   enabled_at_start = true,
@@ -1232,9 +1232,19 @@ block{
   maximum_moves = 1,
 }
 
+npc{
+  layer = 1,
+  x = 56,
+  y = 181,
+  name = "hole_eater_controller",
+  direction = 3,
+  subtype = "0",
+  sprite = "entities/sign",
+}
+
 sensor{
   layer = 1,
-  x = 160,
+  x = 56,
   y = 189,
   width = 16,
   height = 32,
@@ -1248,16 +1258,6 @@ sensor{
   width = 48,
   height = 32,
   name = "hole_eater_launcher_disable_sensor",
-}
-
-npc{
-  layer = 1,
-  x = 56,
-  y = 181,
-  name = "hole_eater_controller",
-  direction = 3,
-  subtype = "0",
-  sprite = "entities/sign",
 }
 
 tile{
