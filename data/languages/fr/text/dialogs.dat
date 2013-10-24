@@ -2450,3 +2450,16 @@ Non
 Oui
 ]]
 }
+-----------------------
+
+-- Epreuve Mange-Trou
+dialog{
+  id= "hint_torch",
+  text = [[
+C'est une torche...
+Peut-être se
+passera-t-il quelque
+chose si on l'allume...
+
+]]
+}
