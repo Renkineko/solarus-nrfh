@@ -83,7 +83,6 @@ local function movement_finished(m)
     
     -- Stop movement if next step is not a hole and play sound, make a chest appear, anything...
     if #holes_to_clear == hole_disabled then
-        movement:stop()
         sol.audio.play_sound('secret')
         game:set_value("hole_clearer", true)
         map:get_entity("hole_eater_launcher"):set_enabled(false)
@@ -93,9 +92,14 @@ local function movement_finished(m)
         return
     end
     
+    if hole_eater:get_sprite():get_animation() ~= "lit" then
+        hero:unfreeze()
+        hole_eater_moving = false
+        return
+    end
+    
     -- Stop movement if next step is not a hole and play sound wrong
     if not is_hole_next then
-        movement:stop()
         trial_failed()
         return
     end
@@ -113,14 +117,24 @@ end
 
 function hole_eater:on_collision_fire()
     hole_eater:get_sprite():set_animation("lit")
+    sol.timer.start(10000, function()
+        hole_eater:get_sprite():set_animation("unlit")
+    end)
 end
 
 function hole_eater_controller:on_interaction()
+    if hole_eater:get_sprite():get_animation() ~= "lit" then
+        sol.audio.play_sound("wrong")
+        return
+    end
+    
+    -- While the block is moving, we freeze the hero
     hero:freeze()
+    
+    -- Initialize important vars
     hole_eater_moving = true
-    sol.audio.play_sound("ok")
-    map:get_entity("hole_eater_launcher"):set_enabled(true)
     new_move = true
+    map:get_entity("hole_eater_launcher"):set_enabled(true)
     sol.timer.start(250, function()
         local hole_eater = map:get_entity("hole_eater")
         local x, y = hole_eater:get_position()
@@ -143,12 +157,13 @@ end
 
 function map:on_command_pressed(command)
     if hole_eater_moving and angles[command] ~= nil then
-        -- Check for the next angle possibility
+        -- If it's a new move there is no constraint about the direction, we set the new one and let's go.
         if new_move then
             next_angle = angles[command]
             return    
         end
         
+        -- Check for the next angle possibility
         local angle = angles[command]
         local angle_diff = next_angle - angle
         -- If player does not make a 180 turn, set the next dir for the hole_eater

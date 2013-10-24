@@ -548,10 +548,19 @@ tile{
   pattern = 69,
 }
 
+tile{
+  layer = 1,
+  x = 48,
+  y = 48,
+  width = 16,
+  height = 96,
+  pattern = 2,
+}
+
 destination{
   layer = 1,
-  x = 72,
-  y = 205,
+  x = 160,
+  y = 453,
   name = "from_weaponry",
   direction = 1,
   default = true,
@@ -1301,6 +1310,54 @@ npc{
   direction = 3,
   subtype = "1",
   sprite = "entities/torch",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 61,
+  subtype = "pot",
+  treasure_name = "magic_flask",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 77,
+  subtype = "pot",
+  treasure_name = "magic_flask",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 93,
+  subtype = "pot",
+  treasure_name = "magic_flask",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 109,
+  subtype = "pot",
+  treasure_name = "magic_flask",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 125,
+  subtype = "pot",
+  treasure_name = "magic_flask",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 141,
+  subtype = "pot",
+  treasure_name = "magic_flask",
 }
 
 tile{
