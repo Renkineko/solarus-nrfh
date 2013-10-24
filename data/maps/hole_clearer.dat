@@ -1242,24 +1242,6 @@ npc{
   sprite = "entities/sign",
 }
 
-sensor{
-  layer = 1,
-  x = 56,
-  y = 189,
-  width = 16,
-  height = 32,
-  name = "hole_eater_launcher_enable_sensor",
-}
-
-sensor{
-  layer = 1,
-  x = 144,
-  y = 157,
-  width = 48,
-  height = 32,
-  name = "hole_eater_launcher_disable_sensor",
-}
-
 tile{
   layer = 2,
   x = 0,

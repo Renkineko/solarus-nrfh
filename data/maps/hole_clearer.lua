@@ -1,7 +1,7 @@
 local map = ...
 local game = map:get_game()
 local hole_eater_moving = false
-local holes_to_clear = map:get_entities("hole_to_clear")
+local holes_to_clear = {}
 local hole_disabled = 0
 local next_angle = 2
 local movement
@@ -25,17 +25,10 @@ function separator_entrance_trial:on_activated()
         map:set_entities_enabled("hole_to_clear", true)
         hole_eater:set_enabled(true)
         hole_eater:reset()
+        hole_disabled = 0
     else
         map:remove_entities("hole_to_clear")
     end
-end
-
-function hole_eater_launcher_enable_sensor:on_activated()
-    map:get_entity("hole_eater_launcher"):set_enabled(true)
-end
-
-function hole_eater_launcher_disable_sensor:on_activated()
-    map:get_entity("hole_eater_launcher"):set_enabled(false)
 end
 
 local function movement_finished(m)
@@ -52,7 +45,7 @@ local function movement_finished(m)
     local is_hole_next = false
     
     -- destroy the hole we're on
-    for entity in map:get_entities("hole_to_clear") do
+    for i, entity in pairs(holes_to_clear) do
         local hole_x, hole_y, _ = entity:get_position()
         if hole_x == x and hole_y == y then
             entity:set_enabled(false)
@@ -61,7 +54,7 @@ local function movement_finished(m)
         end
     end
     
-    for entity in map:get_entities("hole_to_clear") do
+    for i, entity in pairs(holes_to_clear) do
         -- check if the next step is a hole
         local hole_x, hole_y, _ = entity:get_position()
         if entity:is_enabled() and hole_x == next_x and hole_y == next_y then
@@ -74,6 +67,7 @@ local function movement_finished(m)
         movement:stop()
         sol.audio.play_sound('secret')
         game:set_value("hole_clearer", true)
+        map:get_entity("hole_eater_launcher"):set_enabled(false)
         hole_eater:set_enabled(false)
         hero:unfreeze()
         return
@@ -84,6 +78,7 @@ local function movement_finished(m)
         movement:stop()
         sol.audio.play_sound('wrong')
         hole_eater:set_enabled(false)
+        map:get_entity("hole_eater_launcher"):set_enabled(false)
         hero:unfreeze()
         return
     end
@@ -100,6 +95,7 @@ function hole_eater_controller:on_interaction()
     hole_eater_moving = true
     local hole_eater = map:get_entity("hole_eater")
     sol.audio.play_sound("ok")
+    map:get_entity("hole_eater_launcher"):set_enabled(true)
     
     movement = sol.movement.create("path")
     movement:set_path({next_angle, next_angle})
@@ -123,6 +119,11 @@ function map:on_started()
     local hole_eater_launcher = map:get_entity("hole_eater_launcher")
     hole_eater_launcher:set_visible(false)
     hole_eater_launcher:set_enabled(false)
+    
+    for ent in map:get_entities("hole_to_clear") do
+        holes_to_clear[#holes_to_clear + 1] = ent
+    end
+    
     if game:get_value("hole_clearer") then
         -- start a dialog to know if the player wants to reset the trial
         game:start_dialog("reset_trial", function(answer)
