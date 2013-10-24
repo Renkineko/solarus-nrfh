@@ -43,7 +43,8 @@ local equipment_available = {
         hole_clearer = 1
     },
     [magic_bar_chest] = {
-        lost_palazzo = 2
+        lost_palazzo = 2,
+        hole_clearer = 1
     },
     [magic_cape_chest] = {
     },
