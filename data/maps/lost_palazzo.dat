@@ -5105,7 +5105,7 @@ teletransporter{
   name = "tp_hole",
   sound = "warp",
   transition = 1,
-  destination_map = "142",
+  destination_map = "lost_palazzo",
   destination = "tp_hole_dest",
 }
 
@@ -5118,7 +5118,7 @@ teletransporter{
   name = "tp_hole_back",
   sound = "warp",
   transition = 1,
-  destination_map = "142",
+  destination_map = "lost_palazzo",
   destination = "tp_hole_back_dest",
 }
 
@@ -5493,7 +5493,7 @@ npc{
 destination{
   layer = 0,
   x = 968,
-  y = 181,
+  y = 165,
   name = "dst_to_wiznake_room",
   direction = 3,
 }
@@ -9570,7 +9570,7 @@ dynamic_tile{
 jumper{
   layer = 1,
   x = 952,
-  y = 728,
+  y = 720,
   width = 32,
   height = 8,
   direction = 2,
@@ -9658,8 +9658,9 @@ teletransporter{
   height = 16,
   name = "tpe_wiznake_room_to",
   sprite = "entities/teletransporter",
+  sound = "warp",
   transition = 1,
-  destination_map = "142",
+  destination_map = "lost_palazzo",
   destination = "dst_to_wiznake_room",
 }
 

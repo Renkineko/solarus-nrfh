@@ -2461,6 +2461,54 @@ besoin de rien ici.
 
 -----------------------
 
+dialog{
+  id = "lost_palazzo.hint_jump_hole_room",
+  skip = "all",
+  text = [[
+Ce qui compte, c'est
+les valeurs :
+Huit, quatre, deux, un
+]]
+}
+-----------------------
+
+dialog{
+  id = "lost_palazzo.hint_torch_good",
+  skip = "all",
+  text = [[
+Les torches t'ouvriront
+le passage quoi qu'il
+arrive.
+]]
+}
+-----------------------
+
+dialog{
+  id = "lost_palazzo.hint_torch_bad",
+  skip = "all",
+  text = [[
+Chaque torche te
+bloquera le passage.
+
+Concentre-toi sur une
+seule tâche.
+]]
+}
+-----------------------
+
+dialog{
+  id = "lost_palazzo.do_not_fear_bubbles",
+  skip = "all",
+  text = [[
+J'ai personnellement
+entraîné les tetdoss
+de cette salle.
+Ne t'inquiète pas, ils
+sont inoffensifs.
+]]
+}
+-----------------------
+
 -- Epreuve Mange-Trou
 dialog{
   id= "reset_trial",
