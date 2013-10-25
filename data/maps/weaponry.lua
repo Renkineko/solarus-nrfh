@@ -99,6 +99,7 @@ function chest_equipment:on_empty()
     
     if new_equipment then
         sol.audio.play_sound("treasure")
+        hero:start_victory()
         game:start_dialog("equipment_set")
     else
         sol.audio.play_sound("wrong")
@@ -107,5 +108,4 @@ function chest_equipment:on_empty()
     
     game:get_item("bow"):set_amount(99)
     game:get_item("bombs_counter"):set_amount(99)
-    hero:unfreeze()
 end

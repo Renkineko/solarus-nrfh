@@ -24,8 +24,11 @@ function map:on_started()
     game:get_item("quiver"):set_variant("0")
     game:get_item("shield"):set_variant("0")
     game:get_item("cane_of_somaria"):set_variant("0")
-    game:get_item("sword"):set_variant("0")
+    game:get_item("sword"):set_variant("1")
     game:get_item("tunic"):set_variant("1")
+    
+    -- Reset the abilities
+    game:set_ability("tunic", 1)
     
     -- Except for the bottles, which are just emptied
     game:get_item("bottle_1"):set_variant("1")

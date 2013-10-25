@@ -132,6 +132,12 @@ function hole_eater_controller:on_interaction()
     hole_eater_moving = true
     new_move = true
     map:get_entity("hole_eater_launcher"):set_enabled(true)
+    
+    -- check if a direction was pressed before the player interacts with the controller
+    if game:is_command_pressed("up") then
+        next_angle = 2
+    end
+    
     sol.timer.start(250, function()
         local hole_eater = map:get_entity("hole_eater")
         local x, y = hole_eater:get_position()
