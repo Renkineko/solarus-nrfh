@@ -9192,6 +9192,24 @@ tile{
   pattern = 339,
 }
 
+tile{
+  layer = 1,
+  x = 568,
+  y = 608,
+  width = 8,
+  height = 16,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 592,
+  y = 608,
+  width = 8,
+  height = 16,
+  pattern = 71,
+}
+
 wall{
   layer = 1,
   x = 744,
@@ -10110,15 +10128,6 @@ destination{
   y = 1397,
   name = "dst_from_wiznake_room",
   direction = 1,
-}
-
-enemy{
-  layer = 1,
-  x = 104,
-  y = 1381,
-  name = "t",
-  direction = 3,
-  breed = "tentacle",
 }
 
 tile{
