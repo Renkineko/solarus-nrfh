@@ -2429,9 +2429,33 @@ utilisation des separa-
 teurs pour recommencer
 l'énigme.
 $0
-Armurerie : Plume.
+Armurerie : Lampe.
 
-EN TRAVAUX.
+Bonne chance.
+]]
+}
+-----------------------
+
+-- Armurerie, coffre plein
+dialog{
+  id= "equipment_set",
+  skip = "all",
+  text = [[
+Tu as trouvé ton nouvel
+équipement ! Tu te sens
+paré à toute épreuve !
+]]
+}
+-----------------------
+
+-- Armurerie, coffre vide
+dialog{
+  id= "no_equipment_set",
+  skip = "all",
+  text = [[
+Ce coffre est vide !
+Apparemment tu n'auras
+besoin de rien ici.
 ]]
 }
 

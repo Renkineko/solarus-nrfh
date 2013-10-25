@@ -24,20 +24,17 @@ local function check_next_hole(x, y)
     -- get next coord by the angle
     local next_x = x + calcul_next_coords[next_angle].x
     local next_y = y + calcul_next_coords[next_angle].y
-    local file = sol.file.open("debug.txt", "w")
-    file:write("Base : "..x.." "..y.."\tCalcul : "..next_x.." "..next_y.."\n")
+    
     for i, entity in pairs(holes_to_clear) do
         -- check if the next step is a hole
         local hole_x, hole_y, _ = entity:get_position()
-        file:write(entity:get_name().." : "..hole_x.." "..hole_y.."\n")
+        
         if entity:is_enabled() and hole_x == next_x and hole_y == next_y then
-            file:write("yay")
-            file:close()
+            
             return true
         end
     end
-    file:write("shit")
-    file:close()
+    
     return false
 end
 

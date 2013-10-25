@@ -5,62 +5,65 @@ local game = map:get_game()
 -- of the map and the variant of the item,
 -- 0 meaning the chest is disabled.
 local equipment_available = {
-    [bomb_bag_chest] = {
+    bomb_bag = {
         lost_palazzo = 2
     },
-    [boomerang_chest] = {
+    boomerang = {
         lost_palazzo = 2
     },
-    [bottle_1_chest] = {
+    bottle_1 = {
         lost_palazzo = 3
     },
-    [bottle_2_chest] = {
+    bottle_2 = {
         lost_palazzo = 4
     },
-    [bottle_3_chest] = {
+    bottle_3 = {
         lost_palazzo = 4
     },
-    [bottle_4_chest] = {
+    bottle_4 = {
     },
-    [bow_chest] = {
+    bow = {
         lost_palazzo = 1
     },
-    [cane_of_somaria_chest] = {
+    cane_of_somaria = {
         lost_palazzo = 1
     },
-    [feather_chest] = {
+    feather = {
         lost_palazzo = 1
     },
-    [flippers_chest] = {
+    flippers = {
     },
-    [glove_chest] = {
+    glove = {
     },
-    [hookshot_chest] = {
+    hookshot = {
         lost_palazzo = 1
     },
-    [lamp_chest] = {
+    lamp = {
         lost_palazzo = 1,
         hole_clearer = 1
     },
-    [magic_bar_chest] = {
+    life = {
+        lost_palazzo = 20,
+    },
+    magic_bar = {
         lost_palazzo = 2,
         hole_clearer = 1
     },
-    [magic_cape_chest] = {
+    magic_cape = {
     },
-    [pegasus_shoes_chest] = {
+    pegasus_shoes = {
         lost_palazzo = 1
     },
-    [quiver_chest] = {
+    quiver = {
         lost_palazzo = 2
     },
-    [shield_chest] = {
+    shield = {
         lost_palazzo = 2
     },
-    [sword_chest] = {
+    sword = {
         lost_palazzo = 2
     },
-    [tunic_chest] = {
+    tunic = {
         lost_palazzo = 3
     }
 }
@@ -69,16 +72,40 @@ function map:on_started()
     local trial_dest = game:get_value("trial_destination")
     map:set_entities_enabled("teleporter_trial", false)
     map:get_entity("teleporter_trial_"..trial_dest):set_enabled(true)
-    for chest, value in pairs(equipment_available) do
+end
+
+function chest_equipment:on_empty()
+    local new_equipment = false
+    local trial_dest = game:get_value("trial_destination")
+    for item, value in pairs(equipment_available) do
         local variant = value[trial_dest]
-        if variant == nil or variant == 0 then
-            chest:set_enabled(false)
-        else
-            local name_item = chest:get_name():sub(1, -7)
-            function chest:on_empty()
-                hero:start_treasure(name_item, variant)
-                hero:unfreeze()
+        if variant ~= nil and variant > 0 then
+            if item == "magic_bar" then
+                game:set_max_magic(42 * variant)
+                new_equipment = true
+            elseif item == "life" then
+                game:set_max_life(4 * variant)
+                game:set_life(4*variant)
+                new_equipment = true
+            else
+                game:get_item(item):set_variant(variant)
+                if item == "tunic" then
+                    game:set_ability("tunic", variant)
+                end
+                new_equipment = true
             end
         end
     end
+    
+    if new_equipment then
+        sol.audio.play_sound("treasure")
+        game:start_dialog("equipment_set")
+    else
+        sol.audio.play_sound("wrong")
+        game:start_dialog("no_equipment_set")
+    end
+    
+    game:get_item("bow"):set_amount(99)
+    game:get_item("bombs_counter"):set_amount(99)
+    hero:unfreeze()
 end
