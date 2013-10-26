@@ -5,7 +5,6 @@ properties{
   height = 1536,
   world = "lost_palazzo",
   tileset = "11",
-  music = "lost_palazzo",
 }
 
 tile{
@@ -5235,16 +5234,6 @@ sensor{
   name = "sensor_jump_room_5",
 }
 
-switch{
-  layer = 0,
-  x = 192,
-  y = 152,
-  name = "tmp_switch_torch",
-  subtype = "1",
-  needs_block = false,
-  inactivate_when_leaving = true,
-}
-
 door{
   layer = 0,
   x = 192,
@@ -5492,7 +5481,7 @@ npc{
 
 destination{
   layer = 0,
-  x = 968,
+  x = 328,
   y = 165,
   name = "dst_to_wiznake_room",
   direction = 3,

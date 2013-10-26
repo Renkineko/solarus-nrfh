@@ -2330,6 +2330,17 @@ de cristal. Frappe-le
 avec quelque chose...
 ]]
 }
+--------------------
+
+dialog{
+  id = "torch.need_lamp",
+  skip = "all",
+  text = [[
+Il y a sûrement un
+moyen d'allumer
+cette torche...
+]]
+}
 -----------------------
 
 -- Message de bienvenue dans le Hub

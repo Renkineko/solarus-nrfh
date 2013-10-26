@@ -91,9 +91,12 @@ local function check_torches()
         end
         map:open_doors("door_torch")
         map:open_doors("door_jump_1")
-        map:get_game():set_value("lost_palazzo_torches_ok", true)
+        game:set_value("lost_palazzo_torches_ok", true)
         sol.audio.play_sound("secret")
+        return true
     end
+    
+    return false
 end
 
 local function stop_jump_sensor()
@@ -339,18 +342,20 @@ end
 
 -- /// TORCHES \\\
 local function torch_interaction(torch)
-    map:start_dialog("torch.need_lamp")
+    game:start_dialog("torch.need_lamp")
 end
 
 local function torch_collision_fire(torch)
-    sol.audio.play_sound("cursor")
     local torch_sprite = torch:get_sprite()
+    --local file = sol.file.open("debug.txt", "w")
     if torch_sprite:get_animation() == "unlit" then
+        --file:write("\nTorche "..torch:get_name().." non allumée. ")
         -- temporarily light the torch up
         torch_sprite:set_animation("lit")
-        check_torches()
+        local puzzle_solved = check_torches()
         
-        if not all_torches_lit() then
+        if not puzzle_solved then
+            --file:write("Enigme non résolue, apparition de mobs. ")
             local enemy_name = "enemy_" .. torch:get_name()
             local position = (positions[math.random(#positions)])
             local enemy_breed = (breeds[math.random(#breeds)])
@@ -358,30 +363,19 @@ local function torch_collision_fire(torch)
             -- Create X new enemies, X is the number of torches lit
             for n = 1, nb_enemy_to_create do
                 map:create_enemy({name = enemy_name .. "_" .. n, layer = 0, x = position.x, y = position.y, direction = 3, breed = enemy_breed, treasure_name="random"})
-                sol.timer.start(torches_delay, function()
-                    torch_sprite:set_animation("unlit")
-                    map:remove_entities(enemy_name)
-                end)
             end
-        end
-    end
-end
-
-function tmp_switch_torch:on_activated()
-    check_torches()
-    if not all_torches_lit() then
-        local enemy_name = "enemy_" .. "torch_room"
-        local enemy_breed = (breeds[math.random(#breeds)])
-        local nb_enemy_to_create = get_nb_torches_lit()
-        -- Create X new enemies, X is the number of torches lit
-        for n = 1, nb_enemy_to_create do
-            local position = (positions[math.random(#positions)])
-            map:create_enemy({name = enemy_name .. "_" .. n, layer = 0, x = position.x, y = position.y, direction = 3, breed = enemy_breed, treasure_name="random"})
+            
+            -- set the timer to unlit the torches and destroy the mobs
             sol.timer.start(torches_delay, function()
+                --file:write("Trop tard pour la torche ".. torch:get_name() ..", extinction et disparition de ses mobs")
+                torch_sprite:set_animation("unlit")
                 map:remove_entities(enemy_name)
             end)
+        else
+            --file:write("Enigme résolue.")
         end
     end
+    --file:close()
 end
 
 for torch in map:get_entities("torch") do
