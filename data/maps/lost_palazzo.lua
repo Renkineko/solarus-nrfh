@@ -347,15 +347,12 @@ end
 
 local function torch_collision_fire(torch)
     local torch_sprite = torch:get_sprite()
-    --local file = sol.file.open("debug.txt", "w")
     if torch_sprite:get_animation() == "unlit" then
-        --file:write("\nTorche "..torch:get_name().." non allumée. ")
         -- temporarily light the torch up
         torch_sprite:set_animation("lit")
         local puzzle_solved = check_torches()
         
         if not puzzle_solved then
-            --file:write("Enigme non résolue, apparition de mobs. ")
             local enemy_name = "enemy_" .. torch:get_name()
             local position = (positions[math.random(#positions)])
             local enemy_breed = (breeds[math.random(#breeds)])
@@ -367,15 +364,12 @@ local function torch_collision_fire(torch)
             
             -- set the timer to unlit the torches and destroy the mobs
             sol.timer.start(torches_delay, function()
-                --file:write("Trop tard pour la torche ".. torch:get_name() ..", extinction et disparition de ses mobs")
                 torch_sprite:set_animation("unlit")
                 map:remove_entities(enemy_name)
             end)
         else
-            --file:write("Enigme résolue.")
         end
     end
-    --file:close()
 end
 
 for torch in map:get_entities("torch") do

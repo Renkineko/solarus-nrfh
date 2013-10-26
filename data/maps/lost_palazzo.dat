@@ -4248,7 +4248,6 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/torch",
-  behavior = "item#lamp",
 }
 
 npc{
@@ -4259,7 +4258,6 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/torch",
-  behavior = "item#lamp",
 }
 
 npc{
@@ -4270,7 +4268,6 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/torch",
-  behavior = "item#lamp",
 }
 
 npc{
@@ -4281,7 +4278,6 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/torch",
-  behavior = "item#lamp",
 }
 
 npc{
@@ -4292,7 +4288,6 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/torch",
-  behavior = "item#lamp",
 }
 
 switch{
@@ -5147,7 +5142,6 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/torch",
-  behavior = "item#lamp",
 }
 
 npc{
