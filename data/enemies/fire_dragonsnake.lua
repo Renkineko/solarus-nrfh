@@ -64,6 +64,7 @@ function enemy:on_created()
     head = self:create_sprite("enemies/fire_dragonsnake")
     self:set_size(16, 16)
     self:set_origin(8, 13)
+    self:set_pushed_back_when_hurt(false)
     
     -- While the enemy has body destructable, it's invincible but can be immobilized
     self:set_invincible()
