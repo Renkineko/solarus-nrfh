@@ -208,6 +208,7 @@ sprite{ id = "enemies/fire_dragonsnake_ball", description = "Enemy: Dragonsnake 
 sprite{ id = "enemies/fire_dragonsnake_bigball", description = "Enemy: Dragonsnake (feu) - Grosse Boule" }
 sprite{ id = "enemies/fire_dragonsnake_smallball", description = "Enemy: Dragonsnake (feu) - Petite Boule" }
 sprite{ id = "enemies/wiznake", description = "Enemy: Wiznake" }
+sprite{ id = "effects/cast1", description = "Effects: Cast1" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
