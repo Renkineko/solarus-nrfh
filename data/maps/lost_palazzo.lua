@@ -124,16 +124,32 @@ function map:on_started()
     if map:get_game():get_value("lost_palazzo_mini_boss_killed") then
         map:remove_entities("close_mb_sensor")
         map:open_doors("mb_door")
-        map:set_entities_enabled("tp_wiznake_room", true)
+        map:set_entities_enabled("tp_mini_boss_room", true)
+        map:set_entities_enabled("dyn_giga_barrier", false)
+        map:set_entities_enabled("dyn_giga_stairs", true)
     else
-        mini_boss_aspic:set_enabled(false)
-        map:set_entities_enabled("tp_wiznake_room", false)
+        mini_boss_giga:set_enabled(false)
+        map:set_entities_enabled("tp_mini_boss_room", false)
+        map:set_entities_enabled("dyn_giga_barrier", true)
+        map:set_entities_enabled("dyn_giga_stairs", false)
     end
+    
+    if map:get_game():get_value("lost_palazzo_boss_killed") then
+        map:remove_entities("close_boss_door_sensor")
+        map:remove_entities("boss_room_trap_activate_sensor")
+    else
+        map:set_entities_enabled("switch_boss", false)
+    end
+    
+    map:set_entities_enabled("dyn_boss_trap_active", false)
+    map:set_entities_enabled("dyn_boss_trap_inactive", true)
+    npc_boss_cannon:set_enabled(false)
     
     -- Open doors
     map:set_doors_open("ke_a", true)
     map:set_doors_open("door_torch", true)
     map:set_doors_open("door_jump", true)
+    map:set_doors_open("boss_door")
     
     -- Disable tp of the symetric room
     tp_hole:set_enabled(false)
@@ -169,10 +185,34 @@ function close_mb_sensor:on_activated()
     else
         map:close_doors("mb_door")
         map:close_doors("switch_door_a_2")
-        mini_boss_aspic:set_enabled(true)
+        mini_boss_giga:set_enabled(true)
     end
 end
 close_mb_sensor_2.on_activated = close_mb_sensor.on_activated
+
+function close_boss_door_sensor:on_activated()
+    map:set_entities_enabled("block_boss", false)
+    if not game:get_value("lost_palazzo_boss_killed") then
+        map:set_entities_enabled("switch_boss", true)
+        map:close_doors("boss_door")
+        hero:walk("222222")
+        -- enable cannon
+        -- enable boss
+        -- disable path
+        
+    else
+        map:set_entities_enabled("switch_boss", false)
+        -- enable path
+    end
+    self:set_enabled(false)
+end
+
+function boss_room_trap_activate_sensor:on_activated()
+    map:set_entities_enabled("dyn_boss_trap_active", true)
+    map:set_entities_enabled("dyn_boss_trap_inactive", false)
+    npc_boss_cannon:set_enabled(true)
+    self:set_enabled(false)
+end
 
 -- Close the door of the torches room and set light to dark...
 function sensor_torch:on_activated()
@@ -214,7 +254,7 @@ function sensor_jump_room_1:on_activated()
         jump_good_sensor = jump_good_sensor + 1
     elseif jump_good_sensor ~= 0 then
         sol.audio.play_sound("wrong")
-        jump_good_sensor = 0
+        jump_good_sensor = 1
     end
 end
 
@@ -292,11 +332,14 @@ for enemy in map:get_entities("pike_switch") do
     end
 end
 
-function mini_boss_aspic:on_dead()
+function mini_boss_giga:on_dead()
     map:get_game():set_value("lost_palazzo_mini_boss_killed", true)
     map:open_doors("mb_door")
     map:open_doors("switch_door_a_2")
-    map:set_entities_enabled("tp_wiznake_room", true)
+    map:set_entities_enabled("tp_mini_boss_room", true)
+    map:set_entities_enabled("dyn_giga_barrier", false)
+    map:set_entities_enabled("dyn_giga_stairs", true)
+    sol.audio.play_sound("secret")
 end
 
 -- /// SWITCHES \\\
@@ -339,6 +382,60 @@ function final_sd_a:on_activated()
         sd_block_4:reset()
     end
 end
+
+function switch_boss_fire_cannon:on_activated()
+    -- make an explosion on the coordinates corresponding to the position x, y-192 of the cannon
+    local explo_x, explo_y = npc_boss_cannon:get_position()
+    map:create_explosion({layer=2, x=explo_x, y=explo_y-192})
+    
+    -- deactivate the switch
+    sol.timer.start(2500, function()
+        self:set_activated(false)
+    end)
+end
+switch_boss_fire_cannon_2.on_activated = switch_boss_fire_cannon.on_activated
+
+function switch_boss_cannon_left:on_activated()
+    -- move the cannon to the left
+    local move = sol.movement.create("straight")
+    move:set_speed(64)
+    move:set_angle(math.pi)
+    move:start(npc_boss_cannon)
+end
+function switch_boss_cannon_right:on_activated()
+    -- move the cannon to the right
+    local move = sol.movement.create("straight")
+    move:set_speed(64)
+    move:set_angle(0)
+    move:start(npc_boss_cannon)
+end
+
+function switch_boss_cannon_left:on_inactivated()
+    -- immobilize the cannon
+    npc_boss_cannon:stop_movement()
+end
+switch_boss_cannon_right.on_inactivated = switch_boss_cannon_left.on_inactivated
+
+function switch_boss_protect_upleft:on_activated()
+    map:set_entities_enabled("block_boss_protect_upleft", true)
+    map:set_entities_enabled("block_boss_protect_left", true)
+end
+function switch_boss_protect_up:on_activated()
+    map:set_entities_enabled("block_boss_protect_upleft", true)
+    map:set_entities_enabled("block_boss_protect_upright", true)
+    map:set_entities_enabled("block_boss_protect_up", true)
+end
+function switch_boss_protect_upright:on_activated()
+    map:set_entities_enabled("block_boss_protect_upright", true)
+    map:set_entities_enabled("block_boss_protect_right", true)
+end
+
+
+function switch_boss_protect_upleft:on_inactivated()
+    map:set_entities_enabled("block_boss_protect", false)
+end
+switch_boss_protect_upright.on_inactivated = switch_boss_protect_upleft.on_inactivated
+switch_boss_protect_up.on_inactivated = switch_boss_protect_upleft.on_inactivated
 
 -- /// TORCHES \\\
 local function torch_interaction(torch)
