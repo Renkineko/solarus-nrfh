@@ -775,7 +775,7 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/sign",
-  behavior = "dialog#trial_unknown",
+  behavior = "dialog#trial_pike_boss",
 }
 
 npc{
@@ -785,7 +785,7 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/sign",
-  behavior = "dialog#trial_unknown",
+  behavior = "dialog#trial_monty_hall",
 }
 
 sensor{
@@ -834,6 +834,24 @@ teletransporter{
   transition = 1,
   destination_map = "weaponry",
   destination = "from_hub",
+}
+
+sensor{
+  layer = 0,
+  x = 208,
+  y = 149,
+  width = 16,
+  height = 16,
+  name = "sensor_monty_hall",
+}
+
+sensor{
+  layer = 0,
+  x = 320,
+  y = 149,
+  width = 16,
+  height = 16,
+  name = "sensor_pike_boss",
 }
 
 tile{

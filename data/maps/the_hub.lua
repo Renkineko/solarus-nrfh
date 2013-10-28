@@ -9,6 +9,15 @@ function sensor_hole_clearer:on_activated()
     game:set_value("trial_destination", "hole_clearer")
 end
 
+function sensor_monty_hall:on_activated()
+    game:set_value("trial_destination", "monty_hall")
+end
+
+function sensor_pike_boss:on_activated()
+    game:set_value("trial_destination", "pike_boss")
+end
+
+
 function map:on_started()
     -- Always reset all items in the possession of the hero
     game:get_item("bomb_bag"):set_variant("0")
