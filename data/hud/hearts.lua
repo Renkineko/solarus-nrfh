@@ -42,6 +42,10 @@ function hearts:check()
   if nb_max_hearts ~= self.nb_max_hearts_displayed then
     need_rebuild = true
     self.nb_max_hearts_displayed = nb_max_hearts
+    
+    if self.nb_current_hearts_displayed > nb_max_hearts then
+      self.nb_current_hearts_displayed = nb_max_hearts
+    end
   end
 
   -- Current life.
