@@ -57,6 +57,9 @@ local equipment_available = {
     quiver = {
         lost_palazzo = 2
     },
+    rupee_bag = {
+        lost_palazzo = 3
+    },
     shield = {
         lost_palazzo = 2
     },
@@ -108,4 +111,5 @@ function chest_equipment:on_empty()
     
     game:get_item("bow"):set_amount(99)
     game:get_item("bombs_counter"):set_amount(99)
+    game:set_money(game:get_max_money())
 end

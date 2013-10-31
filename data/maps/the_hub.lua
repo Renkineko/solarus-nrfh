@@ -35,6 +35,7 @@ function map:on_started()
     game:get_item("cane_of_somaria"):set_variant("0")
     game:get_item("sword"):set_variant("1")
     game:get_item("tunic"):set_variant("1")
+    game:get_item("rupee_bag"):set_variant("1")
     
     -- Reset the abilities
     game:set_ability("tunic", 1)
@@ -51,4 +52,5 @@ function map:on_started()
     game:set_max_magic(0)
     game:set_max_life(20)
     game:set_life(20)
+    game:set_money(0)
 end
