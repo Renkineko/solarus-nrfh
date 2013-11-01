@@ -1,0 +1,716 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  world = "monty_hall",
+  tileset = "0",
+  music = "mini_game",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 200,
+  width = 240,
+  height = 24,
+  pattern = 52,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 200,
+  width = 16,
+  height = 48,
+  pattern = 2,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 16,
+  width = 24,
+  height = 24,
+  pattern = 45,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 16,
+  width = 24,
+  height = 24,
+  pattern = 46,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 200,
+  width = 24,
+  height = 24,
+  pattern = 48,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 200,
+  width = 24,
+  height = 24,
+  pattern = 47,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 16,
+  width = 240,
+  height = 24,
+  pattern = 49,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 40,
+  width = 24,
+  height = 160,
+  pattern = 51,
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 40,
+  width = 24,
+  height = 160,
+  pattern = 50,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 240,
+  height = 160,
+  pattern = 2,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 14,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 15,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 8,
+  height = 8,
+  pattern = 17,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 192,
+  width = 8,
+  height = 8,
+  pattern = 16,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 40,
+  width = 224,
+  height = 8,
+  pattern = 18,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 192,
+  width = 224,
+  height = 8,
+  pattern = 21,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 48,
+  width = 8,
+  height = 144,
+  pattern = 20,
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 48,
+  width = 8,
+  height = 144,
+  pattern = 19,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 200,
+  width = 16,
+  height = 16,
+  pattern = 77,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 200,
+  width = 8,
+  height = 16,
+  pattern = 74,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 200,
+  width = 8,
+  height = 16,
+  pattern = 75,
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = 122,
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 160,
+  width = 48,
+  height = 8,
+  pattern = 120,
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = 123,
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 152,
+  width = 48,
+  height = 8,
+  pattern = 119,
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = 115,
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = 114,
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = 118,
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = 112,
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 136,
+  width = 48,
+  height = 8,
+  pattern = 116,
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = 113,
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = 117,
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 144,
+  width = 48,
+  height = 8,
+  pattern = 121,
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 136,
+  width = 56,
+  height = 8,
+  pattern = 70,
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 136,
+  width = 56,
+  height = 8,
+  pattern = 70,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 224,
+  width = 8,
+  height = 16,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 224,
+  width = 8,
+  height = 16,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = 76,
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = 76,
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = 76,
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = 73,
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = 73,
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = 73,
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = 72,
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = 72,
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = 72,
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 48,
+  width = 8,
+  height = 48,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 48,
+  width = 8,
+  height = 48,
+  pattern = 71,
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = 69,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 136,
+  width = 16,
+  height = 8,
+  name = "open_game_barrier",
+  pattern = 70,
+  enabled_at_start = true,
+}
+
+destination{
+  layer = 1,
+  x = 160,
+  y = 205,
+  direction = 1,
+  default = true,
+}
+
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 224,
+  width = 16,
+  height = 16,
+  transition = 1,
+  destination_map = "the_hub",
+  destination = "default_dest",
+}
+
+npc{
+  layer = 1,
+  x = 240,
+  y = 133,
+  name = "monty_hall_npc",
+  direction = 3,
+  subtype = "1",
+  sprite = "npc/newlink7",
+}
+
+npc{
+  layer = 1,
+  x = 240,
+  y = 165,
+  name = "monty_hall_npc_gen",
+  direction = 3,
+  subtype = "0",
+}
+
+door{
+  layer = 1,
+  x = 72,
+  y = 24,
+  name = "door_one",
+  direction = 1,
+  sprite = "entities/door_normal",
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 24,
+  name = "door_two",
+  direction = 1,
+  sprite = "entities/door_normal",
+}
+
+door{
+  layer = 1,
+  x = 232,
+  y = 24,
+  name = "door_three",
+  direction = 1,
+  sprite = "entities/door_normal",
+}
+
+sensor{
+  layer = 1,
+  x = 48,
+  y = 93,
+  width = 80,
+  height = 16,
+  name = "sensor_door_one",
+}
+
+sensor{
+  layer = 1,
+  x = 136,
+  y = 93,
+  width = 64,
+  height = 16,
+  name = "sensor_door_two",
+}
+
+sensor{
+  layer = 1,
+  x = 208,
+  y = 93,
+  width = 80,
+  height = 16,
+  name = "sensor_door_three",
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 16,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 224,
+  width = 320,
+  height = 16,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 16,
+  width = 16,
+  height = 208,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 16,
+  width = 16,
+  height = 208,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 216,
+  width = 32,
+  height = 8,
+  pattern = 153,
+}
+
+tile{
+  layer = 2,
+  x = 64,
+  y = 16,
+  width = 32,
+  height = 8,
+  pattern = 154,
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 16,
+  width = 32,
+  height = 8,
+  pattern = 154,
+}
+
+tile{
+  layer = 2,
+  x = 224,
+  y = 16,
+  width = 32,
+  height = 8,
+  pattern = 154,
+}
+
+npc{
+  layer = 2,
+  x = 80,
+  y = 37,
+  name = "npc_door_one",
+  direction = 3,
+  subtype = "0",
+}
+
+npc{
+  layer = 2,
+  x = 160,
+  y = 37,
+  name = "npc_door_two",
+  direction = 3,
+  subtype = "0",
+}
+
+npc{
+  layer = 2,
+  x = 240,
+  y = 37,
+  name = "npc_door_three",
+  direction = 3,
+  subtype = "0",
+}
+
