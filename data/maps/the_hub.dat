@@ -703,6 +703,22 @@ tile{
 
 stairs{
   layer = 0,
+  x = 200,
+  y = 120,
+  direction = 1,
+  subtype = "3",
+}
+
+stairs{
+  layer = 0,
+  x = 312,
+  y = 120,
+  direction = 1,
+  subtype = "3",
+}
+
+stairs{
+  layer = 0,
   x = 128,
   y = 120,
   direction = 1,
@@ -852,6 +868,28 @@ sensor{
   width = 16,
   height = 16,
   name = "sensor_pike_boss",
+}
+
+teletransporter{
+  layer = 0,
+  x = 200,
+  y = 120,
+  width = 16,
+  height = 16,
+  transition = 1,
+  destination_map = "weaponry",
+  destination = "from_hub",
+}
+
+teletransporter{
+  layer = 0,
+  x = 312,
+  y = 120,
+  width = 16,
+  height = 16,
+  transition = 1,
+  destination_map = "weaponry",
+  destination = "from_hub",
 }
 
 tile{

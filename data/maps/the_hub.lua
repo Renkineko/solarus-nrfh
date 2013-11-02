@@ -17,11 +17,11 @@ function sensor_pike_boss:on_activated()
     game:set_value("trial_destination", "pike_boss")
 end
 
-
 function map:on_started()
     -- Always reset all items in the possession of the hero
     game:get_item("bomb_bag"):set_variant("0")
     game:get_item("boomerang"):set_variant("0")
+    game:get_item("bombs_counter"):set_variant(0)
     game:get_item("bow"):set_variant("0")
     game:get_item("feather"):set_variant("0")
     game:get_item("flippers"):set_variant("0")
@@ -48,7 +48,6 @@ function map:on_started()
     
     -- We put the counters to 0
     game:get_item("bow"):set_amount(0)
-    game:get_item("bombs_counter"):set_amount(0)
     game:set_max_magic(0)
     game:set_max_life(20)
     game:set_life(20)

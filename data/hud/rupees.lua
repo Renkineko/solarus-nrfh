@@ -31,6 +31,18 @@ function rupees:initialize(game)
   self:rebuild_surface()
 end
 
+local function get_step(diff)
+  local step = 0
+  local division = 50
+  diff = math.abs(diff)
+  while diff/division > 1 do
+    step = step + 1
+    division = division*10
+  end
+  
+  return step
+end
+
 function rupees:check()
 
   local need_rebuild = false
@@ -47,10 +59,11 @@ function rupees:check()
   if money ~= self.money_displayed then
     need_rebuild = true
     local increment
+    local step = 10^((self.money_displayed-money)/20)
     if money > self.money_displayed then
-      increment = 1
+      increment = 10^(get_step(self.money_displayed-money))
     else
-      increment = -1
+      increment = -10^(get_step(self.money_displayed-money))
     end
     self.money_displayed = self.money_displayed + increment
 

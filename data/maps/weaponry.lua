@@ -58,7 +58,7 @@ local equipment_available = {
         lost_palazzo = 2
     },
     rupee_bag = {
-        lost_palazzo = 3
+        monty_hall = 5
     },
     shield = {
         lost_palazzo = 2
@@ -111,5 +111,5 @@ function chest_equipment:on_empty()
     
     game:get_item("bow"):set_amount(99)
     game:get_item("bombs_counter"):set_amount(99)
-    game:set_money(game:get_max_money())
+    game:set_money(math.floor(game:get_max_money()/2))
 end

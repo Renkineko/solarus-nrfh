@@ -522,6 +522,29 @@ chest{
   sprite = "entities/big_chest",
 }
 
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 0,
+  width = 16,
+  height = 16,
+  name = "teleporter_trial_monty_hall",
+  transition = 1,
+  destination_map = "monty_hall",
+}
+
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 0,
+  width = 16,
+  height = 16,
+  name = "teleporter_trial_pike_boss",
+  transition = 1,
+  destination_map = "the_hub",
+  destination = "default_dest",
+}
+
 tile{
   layer = 2,
   x = 0,
