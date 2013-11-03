@@ -512,6 +512,69 @@ tile{
   pattern = 69,
 }
 
+tile{
+  layer = 1,
+  x = 96,
+  y = 144,
+  width = 8,
+  height = 16,
+  pattern = 10,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 144,
+  width = 8,
+  height = 16,
+  pattern = 9,
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 160,
+  width = 48,
+  height = 8,
+  pattern = 11,
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = 6,
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = 7,
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 144,
+  width = 48,
+  height = 16,
+  pattern = 173,
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 136,
+  width = 16,
+  height = 8,
+  pattern = 8,
+}
+
 dynamic_tile{
   layer = 1,
   x = 120,
@@ -565,7 +628,7 @@ door{
   layer = 1,
   x = 72,
   y = 24,
-  name = "door_one",
+  name = "door_1",
   direction = 1,
   sprite = "entities/door_normal",
 }
@@ -574,7 +637,7 @@ door{
   layer = 1,
   x = 152,
   y = 24,
-  name = "door_two",
+  name = "door_2",
   direction = 1,
   sprite = "entities/door_normal",
 }
@@ -583,7 +646,7 @@ door{
   layer = 1,
   x = 232,
   y = 24,
-  name = "door_three",
+  name = "door_3",
   direction = 1,
   sprite = "entities/door_normal",
 }
@@ -594,7 +657,7 @@ sensor{
   y = 93,
   width = 80,
   height = 16,
-  name = "sensor_door_one",
+  name = "sensor_door_1",
 }
 
 sensor{
@@ -603,7 +666,7 @@ sensor{
   y = 93,
   width = 64,
   height = 16,
-  name = "sensor_door_two",
+  name = "sensor_door_2",
 }
 
 sensor{
@@ -612,7 +675,34 @@ sensor{
   y = 93,
   width = 80,
   height = 16,
-  name = "sensor_door_three",
+  name = "sensor_door_3",
+}
+
+npc{
+  layer = 1,
+  x = 80,
+  y = 45,
+  name = "npc_door_1",
+  direction = 3,
+  subtype = "0",
+}
+
+npc{
+  layer = 1,
+  x = 240,
+  y = 45,
+  name = "npc_door_3",
+  direction = 3,
+  subtype = "0",
+}
+
+npc{
+  layer = 1,
+  x = 160,
+  y = 45,
+  name = "npc_door_2",
+  direction = 3,
+  subtype = "0",
 }
 
 tile{
@@ -685,32 +775,5 @@ tile{
   width = 32,
   height = 8,
   pattern = 154,
-}
-
-npc{
-  layer = 2,
-  x = 80,
-  y = 37,
-  name = "npc_door_one",
-  direction = 3,
-  subtype = "0",
-}
-
-npc{
-  layer = 2,
-  x = 160,
-  y = 37,
-  name = "npc_door_two",
-  direction = 3,
-  subtype = "0",
-}
-
-npc{
-  layer = 2,
-  x = 240,
-  y = 37,
-  name = "npc_door_three",
-  direction = 3,
-  subtype = "0",
 }
 

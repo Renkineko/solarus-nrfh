@@ -2597,3 +2597,91 @@ chose si on l'allume...
 
 ]]
 }
+-----------------------
+
+-- Monty Hall
+dialog{
+  id= "monty_hall_npc.presentation",
+  question = true,
+  text = [[
+Le principe est simple.
+Trois portes, derrière
+l'une d'elle se trouve
+la richesse, les autres
+te donneront un petit
+coeur. Après avoir
+choisi une porte, j'en
+ouvrirai une au hasard
+mais contenant
+obligatoirement un
+coeur, et pas celle que
+vous avez choisi. Libre
+à vous de changer de
+choix par la suite.
+$0
+C'est 100 rubis.
+Payer.
+Partir.
+]]
+}
+-----------------------
+
+-- Monty Hall
+dialog{
+  id= "monty_hall_npc.retry",
+  question = true,
+  text = [[
+Ah ! Catastrophe, vous
+avez fait le mauvais
+choix. Mais je pense
+que la prochaine fois
+sera la bonne !
+$0
+Vous m'êtes sympathique
+et si vous retentez de
+suite, je vous fais une
+petite réduction. C'est
+comme qui dirait, à
+prendre ou à laisser.
+Réessayer ?
+Payer 75 rubis.
+Partir.
+]]
+}
+-----------------------
+
+-- Monty Hall
+dialog{
+  id= "monty_hall_npc.won",
+  question = true,
+  text = [[
+Quel flair, mes amis !
+Je sens que vous avez
+compris le truc...
+Voulez-vous réessayer ?
+Payer 100 rubis.
+Partir.
+]]
+}
+-----------------------
+
+-- Monty Hall
+dialog{
+  id= "monty_hall_npc.choose_way",
+  text = [[
+N'oubliez pas : vous
+pourrez changer votre
+choix.
+]]
+}
+-----------------------
+
+-- Monty Hall
+dialog{
+  id= "monty_hall_npc.choose_door",
+  text = [[
+Choisissez la porte qui
+vous inspire le plus
+désormais.
+]]
+}
