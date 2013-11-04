@@ -59,7 +59,6 @@ function rupees:check()
   if money ~= self.money_displayed then
     need_rebuild = true
     local increment
-    local step = 10^((self.money_displayed-money)/20)
     if money > self.money_displayed then
       increment = 10^(get_step(self.money_displayed-money))
     else
