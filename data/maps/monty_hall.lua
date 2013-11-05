@@ -60,8 +60,8 @@ end
 
 local function setup_game()
     game_launched = true
-    math.randomseed( os.time() )
     local good_door = math.random(1, 3)
+    rewards = {false, false, false}
     rewards[good_door] = true
 end
 
@@ -102,15 +102,16 @@ end
 for npc_door in map:get_entities("npc_door") do
     function npc_door:on_interaction()
         local door_name = self:get_name():sub(5)
-        local choosen_door_number = tonumber(door_name:sub(-2))
+        local choosen_door_number = tonumber(door_name:sub(-1))
         map:open_doors(door_name)
+        
         if rewards[choosen_door_number] then
             hero:start_treasure("rupee", 5)
         else
             hero:start_treasure("heart", 1)
         end
         
-        --map:set_entities_enabled("npc_door", false)
+        map:set_entities_enabled("npc_door", false)
     end
 end
 
@@ -118,7 +119,6 @@ for sensor_door in map:get_entities("sensor_door") do
     function sensor_door:on_activated()
         way_choosed = true
         hero:freeze()
-        math.randomseed( os.time() )
         local continue = true
         local door_monty_hall_number
         
