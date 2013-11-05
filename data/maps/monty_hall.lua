@@ -15,6 +15,7 @@ local function reset_map()
     map:close_doors("door")
     map:set_entities_enabled("sensor_door", true)
     map:set_entities_enabled("npc_door", true)
+    monty_hall_npc_gen:set_enabled(true)
     
     -- Replace Monty Hall NPC to its origin point if necessary
     now_monty_hall_x, now_monty_hall_y = monty_hall_npc:get_position()
@@ -106,9 +107,33 @@ for npc_door in map:get_entities("npc_door") do
         map:open_doors(door_name)
         
         if rewards[choosen_door_number] then
-            hero:start_treasure("rupee", 5)
+            hero:start_treasure("rupee", 6, nil, function()
+                hero:teleport("monty_hall")
+                reset_map()
+                game:start_dialog("monty_hall_npc.won", function(answer)
+                    if answer == 1 then
+                        game:remove_money(100)
+                        monty_hall_npc_gen:set_enabled(false)
+                        setup_game()
+                    else
+                        open_game_barrier:set_enabled(true)
+                    end
+                end)
+            end)
         else
-            hero:start_treasure("heart", 1)
+            hero:start_treasure("heart", 1, nil, function()
+                hero:teleport("monty_hall")
+                reset_map()
+                game:start_dialog("monty_hall_npc.retry", function(answer)
+                    if answer == 1 then
+                        game:remove_money(75)
+                        monty_hall_npc_gen:set_enabled(false)
+                        setup_game()
+                    else
+                        open_game_barrier:set_enabled(true)
+                    end
+                end)
+            end)
         end
         
         map:set_entities_enabled("npc_door", false)
