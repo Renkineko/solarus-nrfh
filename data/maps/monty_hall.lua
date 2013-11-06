@@ -5,18 +5,7 @@ local game_launched = false
 local way_choosed = false
 local rewards = {false, false, false}
 
--- Reset the map so we can start a new game without to exit
-local function reset_map()
-    -- Initiate global var
-    game_launched = false
-    way_choosed = false
-    
-    -- Close doors containing rewards and set entities needed for the game enabled
-    map:close_doors("door")
-    map:set_entities_enabled("sensor_door", true)
-    map:set_entities_enabled("npc_door", true)
-    monty_hall_npc_gen:set_enabled(true)
-    
+local function reset_monty_hall_location()
     -- Replace Monty Hall NPC to its origin point if necessary
     now_monty_hall_x, now_monty_hall_y = monty_hall_npc:get_position()
     
@@ -59,7 +48,24 @@ local function reset_map()
     end
 end
 
-local function setup_game()
+-- Reset the map so we can start a new game without to exit
+local function reset_map()
+    -- Initiate global var
+    game_launched = false
+    way_choosed = false
+    
+    -- Close doors containing rewards and set entities needed for the game enabled
+    map:close_doors("door")
+    map:set_entities_enabled("sensor_door", true)
+    map:set_entities_enabled("npc_door", true)
+    monty_hall_npc_gen:set_enabled(true)
+    
+end
+
+local function setup_game(price)
+    game:remove_money(price)
+    open_game_barrier:set_enabled(false)
+    monty_hall_npc_gen:set_enabled(false)
     game_launched = true
     local good_door = math.random(1, 3)
     rewards = {false, false, false}
@@ -76,11 +82,7 @@ local function monty_hall_dialog()
     else
         game:start_dialog("monty_hall_npc.presentation", function(answer)
             if answer == 1 then
-                game:remove_money(100)
-                open_game_barrier:set_enabled(false)
-                monty_hall_npc_gen:set_enabled(false)
-                
-                setup_game()
+                setup_game(100)
             end
         end)
     end
@@ -109,29 +111,35 @@ for npc_door in map:get_entities("npc_door") do
         if rewards[choosen_door_number] then
             hero:start_treasure("rupee", 6, nil, function()
                 hero:teleport("monty_hall")
-                reset_map()
-                game:start_dialog("monty_hall_npc.won", function(answer)
-                    if answer == 1 then
-                        game:remove_money(100)
-                        monty_hall_npc_gen:set_enabled(false)
-                        setup_game()
-                    else
-                        open_game_barrier:set_enabled(true)
-                    end
+                hero:freeze()
+                sol.timer.start(500, function()
+                    reset_map()
+                    game:start_dialog("monty_hall_npc.won", function(answer)
+                        if answer == 1 then
+                            setup_game(100)
+                        else
+                            open_game_barrier:set_enabled(true)
+                        end
+                        reset_monty_hall_location()
+                        hero:unfreeze()
+                    end)
                 end)
             end)
         else
             hero:start_treasure("heart", 1, nil, function()
                 hero:teleport("monty_hall")
-                reset_map()
-                game:start_dialog("monty_hall_npc.retry", function(answer)
-                    if answer == 1 then
-                        game:remove_money(75)
-                        monty_hall_npc_gen:set_enabled(false)
-                        setup_game()
-                    else
-                        open_game_barrier:set_enabled(true)
-                    end
+                hero:freeze()
+                sol.timer.start(500, function()
+                    reset_map()
+                    game:start_dialog("monty_hall_npc.retry", function(answer)
+                        if answer == 1 then
+                            setup_game(75)
+                        else
+                            open_game_barrier:set_enabled(true)
+                        end
+                        reset_monty_hall_location()
+                        hero:unfreeze()
+                    end)
                 end)
             end)
         end
