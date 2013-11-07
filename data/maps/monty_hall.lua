@@ -14,18 +14,11 @@ local function reset_monty_hall_location()
         -- We need a target movement to give x and y positions
         local move = sol.movement.create("target")
         move:set_target(now_monty_hall_x, origin_monty_hall_y)
-        function move:on_changed()
-            monty_hall_npc:get_sprite():set_direction(move:get_direction4())
-        end
-        
         -- Start the movement with a callback to move it horizontally
         move:start(monty_hall_npc, function()
             if now_monty_hall_x ~= origin_monty_hall_x then
                 move = sol.movement.create("target")
                 move:set_target(origin_monty_hall_x, origin_monty_hall_y)
-                function move:on_changed()
-                    monty_hall_npc:get_sprite():set_direction(move:get_direction4())
-                end
                 move:start(monty_hall_npc, function()
                     monty_hall_npc:get_sprite():set_animation("stopped")
                     monty_hall_npc:get_sprite():set_direction(3)
@@ -37,10 +30,6 @@ local function reset_monty_hall_location()
         -- He was already on the good axe Y (very strange, not suppose to happen)
         local move = sol.movement.create("target")
         move:set_target(origin_monty_hall_x, origin_monty_hall_y)
-        function move:on_changed()
-            monty_hall_npc:get_sprite():set_direction(move:get_direction4())
-        end
-        
         move:start(monty_hall_npc, function()
             monty_hall_npc:get_sprite():set_animation("stopped")
             monty_hall_npc:get_sprite():set_direction(3)
@@ -171,9 +160,6 @@ for sensor_door in map:get_entities("sensor_door") do
             local move = sol.movement.create("target")
             move:set_target(door_x, origin_monty_hall_y)
             move:set_smooth(false)
-            function move:on_changed()
-                monty_hall_npc:get_sprite():set_direction(move:get_direction4())
-            end
             function move:on_obstacle_reached()
                 hero:unfreeze()
                 map:set_entities_enabled("sensor_door", false)
@@ -189,9 +175,6 @@ for sensor_door in map:get_entities("sensor_door") do
                     move = sol.movement.create("target")
                     move:set_target(door_x, door_y)
                     move:set_smooth(false)
-                    function move:on_changed()
-                        monty_hall_npc:get_sprite():set_direction(move:get_direction4())
-                    end
                     
                     function move:on_obstacle_reached()
                         hero:unfreeze()
@@ -216,9 +199,6 @@ for sensor_door in map:get_entities("sensor_door") do
             local move = sol.movement.create("target")
             move:set_target(door_x, door_y)
             move:set_smooth(false)
-            function move:on_changed()
-                monty_hall_npc:get_sprite():set_direction(move:get_direction4())
-            end
             function move:on_obstacle_reached()
                 hero:unfreeze()
                 map:set_entities_enabled("sensor_door", false)
