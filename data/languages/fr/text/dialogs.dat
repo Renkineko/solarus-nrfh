@@ -152,7 +152,7 @@ dialog{
   text = [[
 Bois de la Potion
 rouge pour retrouver
-tous tes Coeurs.
+tous tes Luains.
 ]]
 }
 --------------------
@@ -196,7 +196,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs !
+Luains !
 ]]
 }
 --------------------
@@ -237,7 +237,7 @@ dialog{
   text = [[
 Bois de la Potion
 rouge pour retrouver
-tous tes Coeurs.
+tous tes Luains.
 ]]
 }
 --------------------
@@ -281,7 +281,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs !
+Luains !
 ]]
 }
 --------------------
@@ -322,7 +322,7 @@ dialog{
   text = [[
 Bois de la Potion
 rouge pour retrouver
-tous tes Coeurs.
+tous tes Luains.
 ]]
 }
 --------------------
@@ -366,7 +366,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs !
+Luains !
 ]]
 }
 --------------------
@@ -407,7 +407,7 @@ dialog{
   text = [[
 Bois de la Potion
 rouge pour retrouver
-tous tes Coeurs.
+tous tes Luains.
 ]]
 }
 --------------------
@@ -451,7 +451,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs !
+Luains !
 ]]
 }
 --------------------
@@ -506,7 +506,7 @@ dialog{
   text = [[
 Mange des Pommes
 pour récupérer des
-Coeurs.
+Luains.
 ]]
 }
 --------------------
@@ -519,7 +519,7 @@ dialog{
   text = [[
 Mange un Pain au
 Chocolat pour
-récupérer 3 Coeurs.
+récupérer 3 Luains.
 ]]
 }
 --------------------
@@ -532,7 +532,7 @@ dialog{
   text = [[
 Mange un Croissant
 pour récupérer
-7 Coeurs.
+7 Luains.
 ]]
 }
 --------------------
@@ -948,7 +948,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs.
+Luains.
 ]]
 }
 --------------------
@@ -1038,7 +1038,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs.
+Luains.
 ]]
 }
 --------------------
@@ -1128,7 +1128,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs.
+Luains.
 ]]
 }
 --------------------
@@ -1218,7 +1218,7 @@ Tu peux aussi
 l'utiliser à tout
 moment pour
 récupérer des
-Coeurs.
+Luains.
 ]]
 }
 --------------------
@@ -1282,7 +1282,7 @@ Pommes !$0
 
 Consomme-les plus
 tard pour récupérer
-des Coeurs !
+des Luains !
 ]]
 }
 --------------------
@@ -1312,7 +1312,7 @@ Croissant !$0 Il est
 croustillant !
 Mange un Croissant
 pour récupérer
-des Coeurs.
+des Luains.
 ]]
 }
 --------------------
@@ -1896,26 +1896,26 @@ des lieux !
 }
 --------------------
 
--- Fragment de Coeur
+-- Fragment de Luain
 dialog{
   id = "_treasure.piece_of_heart.1",
   icon = 79,
   text = [[
 Tu as trouvé un
-Fragment de Coeur !
+Fragment de Luain !
 ]]
 }
 --------------------
 
--- Réceptacle de Coeur
+-- Réceptacle de Luain
 dialog{
   id = "_treasure.heart_container.1",
   icon = 80,
   text = [[
 Tu as trouvé un
-Réceptacle de Coeur.
+Réceptacle de Luain.
 
-Tu obtiens un Coeur
+Tu obtiens un Luain
 supplémentaire !
 ]]
 }
@@ -2019,13 +2019,13 @@ Utilise l'Arc et les
 }
 --------------------
 
--- 1 Coeur
+-- 1 Luain
 dialog{
   id = "_treasure.heart.1",
   icon = 84,
   text = [[
 Tu as trouvé un
-Coeur !
+Luain !
 ]]
 }
 --------------------
@@ -2338,7 +2338,7 @@ dialog{
   text = [[
 Collecte-en quatre
 pour former un
-nouveau Coeur.
+nouveau Luain.
 ]]
 }
 --------------------
@@ -2349,7 +2349,7 @@ dialog{
   text = [[
 Encore deux et
 tu obtiendras
-un nouveau Coeur.
+un nouveau Luain.
 ]]
 }
 --------------------
@@ -2360,7 +2360,7 @@ dialog{
   text = [[
 Plus qu'un à trouver
 pour former un
-nouveau Coeur !
+nouveau Luain !
 ]]
 }
 --------------------
@@ -2370,9 +2370,9 @@ dialog{
   icon = 78,
   text = [[
 Tu as trouvé quatre
-Fragments de Coeur.
+Fragments de Luain.
 
-Tu obtiens un Coeur
+Tu obtiens un Luain
 supplémentaire !
 ]]
 }
@@ -2399,7 +2399,7 @@ dialog{
   question = true,
   text = [[
 Que vas-tu en faire ?
-Récupérer des Coeurs
+Récupérer des Luains
 La conserver
 ]]
 }
@@ -2483,7 +2483,7 @@ dialog{
   text = [[
 Prendre une pomme te
 permet de récupérer
-un Coeur.
+un Luain.
 Que veux-tu faire ?
 Manger une pomme
 Ne rien faire
@@ -2498,7 +2498,7 @@ dialog{
   question = true,
   text = [[
 Un Pain au Chocolat
-te redonne 3 Coeurs.
+te redonne 3 Luains.
 
 Que veux-tu faire ?
 En manger un
@@ -2515,7 +2515,7 @@ dialog{
   text = [[
 Un Croissant te
 permet de retrouver
-7 Coeurs.
+7 Luains.
 Que veux-tu faire ?
 En manger un
 Ne rien faire
