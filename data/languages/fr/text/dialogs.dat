@@ -2330,7 +2330,199 @@ de cristal. Frappe-le
 avec quelque chose...
 ]]
 }
+-----------------------
+
+dialog{
+  id = "found_piece_of_heart.first",
+  icon = 75,
+  text = [[
+Collecte-en quatre
+pour former un
+nouveau Coeur.
+]]
+}
 --------------------
+
+dialog{
+  id = "found_piece_of_heart.second",
+  icon = 76,
+  text = [[
+Encore deux et
+tu obtiendras
+un nouveau Coeur.
+]]
+}
+--------------------
+
+dialog{
+  id = "found_piece_of_heart.third",
+  icon = 77,
+  text = [[
+Plus qu'un à trouver
+pour former un
+nouveau Coeur !
+]]
+}
+--------------------
+
+dialog{
+  id = "found_piece_of_heart.fourth",
+  icon = 78,
+  text = [[
+Tu as trouvé quatre
+Fragments de Coeur.
+
+Tu obtiens un Coeur
+supplémentaire !
+]]
+}
+--------------------
+
+-- Lorsqu'on trouve une Fée en ayant au moins un Flacon (même dialogue que dans ALTTP)
+dialog{
+  id = "found_fairy",
+  icon = 81,
+  skip = "current",
+  next = "found_fairy.1",
+  text = [[
+Tu as trouvé une
+Fée, elle est
+merveilleuse !
+]]
+}
+--------------------
+
+-- |--------------------___|
+dialog{
+  id = "found_fairy.1",
+  icon = -1,
+  question = true,
+  text = [[
+Que vas-tu en faire ?
+Récupérer des Coeurs
+La conserver
+]]
+}
+--------------------
+
+-- Lorsqu'on veut conserver une Fée mais qu'on n'a pas de Flacon vide
+dialog{
+  id = "found_fairy.no_empty_bottle",
+  skip = "current",
+  text = [[
+Tu n'as pas de Flacon
+vide !
+]]
+}
+-----------------------
+
+-- Lorsqu'on trouve de l'eau et qu'on a un Flacon vide
+dialog{
+  id = "found_water",
+  icon = 8,
+  question = true,
+  text = [[
+Veux-tu mettre de
+l'eau dans ton
+
+Flacon Magique ?
+Oui
+Non
+]]
+}
+--------------------
+
+-- Lorsqu'on trouve de l'eau mais qu'on n'a aucun Flacon
+dialog{
+  id = "found_water.no_bottle",
+  skip = "all",
+  text = [[
+Il y a de l'eau ici,
+mais tu n'as pas
+de récipient
+pour la stocker...
+]]
+}
+-----------------------
+
+-- Lorsqu'on trouve de l'eau et qu'on a au moins un Flacon, mais pas de Flacon vide
+dialog{
+  id = "found_water.no_empty_bottle",
+  icon = 8,
+  skip = "all",
+  text = [[
+Il y a de l'eau ici,
+mais il te faut
+un Flacon vide
+pour la stocker...
+]]
+}
+--------------------
+
+-- Utiliser un Flacon contenant de l'eau
+dialog{
+  id = "use_bottle_with_water",
+  icon = 8,
+  question = true,
+  text = [[
+Ton Flacon Magique
+contient de l'eau.
+
+Que veux-tu faire ?
+Vider l'eau
+La conserver
+]]
+}
+--------------------
+
+-- Utiliser une Pomme
+dialog{
+  id = "use_apples",
+  icon = 16,
+  question = true,
+  text = [[
+Prendre une pomme te
+permet de récupérer
+un Coeur.
+Que veux-tu faire ?
+Manger une pomme
+Ne rien faire
+]]
+}
+--------------------
+
+-- Utiliser un Pain au Chocolat
+dialog{
+  id = "use_pains_au_chocolat",
+  icon = 17,
+  question = true,
+  text = [[
+Un Pain au Chocolat
+te redonne 3 Coeurs.
+
+Que veux-tu faire ?
+En manger un
+Ne rien faire
+]]
+}
+--------------------
+
+-- Utiliser un Croissant
+dialog{
+  id = "use_croissants",
+  icon = 18,
+  question = true,
+  text = [[
+Un Croissant te
+permet de retrouver
+7 Coeurs.
+Que veux-tu faire ?
+En manger un
+Ne rien faire
+]]
+}
+--------------------
+
 
 dialog{
   id = "torch.need_lamp",
