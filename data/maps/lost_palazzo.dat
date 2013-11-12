@@ -12617,10 +12617,11 @@ wall{
 
 wall{
   layer = 2,
-  x = 424,
+  x = 464,
   y = 416,
-  width = 320,
+  width = 240,
   height = 8,
+  name = "boss_wall_4",
   stops_hero = false,
   stops_enemies = true,
   stops_npcs = false,
@@ -12632,7 +12633,8 @@ wall{
   x = 736,
   y = 352,
   width = 8,
-  height = 64,
+  height = 152,
+  name = "boss_wall_3",
   stops_hero = false,
   stops_enemies = true,
   stops_npcs = false,
@@ -12645,6 +12647,7 @@ wall{
   y = 344,
   width = 320,
   height = 8,
+  name = "boss_wall",
   stops_hero = false,
   stops_enemies = true,
   stops_npcs = false,
@@ -12656,7 +12659,8 @@ wall{
   x = 424,
   y = 352,
   width = 8,
-  height = 64,
+  height = 152,
+  name = "boss_wall_2",
   stops_hero = false,
   stops_enemies = true,
   stops_npcs = false,
@@ -12671,5 +12675,81 @@ npc{
   direction = 3,
   subtype = "0",
   sprite = "entities/cannon",
+}
+
+wall{
+  layer = 2,
+  x = 424,
+  y = 552,
+  width = 8,
+  height = 32,
+  stops_hero = false,
+  stops_enemies = false,
+  stops_npcs = true,
+  stops_blocks = false,
+}
+
+wall{
+  layer = 2,
+  x = 736,
+  y = 552,
+  width = 8,
+  height = 32,
+  stops_hero = false,
+  stops_enemies = false,
+  stops_npcs = true,
+  stops_blocks = false,
+}
+
+wall{
+  layer = 2,
+  x = 464,
+  y = 424,
+  width = 8,
+  height = 80,
+  name = "boss_wall_5",
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = false,
+  stops_blocks = false,
+}
+
+wall{
+  layer = 2,
+  x = 696,
+  y = 424,
+  width = 8,
+  height = 80,
+  name = "boss_wall_6",
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = false,
+  stops_blocks = false,
+}
+
+wall{
+  layer = 2,
+  x = 432,
+  y = 496,
+  width = 32,
+  height = 8,
+  name = "boss_wall_7",
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = false,
+  stops_blocks = false,
+}
+
+wall{
+  layer = 2,
+  x = 704,
+  y = 496,
+  width = 32,
+  height = 8,
+  name = "boss_wall_8",
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = false,
+  stops_blocks = false,
 }
 
