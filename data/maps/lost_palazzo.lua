@@ -386,11 +386,24 @@ end
 function switch_boss_fire_cannon:on_activated()
     -- make an explosion on the coordinates corresponding to the position x, y-192 of the cannon
     local explo_x, explo_y = npc_boss_cannon:get_position()
-    map:create_explosion({layer=2, x=explo_x, y=explo_y-192})
+    -- get the boss position to calculate the y
     
-    -- deactivate the switch
-    sol.timer.start(2500, function()
-        self:set_activated(false)
+    switch_boss_fire_cannon:set_activated(true)
+    switch_boss_fire_cannon_2:set_activated(true)
+    sol.timer.start(200, function()
+        sol.audio.play_sound("jump")
+    end)
+    
+    sol.timer.start(1000, function()
+        -- decide if the boss can dodge the attack or not
+        map:create_explosion({layer=2, x=explo_x, y=explo_y-192})
+        sol.audio.play_sound("explosion")
+        
+        -- deactivate the switch
+        sol.timer.start(2500, function()
+            switch_boss_fire_cannon:set_activated(false)
+            switch_boss_fire_cannon_2:set_activated(false)
+        end)
     end)
 end
 switch_boss_fire_cannon_2.on_activated = switch_boss_fire_cannon.on_activated
