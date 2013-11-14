@@ -16,7 +16,7 @@ end
 function hearts:initialize(game)
 
   self.game = game
-  self.surface = sol.surface.create(90, 18)
+  self.surface = sol.surface.create(105, 18)
   self.surface:set_transparency_color{0, 0, 0}
   self.dst_x = 0
   self.dst_y = 0
@@ -117,7 +117,7 @@ function hearts:rebuild_surface()
 
   -- Display the hearts.
   for i = 0, self.nb_max_hearts_displayed - 1 do
-    local x, y = (i % 10) * 9, math.floor(i / 10) * 9
+    local x, y = i * 5, ((i+1) % 2) * 5
     self.empty_heart_sprite:draw(self.surface, x, y)
     if i < math.floor(self.nb_current_hearts_displayed / 4) then
       -- This heart is full.
@@ -129,7 +129,7 @@ function hearts:rebuild_surface()
   local i = math.floor(self.nb_current_hearts_displayed / 4)
   local remaining_fraction = self.nb_current_hearts_displayed % 4
   if remaining_fraction ~= 0 then
-    local x, y = (i % 10) * 9, math.floor(i / 10) * 9
+    local x, y = i * 5, (i % 2) * 5
     self.all_hearts_img:draw_region((remaining_fraction - 1) * 9, 0, 9, 9, self.surface, x, y)
   end
 end

@@ -172,7 +172,7 @@ function submenu:on_command_pressed(command)
           self.game:save()
           sol.audio.play_sound("piece_of_heart")
         else
-          sol.audio.play_sound("danger")
+          sol.audio.play_sound("validate_menu")
         end
         self.question_text_1:set_text_key("save_dialog.continue_question_0")
         self.question_text_2:set_text_key("save_dialog.continue_question_1")
@@ -180,7 +180,7 @@ function submenu:on_command_pressed(command)
         self.save_dialog_sprite:set_animation("left")
       else
         -- After "Do you want to continue?".
-        sol.audio.play_sound("danger")
+        sol.audio.play_sound("validate_menu")
         self.save_dialog_state = 0
         self.game:set_custom_command_effect("action", self.action_command_effect_saved)
         self.game:set_custom_command_effect("attack", self.attack_command_effect_saved)

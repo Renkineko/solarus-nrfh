@@ -20,7 +20,7 @@ function game:initialize_hud()
   }
 
   local menu = hearts_builder:new(self)
-  menu:set_dst_position(-104, 6)
+  menu:set_dst_position(-114, 6)
   self.hud[#self.hud + 1] = menu
 
   menu = magic_bar_builder:new(self)
