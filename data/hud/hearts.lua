@@ -129,7 +129,7 @@ function hearts:rebuild_surface()
   local i = math.floor(self.nb_current_hearts_displayed / 4)
   local remaining_fraction = self.nb_current_hearts_displayed % 4
   if remaining_fraction ~= 0 then
-    local x, y = i * 5, (i % 2) * 5
+    local x, y = i * 5, ((i+1) % 2) * 5
     self.all_hearts_img:draw_region((remaining_fraction - 1) * 9, 0, 9, 9, self.surface, x, y)
   end
 end
