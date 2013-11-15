@@ -49,10 +49,6 @@ function hearts:check()
   if nb_max_hearts ~= self.nb_max_hearts_displayed then
     need_rebuild = true
     self.nb_max_hearts_displayed = nb_max_hearts
-    
-    if self.nb_current_hearts_displayed > nb_max_hearts then
-      self.nb_current_hearts_displayed = nb_max_hearts
-    end
   end
 
   -- Current life.
@@ -60,6 +56,7 @@ function hearts:check()
   if nb_current_hearts ~= self.nb_current_hearts_displayed then
 
     need_rebuild = true
+    
     if nb_current_hearts < self.nb_current_hearts_displayed then
       self.nb_current_hearts_displayed = self.nb_current_hearts_displayed - 1
     else
@@ -69,8 +66,13 @@ function hearts:check()
         sol.audio.play_sound("heart")
       end
     end
+    
+    if self.nb_current_hearts_displayed > nb_max_hearts*4 then
+      self.nb_current_hearts_displayed = nb_max_hearts*4
+    end
   end
 
+    
   -- If we are in-game, play an animation and a sound if the life is low.
   if self.game:is_started() then
 
