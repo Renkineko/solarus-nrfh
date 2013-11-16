@@ -83,19 +83,17 @@ function chest_equipment:on_empty()
     for item, value in pairs(equipment_available) do
         local variant = value[trial_dest]
         if variant ~= nil and variant > 0 then
+            new_equipment = true
             if item == "magic_bar" then
                 game:set_max_magic(42 * variant)
-                new_equipment = true
             elseif item == "life" then
                 game:set_max_life(4 * variant)
                 game:set_life(4*variant)
-                new_equipment = true
             else
                 game:get_item(item):set_variant(variant)
                 if item == "tunic" then
                     game:set_ability("tunic", variant)
                 end
-                new_equipment = true
             end
         end
     end
