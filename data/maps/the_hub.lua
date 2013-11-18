@@ -1,20 +1,10 @@
 local map = ...
 local game = map:get_game()
 
-function sensor_lost_palazzo:on_activated()
-    game:set_value("trial_destination", "lost_palazzo")
-end
-
-function sensor_hole_clearer:on_activated()
-    game:set_value("trial_destination", "hole_clearer")
-end
-
-function sensor_monty_hall:on_activated()
-    game:set_value("trial_destination", "monty_hall")
-end
-
-function sensor_pike_boss:on_activated()
-    game:set_value("trial_destination", "pike_boss")
+for sensor in map:get_entities("sensor_") do
+    function sensor:on_activated()
+        game:set_value("trial_destination", self:get_name():sub(8))
+    end
 end
 
 function map:on_started()
