@@ -1,5 +1,6 @@
 local enemy = ...
 local sprite
+--local move
 
 -- Gigas, mini-boss of the lost palazzo.
 -- He can throw poison gaz, appear enemies, teleport and invoke thunder blast
@@ -23,62 +24,82 @@ local positions = {
 function enemy:teleport()
     -- this function split the enemy into six balls of energy randomly going through the room
     -- and after X seconds, come back on one of the positions.
-    sprite:set_animation("spirit_transformation_in")
+    sprite:set_animation("spirit_transformation_out")
+    enemy:stop_movement()
     function sprite:on_animation_finished()
+        enemy:set_position(-100, -100)
         sol.timer.start(math.random(2000, 5000), function()
             local position = (positions[math.random(#positions)])
             enemy:set_position(position.x, position.y)
-            sprite:set_animation("spirit_transformation_out")
+            sprite:set_animation("spirit_transformation_in")
+            
+            function sprite:on_animation_finished()
+                enemy:restart()
+            end
         end)
     end
 end
 
 function enemy:attack_thunder_blast()
-    print('todo when enemy:attack_custom will be available in the engine')
-    enemy:restart()
+    print('[TODO] Thunder Blast - todo when enemy:attack_custom will be available in the engine')
+    enemy:stop_movement()
+    sprite:set_animation("hands_up")
+    
+    function sprite:on_animation_finished()
+        enemy:restart()
+    end
 end
 
 function enemy:attack_punch_floor()
-    print('punch floor')
-    enemy:restart()
+    enemy:stop_movement()
+    sprite:set_animation("hands_down")
+    
+    function sprite:on_animation_finished()
+        enemy:restart()
+    end
 end
 
 function enemy:attack_poison_gaz()
-    print('todo when enemy:attack_custom will be available in the engine')
-    enemy:restart()
+    print('[TODO] Poison Gaz - when enemy:attack_custom will be available in the engine')
+    enemy:stop_movement()
+    sprite:set_animation("spitting")
+    
+    sol.timer.start(2500, function()
+        enemy:restart()
+    end)
 end
 
 function enemy:attack_invoke_lizalfos()
     enemy:stop_movement()
     sprite:set_animation("hands_up")
     
-    enemy:restart()
+    function sprite:on_animation_finished()
+        enemy:restart()
+    end
 end
 
 function enemy:choose_attack()
     -- calculate distance from the hero to know what to do
     local hero = enemy:get_map():get_entity("hero")
     local distance = self:get_distance(hero)
-    local next_attack_choosen = false
     
-    if distance > 25 then
+    print(distance)
+    if distance > 150 then
         if math.random(1, 2) == 1 then
             self:attack_thunder_blast()
-            next_attack_choosen = true
+            return
         end
-    elseif distance < 10 then
+    elseif distance < 100 then
         if math.random(1, 2) == 1 then
             self:attack_punch_floor()
-            next_attack_choosen = true
+            return
         end
     end
     
-    if not next_attack_choosen then
-        if math.random(1, 2) == 1 then
-            self:attack_poison_gaz()
-        else
-            self:attack_invoke_lizalfos()
-        end
+    if math.random(1, 2) == 1 then
+        self:attack_poison_gaz()
+    else
+        self:attack_invoke_lizalfos()
     end
 end
 
@@ -87,8 +108,8 @@ function enemy:on_created()
     self:set_life(20)
     self:set_damage(24)
     sprite = self:create_sprite("enemies/gigas")
-    self:set_size(64, 64)
-    self:set_origin(37, 57)
+    self:set_size(72, 48)
+    self:set_origin(36, 45)
     
     -- When Gigas is hurted, he then teleport to another spot of the room
     local old_animation
@@ -101,16 +122,25 @@ function enemy:on_created()
 end
 
 function enemy:on_restarted()
-    local m = sol.movement.create("path_finding")
-    m:set_speed(48)
-    m:start(self)
-    
-    sol.timer.start(self, math.random(2000, 5000), function()
-        self:choose_attack()
-    end)
+    if sprite:get_animation() ~= "spirit_transformation_out" and sprite:get_animation() ~= "spirit_transformation_in" then
+        local move = sol.movement.create("path_finding")
+        move:set_speed(48)
+        move:start(self)
+        
+        sol.timer.start(self, math.random(2000, 5000), function()
+            self:choose_attack()
+        end)
+    end
 end
 
 function enemy:on_movement_changed(movement)
+    local enemy_x = enemy:get_position()
+    local hero_x = enemy:get_map():get_entity("hero"):get_position()
     
+    if enemy_x < hero_x then
+        enemy:get_sprite():set_direction(0)
+    else
+        enemy:get_sprite():set_direction(1)
+    end
 end
 

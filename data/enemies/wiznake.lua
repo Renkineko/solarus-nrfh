@@ -8,7 +8,7 @@ enemy:set_hurt_style("normal")
 enemy:set_size(16, 16)
 enemy:set_origin(8, 13)
 enemy:set_attack_consequence("explosion", "ignored")
-local sprite = enemy:create_sprite("enemies/snap_dragon")
+local sprite = enemy:create_sprite("enemies/wiznake")
 
 function enemy:on_restarted()
     self:go_random()

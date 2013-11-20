@@ -210,6 +210,7 @@ sprite{ id = "enemies/fire_dragonsnake_bigball", description = "Enemy: Dragonsna
 sprite{ id = "enemies/fire_dragonsnake_smallball", description = "Enemy: Dragonsnake (feu) - Petite Boule" }
 sprite{ id = "enemies/wiznake", description = "Enemy: Wiznake" }
 sprite{ id = "effects/cast1", description = "Effects: Cast1" }
+sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -334,6 +335,7 @@ sound{ id = "warp", description = "warp" }
 sound{ id = "world_warp", description = "world_warp" }
 sound{ id = "wrong", description = "wrong" }
 sound{ id = "zora", description = "zora" }
+sound{ id = "validate_menu", description = "Validate Menu" }
 
 item{ id = "random", description = "(Random)" }
 item{ id = "feather", description = "Feather" }
@@ -454,6 +456,7 @@ enemy{ id = "flower_chomp", description = "Chomper (test)" }
 enemy{ id = "red_dragon", description = "Dragon Rouge (BOSS)" }
 enemy{ id = "fire_dragonsnake", description = "Dragonsnake (feu)" }
 enemy{ id = "wiznake", description = "Wiznake" }
+enemy{ id = "gigas", description = "Gigas" }
 
 
 language{ id = "de", description = "Deutsch" }

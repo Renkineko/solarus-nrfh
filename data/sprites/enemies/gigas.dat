@@ -2,8 +2,8 @@ animation{
   name = "stopped",
   src_image = "enemies/gigas.png",
   directions = {
-    { x = 0, y = 64, frame_width = 72, frame_height = 72, origin_x = 37, origin_y = 57, num_frames = 1 },
-    { x = 0, y = 64, frame_width = 72, frame_height = 72, origin_x = 37, origin_y = 57, num_frames = 1 },
+    { x = 0, y = 64, frame_width = 72, frame_height = 72, origin_x = 36, origin_y = 69, num_frames = 1 },
+    { x = 0, y = 64, frame_width = 72, frame_height = 72, origin_x = 36, origin_y = 69, num_frames = 1 },
   },
 }
 
@@ -13,8 +13,8 @@ animation{
   frame_delay = 150,
   frame_to_loop_on = 0,
   directions = {
-    { x = 192, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 49, num_frames = 3 },
-    { x = 0, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 49, num_frames = 3 },
+    { x = 192, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 61, num_frames = 3 },
+    { x = 0, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 61, num_frames = 3 },
   },
 }
 
@@ -24,8 +24,8 @@ animation{
   frame_delay = 50,
   frame_to_loop_on = 0,
   directions = {
-    { x = 384, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 49, num_frames = 3 },
-    { x = 384, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 49, num_frames = 3 },
+    { x = 384, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 61, num_frames = 3 },
+    { x = 384, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 61, num_frames = 3 },
   },
 }
 
@@ -33,9 +33,10 @@ animation{
   name = "spitting",
   src_image = "enemies/gigas.png",
   frame_delay = 150,
+  frame_to_loop_on = 3,
   directions = {
-    { x = 0, y = 136, frame_width = 72, frame_height = 64, origin_x = 32, origin_y = 49, num_frames = 4 },
-    { x = 0, y = 136, frame_width = 72, frame_height = 64, origin_x = 32, origin_y = 49, num_frames = 4 },
+    { x = 0, y = 136, frame_width = 72, frame_height = 64, origin_x = 32, origin_y = 61, num_frames = 4 },
+    { x = 0, y = 136, frame_width = 72, frame_height = 64, origin_x = 32, origin_y = 61, num_frames = 4 },
   },
 }
 
@@ -44,8 +45,8 @@ animation{
   src_image = "enemies/gigas.png",
   frame_delay = 150,
   directions = {
-    { x = 0, y = 208, frame_width = 72, frame_height = 72, origin_x = 40, origin_y = 64, num_frames = 10, num_rows = 2 },
-    { x = 0, y = 208, frame_width = 72, frame_height = 72, origin_x = 40, origin_y = 64, num_frames = 10, num_rows = 2 },
+    { x = 0, y = 208, frame_width = 72, frame_height = 72, origin_x = 36, origin_y = 69, num_frames = 10, num_columns = 5 },
+    { x = 0, y = 208, frame_width = 72, frame_height = 72, origin_x = 36, origin_y = 69, num_frames = 10, num_columns = 5 },
   },
 }
 
@@ -53,10 +54,9 @@ animation{
   name = "hands_down",
   src_image = "enemies/gigas.png",
   frame_delay = 150,
-  frame_to_loop_on = 2,
   directions = {
-    { x = 0, y = 368, frame_width = 72, frame_height = 80, origin_x = 32, origin_y = 48, num_frames = 7 },
-    { x = 0, y = 368, frame_width = 72, frame_height = 80, origin_x = 32, origin_y = 48, num_frames = 7 },
+    { x = 0, y = 368, frame_width = 72, frame_height = 80, origin_x = 36, origin_y = 69, num_frames = 7 },
+    { x = 0, y = 368, frame_width = 72, frame_height = 80, origin_x = 36, origin_y = 69, num_frames = 7 },
   },
 }
 
