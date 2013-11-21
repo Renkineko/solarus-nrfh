@@ -211,6 +211,7 @@ sprite{ id = "enemies/fire_dragonsnake_smallball", description = "Enemy: Dragons
 sprite{ id = "enemies/wiznake", description = "Enemy: Wiznake" }
 sprite{ id = "effects/cast1", description = "Effects: Cast1" }
 sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
+sprite{ id = "enemies/gigas_spirit_ball", description = "Enemy: Gigas Spirit Ball" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }

@@ -1,0 +1,31 @@
+animation{
+  name = "stopped",
+  src_image = "enemies/gigas.png",
+  directions = {
+    { x = 488, y = 80, frame_width = 16, frame_height = 16, origin_x = 4, origin_y = 4, num_frames = 3 },
+    { x = 488, y = 80, frame_width = 16, frame_height = 16, origin_x = 4, origin_y = 4, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "walking",
+  src_image = "enemies/gigas.png",
+  frame_delay = 150,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 488, y = 80, frame_width = 16, frame_height = 16, origin_x = 4, origin_y = 4, num_frames = 3 },
+    { x = 488, y = 80, frame_width = 16, frame_height = 16, origin_x = 4, origin_y = 4, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "hurt",
+  src_image = "enemies/gigas.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 488, y = 80, frame_width = 16, frame_height = 16, origin_x = 4, origin_y = 4, num_frames = 3 },
+    { x = 488, y = 80, frame_width = 16, frame_height = 16, origin_x = 4, origin_y = 4, num_frames = 3 },
+  },
+}
+

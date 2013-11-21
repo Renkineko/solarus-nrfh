@@ -23,12 +23,12 @@ local positions = {
 -- List of spirit balls and their relative position from origin teleport sprite
 local spirit_balls = {}
 local spirit_balls_pos = {
-    {x = -20, y = 0},
-    {x = -10, y = -20},
-    {x = -10, y = 20},
-    {x = 10, y = -20},
-    {x = 10, y = 20},
-    {x = 20, y = 0},
+    {x = -37, y = 0},
+    {x = -11, y = -37},
+    {x = -11, y = 37},
+    {x = 10, y = -37},
+    {x = 10, y = 37},
+    {x = 37, y = 0},
 }
 
 function enemy:reappear()
@@ -69,7 +69,7 @@ function enemy:teleport()
             spirit_balls[n]:appear(pos_x + spirit_balls_pos[n].x, pos_y + spirit_balls_pos[n].y)
         end
 
-        sol.timer.start(math.random(2000, 5000), function()
+        sol.timer.start(math.random(4000, 8000), function()
             enemy:reappear()
         end)
     end
