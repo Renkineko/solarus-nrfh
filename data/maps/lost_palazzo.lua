@@ -125,13 +125,9 @@ function map:on_started()
         map:remove_entities("close_mb_sensor")
         map:open_doors("mb_door")
         map:set_entities_enabled("tp_mini_boss_room", true)
-        map:set_entities_enabled("dyn_giga_barrier", false)
-        map:set_entities_enabled("dyn_giga_stairs", true)
     else
-        mini_boss_giga:set_enabled(false)
+        mini_boss_gigas:set_enabled(false)
         map:set_entities_enabled("tp_mini_boss_room", false)
-        map:set_entities_enabled("dyn_giga_barrier", true)
-        map:set_entities_enabled("dyn_giga_stairs", false)
     end
     
     if map:get_game():get_value("lost_palazzo_boss_killed") then
@@ -185,7 +181,7 @@ function close_mb_sensor:on_activated()
     else
         map:close_doors("mb_door")
         map:close_doors("switch_door_a_2")
-        mini_boss_giga:set_enabled(true)
+        mini_boss_gigas:set_enabled(true)
     end
 end
 close_mb_sensor_2.on_activated = close_mb_sensor.on_activated
@@ -332,13 +328,11 @@ for enemy in map:get_entities("pike_switch") do
     end
 end
 
-function mini_boss_giga:on_dead()
+function mini_boss_gigas:on_dead()
     map:get_game():set_value("lost_palazzo_mini_boss_killed", true)
     map:open_doors("mb_door")
     map:open_doors("switch_door_a_2")
     map:set_entities_enabled("tp_mini_boss_room", true)
-    map:set_entities_enabled("dyn_giga_barrier", false)
-    map:set_entities_enabled("dyn_giga_stairs", true)
     sol.audio.play_sound("secret")
 end
 

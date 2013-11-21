@@ -14,20 +14,22 @@ local sprite
 
 -- Possible positions where he appears.
 local positions = {
-    {x = 952, y = 104},
-    {x = 1072, y = 104},
-    {x = 952, y = 224},
-    {x = 1072, y = 224},
-    {x = 1008, y = 168},
+    {x = 920, y = 148},
+    {x = 1016, y = 148},
+    {x = 920, y = 208},
+    {x = 1016, y = 208},
+    {x = 968, y = 168},
 }
 
 function enemy:teleport()
     -- this function split the enemy into six balls of energy randomly going through the room
     -- and after X seconds, come back on one of the positions.
+    enemy:set_invincible()
     sprite:set_animation("spirit_transformation_out")
     enemy:stop_movement()
     function sprite:on_animation_finished()
         enemy:set_position(-100, -100)
+        -- invoke spirit balls here
         sol.timer.start(math.random(2000, 5000), function()
             local position = (positions[math.random(#positions)])
             enemy:set_position(position.x, position.y)
@@ -108,8 +110,8 @@ function enemy:on_created()
     self:set_life(20)
     self:set_damage(24)
     sprite = self:create_sprite("enemies/gigas")
-    self:set_size(72, 48)
-    self:set_origin(36, 45)
+    self:set_size(72, 32)
+    self:set_origin(36, 29)
     
     -- When Gigas is hurted, he then teleport to another spot of the room
     local old_animation
@@ -122,7 +124,9 @@ function enemy:on_created()
 end
 
 function enemy:on_restarted()
+    
     if sprite:get_animation() ~= "spirit_transformation_out" and sprite:get_animation() ~= "spirit_transformation_in" then
+        enemy:set_default_attack_consequences()
         local move = sol.movement.create("path_finding")
         move:set_speed(48)
         move:start(self)
