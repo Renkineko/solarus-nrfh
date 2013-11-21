@@ -453,10 +453,11 @@ enemy{ id = "billy", description = "Billy" }
 enemy{ id = "ganon", description = "Ganon" }
 enemy{ id = "fire_bat", description = "Fire bat" }
 enemy{ id = "flower_chomp", description = "Chomper (test)" }
-enemy{ id = "red_dragon", description = "Dragon Rouge (BOSS)" }
+enemy{ id = "red_dragon", description = "Red Dragon (BOSS)" }
 enemy{ id = "fire_dragonsnake", description = "Dragonsnake (feu)" }
 enemy{ id = "wiznake", description = "Wiznake" }
 enemy{ id = "gigas", description = "Gigas" }
+enemy{ id = "gigas_spirit_ball", description = "Gigas Spirit Ball" }
 
 
 language{ id = "de", description = "Deutsch" }

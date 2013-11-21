@@ -1,9 +1,8 @@
 local enemy = ...
 local sprite
---local move
 
 -- Gigas, mini-boss of the lost palazzo.
--- He can throw poison gaz, appear enemies, teleport and invoke thunder blast
+-- He can throw poison gaz, make enemies appear, teleport, crush the ground and invoke thunder blast
 
 -- attack one : when near the hero, lay on his knees and punch the floor, making it crackling (with hands down animation)
 -- attack two : when at a certain distance, invoke thunder blast making hero slow (with hands up animation)
@@ -21,6 +20,40 @@ local positions = {
     {x = 968, y = 168},
 }
 
+-- List of spirit balls and their relative position from origin teleport sprite
+local spirit_balls = {}
+local spirit_balls_pos = {
+    {x = -20, y = 0},
+    {x = -10, y = -20},
+    {x = -10, y = 20},
+    {x = 10, y = -20},
+    {x = 10, y = 20},
+    {x = 20, y = 0},
+}
+
+function enemy:reappear()
+    -- this function regroups spirit balls to the good positions and when they are all on their good point,
+    -- the sprite animate to spirit_transformation_in and Gigas is back to kick ass !
+    local position = positions[math.random(#positions)]
+    for n = 1, #spirit_balls_pos do
+        spirit_balls[n]:go_to_position(position.x + spirit_balls_pos[n].x, position.y + spirit_balls_pos[n].y)
+    end
+
+    -- The balls will stay around 1 sec because the speed is calculated to cover the distance in ~2 sec
+    sol.timer.start(self, 3000, function()
+        enemy:set_position(position.x, position.y)
+        sprite:set_animation("spirit_transformation_in")
+
+        for n = 1, #spirit_balls_pos do
+            spirit_balls[n]:disappear()
+        end
+
+        function sprite:on_animation_finished()
+            enemy:restart()
+        end
+    end)
+end
+
 function enemy:teleport()
     -- this function split the enemy into six balls of energy randomly going through the room
     -- and after X seconds, come back on one of the positions.
@@ -28,16 +61,16 @@ function enemy:teleport()
     sprite:set_animation("spirit_transformation_out")
     enemy:stop_movement()
     function sprite:on_animation_finished()
+        pos_x, pos_y = enemy:get_position()
+
         enemy:set_position(-100, -100)
         -- invoke spirit balls here
+        for n = 1, #spirit_balls_pos do
+            spirit_balls[n]:appear(pos_x + spirit_balls_pos[n].x, pos_y + spirit_balls_pos[n].y)
+        end
+
         sol.timer.start(math.random(2000, 5000), function()
-            local position = (positions[math.random(#positions)])
-            enemy:set_position(position.x, position.y)
-            sprite:set_animation("spirit_transformation_in")
-            
-            function sprite:on_animation_finished()
-                enemy:restart()
-            end
+            enemy:reappear()
         end)
     end
 end
@@ -112,6 +145,12 @@ function enemy:on_created()
     sprite = self:create_sprite("enemies/gigas")
     self:set_size(72, 32)
     self:set_origin(36, 29)
+    pos_x, pos_y, pos_layer = enemy:get_position()
+
+    for n = 1, #spirit_balls_pos do
+        spirit_balls[n] = enemy:create_enemy({name = "gigas_spirit_" .. n, direction = 0, breed = "gigas_spirit_ball"})
+        spirit_balls[n]:set_enabled(false)
+    end
     
     -- When Gigas is hurted, he then teleport to another spot of the room
     local old_animation

@@ -61,7 +61,7 @@ animation{
 }
 
 animation{
-  name = "ball_spirit",
+  name = "spirit_ball",
   src_image = "enemies/gigas.png",
   frame_delay = 150,
   frame_to_loop_on = 0,

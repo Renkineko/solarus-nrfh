@@ -458,8 +458,8 @@ local function torch_collision_fire(torch)
         
         if not puzzle_solved then
             local enemy_name = "enemy_" .. torch:get_name()
-            local position = (positions[math.random(#positions)])
-            local enemy_breed = (breeds[math.random(#breeds)])
+            local position = positions[math.random(#positions)]
+            local enemy_breed = breeds[math.random(#breeds)]
             local nb_enemy_to_create = get_nb_torches_lit()
             -- Create X new enemies, X is the number of torches lit
             for n = 1, nb_enemy_to_create do
