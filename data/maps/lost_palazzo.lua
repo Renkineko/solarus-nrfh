@@ -176,13 +176,13 @@ close_ke_a_sensor_2.on_activated = close_ke_a_sensor.on_activated
 
 function close_mb_sensor:on_activated()
     if map:get_game():get_value("lost_palazzo_mini_boss_killed") then
-        map:remove_entities("close_mb_sensor")
         map:open_doors("mb_door")
     else
         map:close_doors("mb_door")
         map:close_doors("switch_door_a_2")
         mini_boss_gigas:set_enabled(true)
     end
+    map:remove_entities("close_mb_sensor")
 end
 close_mb_sensor_2.on_activated = close_mb_sensor.on_activated
 

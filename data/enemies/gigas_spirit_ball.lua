@@ -1,4 +1,45 @@
 local enemy = ...
+local speed = {
+    min = 48,
+    max = 88
+}
+local move
+
+function enemy:random_move()
+    move = sol.movement.create("straight")
+    move:set_angle(math.rad(math.random(0, 359)))
+    move:set_max_distance(math.random(20, 50))
+    function move:on_finished()
+        enemy:restart()
+    end
+    
+    function move:on_obstacle_reached()
+        enemy:restart()
+    end
+end
+
+function enemy:target_move()
+    move = sol.movement.create("target")
+    local hero = enemy:get_map():get_entity("hero")
+    local pos_x, pos_y = hero:get_position()
+    
+    if math.random(1, 100) < 50 then
+        pos_x = pos_x - math.random(0,32)
+    else
+        pos_x = pos_x + math.random(0,32)
+    end
+    
+    if math.random(1, 100) < 50 then
+        pos_y = pos_y - math.random(0,32)
+    else
+        pos_y = pos_y + math.random(0,32)
+    end
+    
+    move:set_target(pos_x, pos_y)
+    function move:on_finished()
+        enemy:restart()
+    end
+end
 
 function enemy:on_created()
     enemy:set_life(1000000)
@@ -6,26 +47,29 @@ function enemy:on_created()
     enemy:set_magic_damage(10)
     enemy:set_invincible()
     enemy:create_sprite("enemies/gigas_spirit_ball")
+    --self:set_obstacle_behavior("flying")
+    enemy:set_layer_independent_collisions()
     enemy:set_size(8, 8)
     enemy:set_origin(4, 4)
+    
 end
 
 function enemy:on_restarted()
-    local move = sol.movement.create("random")
-    move:set_speed(128)
-    move:set_ignore_obstacles(true)
-    --move:set_max_distance(20)
-    function move:on_finished()
-        enemy:restart()
-    end
     
+    -- 33% chance to go to the hero instead of randomly going in the piece
+    if math.random(1, 3) == 1 then
+        enemy:target_move()
+    else
+        enemy:random_move()
+    end
+    move:set_speed(math.random(speed.min, speed.max))
     move:start(enemy)
 end
 
 function enemy:go_to_position(pos_x, pos_y)
     enemy:stop_movement()
     local distance = enemy:get_distance(pos_x, pos_y)
-    local move = sol.movement.create("target")
+    move = sol.movement.create("target")
     move:set_target(pos_x, pos_y)
     move:set_ignore_obstacles(true)
     move:set_speed(distance/2)

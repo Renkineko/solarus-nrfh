@@ -5697,6 +5697,24 @@ wall{
   stops_blocks = false,
 }
 
+door{
+  layer = 0,
+  x = 960,
+  y = 256,
+  name = "switch_door_a_2",
+  direction = 3,
+  sprite = "entities/door_normal",
+}
+
+door{
+  layer = 0,
+  x = 960,
+  y = 352,
+  name = "switch_door_a",
+  direction = 1,
+  sprite = "entities/door_normal",
+}
+
 tile{
   layer = 1,
   x = 424,
@@ -10567,24 +10585,6 @@ destination{
   y = 1397,
   name = "dst_from_mini_boss_room",
   direction = 1,
-}
-
-door{
-  layer = 1,
-  x = 960,
-  y = 256,
-  name = "switch_door_a_2",
-  direction = 3,
-  sprite = "entities/door_normal",
-}
-
-door{
-  layer = 1,
-  x = 960,
-  y = 352,
-  name = "switch_door_a",
-  direction = 1,
-  sprite = "entities/door_normal",
 }
 
 wall{
