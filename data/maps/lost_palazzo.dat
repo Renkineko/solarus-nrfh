@@ -5664,6 +5664,7 @@ enemy{
   name = "mini_boss_gigas",
   direction = 0,
   breed = "gigas",
+  rank = 1,
   savegame_variable = "lost_palazzo_mini_boss",
 }
 

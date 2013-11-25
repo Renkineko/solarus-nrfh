@@ -1,8 +1,8 @@
 map{ id = "the_hub", description = "Hub" }
-map{ id = "lost_palazzo", description = "Lost Palazzo" }
-map{ id = "weaponry", description = "Weaponry" }
 map{ id = "hole_clearer", description = "Hole Clearer" }
+map{ id = "lost_palazzo", description = "Lost Palazzo" }
 map{ id = "monty_hall", description = "Monty Hall Choice" }
+map{ id = "weaponry", description = "Weaponry" }
 
 tileset{ id = "1", description = "Light World" }
 tileset{ id = "13", description = "Dark World" }
