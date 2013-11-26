@@ -129,6 +129,7 @@ sprite{ id = "hero/ground1", description = "Grass under hero" }
 sprite{ id = "hero/ground2", description = "Shallow water under hero" }
 sprite{ id = "hero/trail", description = "Hero trail" }
 sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
+sprite{ id = "effects/cast1", description = "Effects: Cast1" }
 sprite{ id = "enemies/black_knight_soldier_sword", description = "Enemy: Black knight soldier sword" }
 sprite{ id = "enemies/khorneth_left_blade", description = "Enemy: Khorneth left blade" }
 sprite{ id = "enemies/khorneth_right_blade", description = "Enemy: Khorneth right blade" }
@@ -209,7 +210,6 @@ sprite{ id = "enemies/fire_dragonsnake_ball", description = "Enemy: Dragonsnake 
 sprite{ id = "enemies/fire_dragonsnake_bigball", description = "Enemy: Dragonsnake (feu) - Grosse Boule" }
 sprite{ id = "enemies/fire_dragonsnake_smallball", description = "Enemy: Dragonsnake (feu) - Petite Boule" }
 sprite{ id = "enemies/wiznake", description = "Enemy: Wiznake" }
-sprite{ id = "effects/cast1", description = "Effects: Cast1" }
 sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
 sprite{ id = "enemies/gigas_spirit_ball", description = "Enemy: Gigas Spirit Ball" }
 
@@ -459,6 +459,7 @@ enemy{ id = "fire_dragonsnake", description = "Dragonsnake (feu)" }
 enemy{ id = "wiznake", description = "Wiznake" }
 enemy{ id = "gigas", description = "Gigas" }
 enemy{ id = "gigas_spirit_ball", description = "Gigas Spirit Ball" }
+enemy{ id = "summoning", description = "Summoning" }
 
 
 language{ id = "de", description = "Deutsch" }
