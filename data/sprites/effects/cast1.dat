@@ -1,5 +1,14 @@
 animation{
-  name = "rotating",
+  name = "spinning",
+  src_image = "effects/cast1.png",
+  frame_delay = 150,
+  directions = {
+    { x = 0, y = 0, frame_width = 78, frame_height = 80, origin_x = 39, origin_y = 40, num_frames = 6 },
+  },
+}
+
+animation{
+  name = "infinite_spinning",
   src_image = "effects/cast1.png",
   frame_delay = 150,
   frame_to_loop_on = 0,

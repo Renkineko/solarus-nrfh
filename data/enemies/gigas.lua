@@ -119,6 +119,13 @@ end
 function enemy:attack_invoke_lizalfos()
     enemy:stop_movement()
     sprite:set_animation("hands_up")
+    print("lizalfos")
+    local summon1 = enemy:get_map():create_enemy({x = 880, y = 160, layer = 0, breed = 'summoning', direction = 0})
+    summon1:set_properties({
+        sprite = "effects/cast1",
+        breed_to_create = "lizalfos",
+        max_number_monster = 4
+    })
     
     function sprite:on_animation_finished()
         enemy:restart()
@@ -157,9 +164,12 @@ function enemy:on_created()
     enemy:set_size(72, 32)
     enemy:set_origin(36, 29)
     pos_x, pos_y, pos_layer = enemy:get_position()
+    if pos_layer < 2 then
+        pos_layer = pos_layer + 1
+    end
 
     for n = 1, #spirit_balls_pos do
-        spirit_balls[n] = enemy:create_enemy({name = "gigas_spirit_" .. n, direction = 0, breed = "gigas_spirit_ball", layer = pos_layer + 1})
+        spirit_balls[n] = enemy:create_enemy({name = "gigas_spirit_" .. n, direction = 0, breed = "gigas_spirit_ball", layer = pos_layer})
         spirit_balls[n]:set_enabled(false)
     end
 end
