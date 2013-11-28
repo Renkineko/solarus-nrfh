@@ -23,7 +23,13 @@ function enemy:summon()
     -- if at the end of the cast we can create another enemy, we do.
     if nb < max_number_monster then
         local x, y, l = enemy:get_position()
-        local name = prefix .. (nb + 1)
+        local i = 1
+        local name = prefix .. i
+        
+        while enemy:get_map():has_entity(name) do
+            i = i + 1
+            name = prefix .. i
+        end
         
         enemy:get_map():create_enemy({name = name, x = x, y = y, layer = l, breed = breed_to_create, direction = 3})
     end

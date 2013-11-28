@@ -119,9 +119,16 @@ end
 function enemy:attack_invoke_lizalfos()
     enemy:stop_movement()
     sprite:set_animation("hands_up")
-    print("lizalfos")
+    
     local summon1 = enemy:get_map():create_enemy({x = 880, y = 160, layer = 0, breed = 'summoning', direction = 0})
     summon1:set_properties({
+        sprite = "effects/cast1",
+        breed_to_create = "lizalfos",
+        max_number_monster = 4
+    })
+    
+    local summon2 = enemy:get_map():create_enemy({x = 1056, y = 160, layer = 0, breed = 'summoning', direction = 0})
+    summon2:set_properties({
         sprite = "effects/cast1",
         breed_to_create = "lizalfos",
         max_number_monster = 4
