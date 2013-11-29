@@ -212,6 +212,7 @@ sprite{ id = "enemies/fire_dragonsnake_smallball", description = "Enemy: Dragons
 sprite{ id = "enemies/wiznake", description = "Enemy: Wiznake" }
 sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
 sprite{ id = "enemies/gigas_spirit_ball", description = "Enemy: Gigas Spirit Ball" }
+sprite{ id = "enemies/poison_gaz", description = "Enemy: Poison Gaz" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -460,6 +461,8 @@ enemy{ id = "wiznake", description = "Wiznake" }
 enemy{ id = "gigas", description = "Gigas" }
 enemy{ id = "gigas_spirit_ball", description = "Gigas Spirit Ball" }
 enemy{ id = "summoning", description = "Summoning" }
+enemy{ id = "poison_gaz", description = "Poison Gaz" }
+enemy{ id = "thunder_strike", description = "Thunder Strike" }
 
 
 language{ id = "de", description = "Deutsch" }

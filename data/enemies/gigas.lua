@@ -8,7 +8,7 @@ local ball_form = false
 -- attack one : when near the hero, lay on his knees and punch the floor, making it crackling (with hands down animation)
 -- attack two : when at a certain distance, invoke thunder blast making hero slow (with hands up animation)
 -- attack three : randomly throw poison gaz (with expiration animation)
--- attack four : randomly make two lizalfos appear (with hands up animation)
+-- attack four : randomly make two monsters appear to help him (with hands up and cast animations)
 -- when hurt : teleport somewhere else in the room (random position from positions table).
 --             Ball spirits are invincibles and move randomly during 2 to 5s before making him reappear
 
@@ -111,26 +111,42 @@ function enemy:attack_poison_gaz()
     enemy:stop_movement()
     sprite:set_animation("spitting")
     
-    sol.timer.start(enemy, 2500, function()
+    local step = 500
+    local nb_gaz = 5
+    local enemy_x, enemy_y = enemy:get_position()
+    
+    for i = 1, nb_gaz do
+        sol.timer.start(enemy, i*step, function()
+            local hero_x, hero_y = enemy:get_map():get_entity('hero'):get_position()
+            local x = hero_x - enemy_x
+            local y = hero_y - enemy_y
+            
+            sol.timer.start(enemy, 100, function()
+                poison_gaz = enemy:create_enemy({breed = 'poison_gaz', direction = 0, x = x, y = y})
+            end)
+        end)
+    end
+    
+    sol.timer.start(enemy, (nb_gaz + 1) * step, function()
         enemy:restart()
     end)
 end
 
-function enemy:attack_invoke_lizalfos()
+function enemy:attack_invoke_monster()
     enemy:stop_movement()
     sprite:set_animation("hands_up")
     
     local summon1 = enemy:get_map():create_enemy({x = 880, y = 160, layer = 0, breed = 'summoning', direction = 0})
     summon1:set_properties({
         sprite = "effects/cast1",
-        breed_to_create = "lizalfos",
+        breed_to_create = "bee_guard",
         max_number_monster = 4
     })
     
     local summon2 = enemy:get_map():create_enemy({x = 1056, y = 160, layer = 0, breed = 'summoning', direction = 0})
     summon2:set_properties({
         sprite = "effects/cast1",
-        breed_to_create = "lizalfos",
+        breed_to_create = "bee_guard",
         max_number_monster = 4
     })
     
@@ -159,7 +175,7 @@ function enemy:choose_attack()
     if math.random(1, 2) == 1 then
         enemy:attack_poison_gaz()
     else
-        enemy:attack_invoke_lizalfos()
+        enemy:attack_invoke_monster()
     end
 end
 
