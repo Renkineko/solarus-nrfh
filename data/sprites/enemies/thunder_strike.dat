@@ -1,0 +1,281 @@
+animation{
+  name = "direction01",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 0, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction02",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 48, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction03",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 96, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction04",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 144, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction05",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 192, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction06",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 240, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction07",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction12",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 48, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction13",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 96, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction14",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 144, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction15",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 192, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction16",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 240, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction17",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction23",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 96, y = 32, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction24",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 144, y = 32, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction25",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 192, y = 32, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction26",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 240, y = 32, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction27",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 32, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction34",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 144, y = 48, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction35",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 192, y = 48, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction36",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 240, y = 48, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction37",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 48, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction45",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 192, y = 64, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction46",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 240, y = 64, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction47",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 64, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+
+animation{
+  name = "direction56",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 240, y = 80, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction57",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 80, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+
+animation{
+  name = "direction67",
+  src_image = "enemies/thunder_strike.png",
+  frame_delay = 100,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 288, y = 96, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 3 },
+  },
+}
+

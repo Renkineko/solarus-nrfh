@@ -213,6 +213,7 @@ sprite{ id = "enemies/wiznake", description = "Enemy: Wiznake" }
 sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
 sprite{ id = "enemies/gigas_spirit_ball", description = "Enemy: Gigas Spirit Ball" }
 sprite{ id = "enemies/poison_gaz", description = "Enemy: Poison Gaz" }
+sprite{ id = "enemies/thunder_strike", description = "Enemy: Thunder Strike" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
