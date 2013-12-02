@@ -33,19 +33,19 @@ function enemy:new_strike()
     
     -- Calculation of x and y position for the new sprite
     if rand_direction > 0 and rand_direction < 4 then
-        print(rand_direction..' -> last_x - 16')
-        last_x = last_x - 16
+        print(rand_direction..' -> last_y - 16')
+        last_y = last_y - 16
     elseif rand_direction > 4 and rand_direction <= 7 then
-        print(rand_direction..' -> last_x + 16')
-        last_x = last_x + 16
+        print(rand_direction..' -> last_y + 16')
+        last_y = last_y + 16
     end
     
     if rand_direction < 2 or rand_direction == 7 then
-        print(rand_direction..' -> last_y + 16')
-        last_y = last_y + 16
+        print(rand_direction..' -> last_x + 16')
+        last_x = last_x + 16
     elseif rand_direction > 2 and rand_direction < 6 then
-        print(rand_direction..' -> last_y - 16')
-        last_y = last_y - 16
+        print(rand_direction..' -> last_x - 16')
+        last_x = last_x - 16
     end
     print(last_x, last_y)
     
