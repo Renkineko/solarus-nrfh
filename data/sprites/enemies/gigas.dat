@@ -51,6 +51,17 @@ animation{
 }
 
 animation{
+  name = "hands_up_infinite",
+  src_image = "enemies/gigas.png",
+  frame_delay = 150,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 0, y = 208, frame_width = 72, frame_height = 72, origin_x = 36, origin_y = 69, num_frames = 4 },
+    { x = 0, y = 208, frame_width = 72, frame_height = 72, origin_x = 36, origin_y = 69, num_frames = 4 },
+  },
+}
+
+animation{
   name = "hands_down",
   src_image = "enemies/gigas.png",
   frame_delay = 150,

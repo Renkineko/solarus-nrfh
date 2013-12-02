@@ -90,9 +90,11 @@ end
 function enemy:attack_thunder_blast()
     print('[TODO] Thunder Blast - todo when enemy:attack_custom will be available in the engine')
     enemy:stop_movement()
-    sprite:set_animation("hands_up")
+    sprite:set_animation("hands_up_infinite")
     
-    function sprite:on_animation_finished()
+    local thunder_strike = enemy:create_enemy({breed = 'thunder_strike', direction = 0, y = -80})
+    
+    function thunder_strike:on_removed()
         enemy:restart()
     end
 end
@@ -160,23 +162,23 @@ function enemy:choose_attack()
     local hero = enemy:get_map():get_entity("hero")
     local distance = enemy:get_distance(hero)
     
-    if distance > 150 then
-        if math.random(1, 2) == 1 then
+    --if distance > 150 then
+    --    if math.random(1, 2) == 1 then
             enemy:attack_thunder_blast()
-            return
-        end
-    elseif distance < 100 then
-        if math.random(1, 2) == 1 then
-            enemy:attack_punch_floor()
-            return
-        end
-    end
-    
-    if math.random(1, 2) == 1 then
-        enemy:attack_poison_gaz()
-    else
-        enemy:attack_invoke_monster()
-    end
+    --        return
+    --    end
+    --elseif distance < 100 then
+    --    if math.random(1, 2) == 1 then
+    --        enemy:attack_punch_floor()
+    --        return
+    --    end
+    --end
+    --
+    --if math.random(1, 2) == 1 then
+    --    enemy:attack_poison_gaz()
+    --else
+    --    enemy:attack_invoke_monster()
+    --end
 end
 
 function enemy:on_created()
