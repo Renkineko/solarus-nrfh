@@ -1,12 +1,19 @@
 local enemy = ...
 local from_direction = nil
-local last_x
-local last_y
+local last_x, last_y -- used to know where will be the last part of the strike
+local origin_x, origin_y -- used to know where the enemy origin is
+local hero_x, hero_y -- used to know where was the hero when the enemy was created
+local distance_max -- used to know what distance max should be done by the strikes
 local aSprites = {}
 
+function print_aSprites()
+    for i, anim in pairs(aSprites) do
+        print("Anim ", i, anim.sprite:get_animation(), origin_x, origin_y, anim.x, anim.y, origin_x+anim.x, origin_y+anim.y)
+    end
+end
+
 function enemy:new_strike()
-    local hero = enemy:get_map():get_entity('hero')
-    local direction = enemy:get_direction8_to(hero)
+    local direction = enemy:get_direction8_to(hero_x, hero_y)
     local animation = 'direction'
     
     -- Calculation of the next animation
@@ -51,11 +58,12 @@ function enemy:new_strike()
     
     local sprite_anim = enemy:create_sprite("enemies/thunder_strike")
     sprite_anim:set_animation(animation)
-    aSprites[#aSprites] = {
+    aSprites[#aSprites+1] = {
         sprite = sprite_anim,
         x = last_x,
         y = last_y
     }
+    print_aSprites()
     --local sprite = enemy:create_sprite("enemies/thunder_strike")
     --print(animation)
     --sprite:set_animation(animation)
@@ -65,11 +73,11 @@ function enemy:new_strike()
     if from_direction < 0 then
         from_direction = from_direction + 8
     end
-    print(from_direction)
     
-    sol.timer.start(1500, function()
-        print("end timer", hero:get_distance(last_x, last_y))
-        if hero:get_distance(last_x, last_y) > 16 then
+    sol.timer.start(100, function()
+        local distance = enemy:get_distance(last_x, last_y)
+        print("distance : ", distance)
+        if distance < distance_max - 16 then
             print('new strike')
             enemy:new_strike()
         else
@@ -86,13 +94,19 @@ function enemy:on_created()
     enemy:set_origin(8, 8)
     enemy:set_invincible()
     
+    local hero = enemy:get_map():get_entity('hero')
     last_x, last_y = enemy:get_position()
-    print(last_x, last_y)
+    origin_x, origin_y = enemy:get_position()
+    print('origin : ', last_x, last_y)
+    hero_x, hero_y = hero:get_position()
+    print('hero : ', hero_x, hero_y)
+    distance_max = hero:get_distance(enemy)
     enemy:new_strike()
 end
 
 function enemy:on_post_draw()
     for i, anim in pairs(aSprites) do
+        --print("Post draw ", i, origin_x, origin_y, anim.x, anim.y)
         self:get_map():draw_sprite(anim.sprite, anim.x, anim.y)
     end
 end
