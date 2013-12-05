@@ -56,46 +56,49 @@ function enemy:new_strike()
     end
     print(last_x, last_y)
     
-    local sprite_anim = enemy:create_sprite("enemies/thunder_strike")
-    sprite_anim:set_animation(animation)
-    aSprites[#aSprites+1] = {
-        sprite = sprite_anim,
-        x = last_x,
-        y = last_y
-    }
-    print_aSprites()
-    --local sprite = enemy:create_sprite("enemies/thunder_strike")
-    --print(animation)
-    --sprite:set_animation(animation)
-    --sprite:set_xy(last_x, last_y)
+    --local sprite_anim = enemy:create_sprite("enemies/thunder_strike")
+    --sprite_anim:set_animation(animation)
+    --aSprites[#aSprites+1] = {
+    --    sprite = sprite_anim,
+    --    x = last_x,
+    --    y = last_y
+    --}
+    --print_aSprites()
+    local sprite = enemy:create_sprite("enemies/thunder_strike")
+    print(animation)
+    sprite:set_animation(animation)
+    sprite:set_xy(last_x, last_y)
     
     from_direction = rand_direction - 4
     if from_direction < 0 then
         from_direction = from_direction + 8
     end
     
-    sol.timer.start(100, function()
-        local distance = enemy:get_distance(last_x, last_y)
+    --sol.timer.start(100, function()
+        local enemy_x, enemy_y = enemy:get_position()
+        local distance = enemy:get_distance(enemy_x+last_x, enemy_y+last_y)
         print("distance : ", distance)
-        if distance < distance_max - 16 then
+        if distance < distance_max - 8 then
             print('new strike')
             enemy:new_strike()
         else
             print('remove')
-            enemy:remove()
+            --enemy:remove()
         end
-    end)
+    --end)
 end
 
 function enemy:on_created()
     enemy:set_life(1)
-    enemy:set_damage(4)
+    enemy:set_damage(40)
     enemy:set_size(16, 16)
     enemy:set_origin(8, 8)
     enemy:set_invincible()
-    
+end
+
+function enemy:on_restarted()
     local hero = enemy:get_map():get_entity('hero')
-    last_x, last_y = enemy:get_position()
+    last_x, last_y = 0, 0
     origin_x, origin_y = enemy:get_position()
     print('origin : ', last_x, last_y)
     hero_x, hero_y = hero:get_position()
@@ -104,9 +107,9 @@ function enemy:on_created()
     enemy:new_strike()
 end
 
-function enemy:on_post_draw()
-    for i, anim in pairs(aSprites) do
-        --print("Post draw ", i, origin_x, origin_y, anim.x, anim.y)
-        self:get_map():draw_sprite(anim.sprite, anim.x, anim.y)
-    end
-end
+--function enemy:on_post_draw()
+--    for i, anim in pairs(aSprites) do
+--        --print("Post draw ", i, origin_x, origin_y, anim.x, anim.y)
+--        self:get_map():draw_sprite(anim.sprite, anim.x, anim.y)
+--    end
+--end

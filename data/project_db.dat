@@ -463,7 +463,9 @@ enemy{ id = "gigas", description = "Gigas" }
 enemy{ id = "gigas_spirit_ball", description = "Gigas Spirit Ball" }
 enemy{ id = "summoning", description = "Summoning" }
 enemy{ id = "poison_gaz", description = "Poison Gaz" }
-enemy{ id = "thunder_strike", description = "Thunder Strike" }
+enemy{ id = "thunder_strike_target", description = "Thunder Strike Target" }
+enemy{ id = "debugger", description = "Debugger" }
+enemy{ id = "thunder_strike_circle", description = "Thunder Strike Circle" }
 
 
 language{ id = "de", description = "Deutsch" }

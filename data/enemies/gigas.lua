@@ -92,10 +92,10 @@ function enemy:attack_thunder_blast()
     enemy:stop_movement()
     sprite:set_animation("hands_up_infinite")
     
-    local thunder_strike = enemy:create_enemy({breed = 'thunder_strike', direction = 0, y = -80})
+    local thunder_strike = enemy:create_enemy({breed = 'thunder_strike_circle', direction = 0, y = -80})
     
     function thunder_strike:on_removed()
-        enemy:restart()
+    --    enemy:restart()
     end
 end
 
