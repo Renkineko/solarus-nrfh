@@ -201,7 +201,6 @@ end
 
 function enemy:on_restarted()
     if ball_form then
-        sol.timer.stop_all(enemy)
         enemy:teleport()
     else
         enemy:reset_attack_consequences()
