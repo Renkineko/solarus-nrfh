@@ -38,6 +38,25 @@ function enemy:new_strike()
         animation = animation .. from_direction .. rand_direction
     end
     
+    --local sprite_anim = enemy:create_sprite("enemies/thunder_strike")
+    --sprite_anim:set_animation(animation)
+    --aSprites[#aSprites+1] = {
+    --    sprite = sprite_anim,
+    --    x = last_x,
+    --    y = last_y
+    --}
+    --print_aSprites()
+    local sprite = enemy:create_sprite("enemies/thunder_strike")
+    print(animation)
+    sprite:set_animation(animation)
+    sprite:set_frame(enemy:get_sprite():get_frame())
+    sprite:set_xy(last_x, last_y)
+    
+    from_direction = rand_direction - 4
+    if from_direction < 0 then
+        from_direction = from_direction + 8
+    end
+    
     -- Calculation of x and y position for the new sprite
     if rand_direction > 0 and rand_direction < 4 then
         print(rand_direction..' -> last_y - 16')
@@ -54,38 +73,23 @@ function enemy:new_strike()
         print(rand_direction..' -> last_x - 16')
         last_x = last_x - 16
     end
+    
     print(last_x, last_y)
     
-    --local sprite_anim = enemy:create_sprite("enemies/thunder_strike")
-    --sprite_anim:set_animation(animation)
-    --aSprites[#aSprites+1] = {
-    --    sprite = sprite_anim,
-    --    x = last_x,
-    --    y = last_y
-    --}
-    --print_aSprites()
-    local sprite = enemy:create_sprite("enemies/thunder_strike")
-    print(animation)
-    sprite:set_animation(animation)
-    sprite:set_xy(last_x, last_y)
-    
-    from_direction = rand_direction - 4
-    if from_direction < 0 then
-        from_direction = from_direction + 8
-    end
-    
-    --sol.timer.start(100, function()
+    sol.timer.start(enemy, 64, function()
         local enemy_x, enemy_y = enemy:get_position()
         local distance = enemy:get_distance(enemy_x+last_x, enemy_y+last_y)
         print("distance : ", distance)
-        if distance < distance_max - 8 then
+        if distance < distance_max then
             print('new strike')
             enemy:new_strike()
         else
             print('remove')
-            --enemy:remove()
+            sol.timer.start(enemy, 500, function()
+                enemy:remove()
+            end)
         end
-    --end)
+    end)
 end
 
 function enemy:on_created()

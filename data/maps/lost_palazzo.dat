@@ -5677,14 +5677,6 @@ sensor{
   name = "close_mb_sensor",
 }
 
-destination{
-  layer = 0,
-  x = 984,
-  y = 253,
-  name = "from_weaponry",
-  direction = 1,
-}
-
 wall{
   layer = 0,
   x = 960,
@@ -11019,6 +11011,14 @@ dynamic_tile{
   name = "dyn_boss_trap_inactive",
   pattern = 360,
   enabled_at_start = true,
+}
+
+destination{
+  layer = 1,
+  x = 200,
+  y = 1509,
+  name = "from_weaponry",
+  direction = 1,
 }
 
 tile{

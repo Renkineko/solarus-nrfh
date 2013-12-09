@@ -1,6 +1,9 @@
 local map = ...
 local game = map:get_game()
 
+local konami = {'up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'action'}
+local i = 1
+
 for sensor in map:get_entities("sensor_") do
     function sensor:on_activated()
         game:set_value("trial_destination", self:get_name():sub(8))
@@ -42,4 +45,15 @@ function map:on_started()
     game:set_max_life(20)
     game:set_life(20)
     game:set_money(0)
+end
+
+function map:on_command_pressed(command)
+    if konami[i] == command then
+        if i == 9 then
+            hero:teleport('debug_room')
+        end
+        i = i+1
+    else
+        i = 1
+    end
 end

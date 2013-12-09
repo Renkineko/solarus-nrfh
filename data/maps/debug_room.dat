@@ -1,0 +1,309 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 640,
+  height = 640,
+  world = "debug_room",
+  tileset = "15",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 16,
+  width = 24,
+  height = 24,
+  pattern = 45,
+}
+
+tile{
+  layer = 1,
+  x = 600,
+  y = 16,
+  width = 24,
+  height = 24,
+  pattern = 46,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 600,
+  width = 24,
+  height = 24,
+  pattern = 47,
+}
+
+tile{
+  layer = 1,
+  x = 600,
+  y = 600,
+  width = 24,
+  height = 24,
+  pattern = 48,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 16,
+  width = 560,
+  height = 24,
+  pattern = 49,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 600,
+  width = 560,
+  height = 24,
+  pattern = 52,
+}
+
+tile{
+  layer = 1,
+  x = 600,
+  y = 40,
+  width = 24,
+  height = 560,
+  pattern = 50,
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 40,
+  width = 24,
+  height = 560,
+  pattern = 51,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 560,
+  height = 560,
+  pattern = 525,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 14,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 40,
+  width = 544,
+  height = 8,
+  pattern = 179,
+}
+
+tile{
+  layer = 1,
+  x = 592,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = 15,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 592,
+  width = 8,
+  height = 8,
+  pattern = 16,
+}
+
+tile{
+  layer = 1,
+  x = 592,
+  y = 592,
+  width = 8,
+  height = 8,
+  pattern = 17,
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 592,
+  width = 544,
+  height = 8,
+  pattern = 236,
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 48,
+  width = 8,
+  height = 544,
+  pattern = 237,
+}
+
+tile{
+  layer = 1,
+  x = 592,
+  y = 48,
+  width = 8,
+  height = 544,
+  pattern = 238,
+}
+
+switch{
+  layer = 1,
+  x = 184,
+  y = 440,
+  name = "switch_thunder_sw",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 312,
+  y = 440,
+  name = "switch_thunder_s",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 440,
+  y = 440,
+  name = "switch_thunder_se",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 184,
+  y = 312,
+  name = "switch_thunder_w",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 440,
+  y = 312,
+  name = "switch_thunder_e",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 184,
+  y = 184,
+  name = "switch_thunder_nw",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 312,
+  y = 184,
+  name = "switch_thunder_n",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+switch{
+  layer = 1,
+  x = 440,
+  y = 184,
+  name = "switch_thunder_ne",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = true,
+}
+
+destination{
+  layer = 1,
+  x = 320,
+  y = 557,
+  direction = 3,
+  default = true,
+}
+
+teletransporter{
+  layer = 1,
+  x = 312,
+  y = 560,
+  width = 16,
+  height = 16,
+  sprite = "entities/teletransporter",
+  transition = 1,
+  destination_map = "the_hub",
+  destination = "default_dest",
+}
+
+switch{
+  layer = 1,
+  x = 272,
+  y = 544,
+  name = "switch_walk",
+  subtype = "1",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 0,
+  width = 640,
+  height = 16,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 624,
+  width = 640,
+  height = 16,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 16,
+  width = 16,
+  height = 608,
+  pattern = 170,
+}
+
+tile{
+  layer = 2,
+  x = 624,
+  y = 16,
+  width = 16,
+  height = 608,
+  pattern = 170,
+}
+
