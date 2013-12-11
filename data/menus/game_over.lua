@@ -122,12 +122,13 @@ end
 
 local black = {0, 0, 0}
 local red = {224, 32, 32}
+local transparent = {0, 0, 0, 0}
 
 function game_over_menu:on_draw(dst_surface)
 
   if state ~= "waiting_start" and state ~= "closing_game" then
     -- Hide the whole map.
-    dst_surface:fill_color(black)
+    dst_surface:fill_color(transparent)
   end
 
   if state == "closing_game"
