@@ -76,11 +76,11 @@ function enemy:new_strike()
     
     print(last_x, last_y)
     
-    sol.timer.start(enemy, 64, function()
+    --sol.timer.start(enemy, 64, function()
         local enemy_x, enemy_y = enemy:get_position()
         local distance = enemy:get_distance(enemy_x+last_x, enemy_y+last_y)
         print("distance : ", distance)
-        if distance < distance_max then
+        if distance < distance_max and not enemy:test_obstacles(last_x, last_y) then
             print('new strike')
             enemy:new_strike()
         else
@@ -89,7 +89,7 @@ function enemy:new_strike()
                 enemy:remove()
             end)
         end
-    end)
+    --end)
 end
 
 function enemy:on_created()
