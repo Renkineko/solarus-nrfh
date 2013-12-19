@@ -1,12 +1,43 @@
 local enemy = ...
 local aStrikes = {}
 
+function getNextProp(pnRandDir)
+    -- The from_direction of the next sprite will always be at the opposite of the direction lastly set.
+    -- If the direction is negative, not possible, with a +8 we go to a valid direction.
+    local nFromDir = pnRandDir - 4
+    local x = 0
+    local y = 0
+    if nFromDir < 0 then
+        nFromDir = nFromDir + 8
+    end
+    
+    -- Calculation of x and y position for the new sprite
+    if pnRandDir > 0 and pnRandDir < 4 then
+        --print(rand_direction..' -> next_y - 16')
+        y = -16
+    elseif pnRandDir > 4 and pnRandDir <= 7 then
+        --print(rand_direction..' -> next_y + 16')
+        y = 16
+    end
+    
+    if pnRandDir < 2 or pnRandDir == 7 then
+        --print(rand_direction..' -> next_x + 16')
+        x = 16
+    elseif pnRandDir > 2 and pnRandDir < 6 then
+        --print(rand_direction..' -> next_x - 16')
+        x = -16
+    end
+    
+    return nFromDir, x, y
+end
+
 function enemy:new_strike()
     
     for i = 1, #aStrikes do
         local oStrike = aStrikes[i]
         local direction = enemy:get_direction8_to(oStrike.hero_x, oStrike.hero_y)
         local animation = 'direction'
+        local lowestdir, highestdir
         
         -- Calculation of the next animation
         if oStrike.from_direction == nil then
@@ -32,8 +63,42 @@ function enemy:new_strike()
         --print(rand_direction, direction, from_direction)
         if rand_direction < oStrike.from_direction then
             animation = animation .. rand_direction .. oStrike.from_direction
+            lowestdir = rand_direction
+            highestdir = oStrike.from_direction
         else
             animation = animation .. oStrike.from_direction .. rand_direction
+            lowestdir = oStrike.from_direction
+            highestdir = rand_direction
+        end
+        
+        print(lowestdir, highestdir)
+        if lowestdir == 1 and (highestdir == 3 or highestdir == 6) then
+            animation = 'direction136'
+            
+            local split_dir
+            if oStrike.from_direction == 1 then
+                split_dir = 6
+                rand_direction = 3
+            elseif oStrike.from_direction == 3 then
+                split_dir = 1
+                rand_direction = 6
+            else
+                split_dir = 1
+                rand_direction = 3
+            end
+            
+            local splitFromDir, splitX, splitY = getNextProp(split_dir)
+            
+            aStrikes[#aStrikes+1] = {
+                from_direction = splitFromDir, 
+                next_x = oStrike.next_x + splitX, -- used to know where will be the next part of the strike
+                next_y = oStrike.next_y + splitY,
+                origin_x = oStrike.origin_x, -- used to know where the enemy origin is
+                origin_y = oStrike.origin_y,
+                hero_x = oStrike.hero_x, -- used to know where was the hero when the enemy was created
+                hero_y = oStrike.hero_y,
+                distance_max = oStrike.distance_max -- used to know what distance max should be done by the strikes
+            }
         end
         
         local sprite = enemy:create_sprite("enemies/thunder_strike")
@@ -42,31 +107,12 @@ function enemy:new_strike()
         sprite:set_frame(enemy:get_sprite():get_frame())
         sprite:set_xy(oStrike.next_x, oStrike.next_y)
         
-        -- The from_direction of the next sprite will always be at the opposite of the direction lastly set.
-        -- If the direction is negative, not possible, with a +8 we go to a valid direction.
-        oStrike.from_direction = rand_direction - 4
-        if oStrike.from_direction < 0 then
-            oStrike.from_direction = oStrike.from_direction + 8
-        end
-        
-        -- Calculation of x and y position for the new sprite
-        if rand_direction > 0 and rand_direction < 4 then
-            --print(rand_direction..' -> next_y - 16')
-            oStrike.next_y = oStrike.next_y - 16
-        elseif rand_direction > 4 and rand_direction <= 7 then
-            --print(rand_direction..' -> next_y + 16')
-            oStrike.next_y = oStrike.next_y + 16
-        end
-        
-        if rand_direction < 2 or rand_direction == 7 then
-            --print(rand_direction..' -> next_x + 16')
-            oStrike.next_x = oStrike.next_x + 16
-        elseif rand_direction > 2 and rand_direction < 6 then
-            --print(rand_direction..' -> next_x - 16')
-            oStrike.next_x = oStrike.next_x - 16
-        end
-        
         --print(next_x, next_y)
+        local from_dir, nextx, nexty = getNextProp(rand_direction)
+        print(from_dir, nextx, nexty)
+        oStrike.from_direction = from_dir
+        oStrike.next_x = oStrike.next_x + nextx
+        oStrike.next_y = oStrike.next_y + nexty
         
         --sol.timer.start(enemy, 64, function()
             local enemy_x, enemy_y = enemy:get_position()
