@@ -38,9 +38,10 @@ function getNextProp(pnRandDir)
 end
 
 function enemy:new_strike()
-    
+    local bNewStrike = true    
     for i = 1, #aStrikes do
         local oStrike = aStrikes[i]
+        oStrike.step = oStrike.step + 1
         local direction = enemy:get_direction8_to(oStrike.hero_x, oStrike.hero_y)
         local animation = 'direction'
         local lowestdir, highestdir
@@ -85,8 +86,9 @@ function enemy:new_strike()
             highestdir = rand_direction
         end
         
-        print(lowestdir, highestdir)
-        if (math.random(1, 100) < 20) then
+        --print(lowestdir, highestdir)
+        -- We allow only 4 splits, and each step increase the possibility of the split
+        if #aStrikes < 4 and math.random(1, 100) < 10*oStrike.step then
             
             for j = 1, #aSplits do
                 if lowestdir == aSplits[j].lowest and (highestdir == aSplits[j].middle or highestdir == aSplits[j].highest) then
@@ -105,9 +107,12 @@ function enemy:new_strike()
                     end
                     
                     local splitFromDir, splitX, splitY = getNextProp(split_dir)
-                    
+
+                    oStrike.step = 0
+
                     aStrikes[#aStrikes+1] = {
-                        from_direction = splitFromDir, 
+                        from_direction = splitFromDir,
+                        step = 0,
                         next_x = oStrike.next_x + splitX, -- used to know where will be the next part of the strike
                         next_y = oStrike.next_y + splitY,
                         origin_x = oStrike.origin_x, -- used to know where the enemy origin is
@@ -133,20 +138,21 @@ function enemy:new_strike()
         oStrike.next_x = oStrike.next_x + nextx
         oStrike.next_y = oStrike.next_y + nexty
         
-        --sol.timer.start(enemy, 64, function()
-            local enemy_x, enemy_y = enemy:get_position()
-            local distance = enemy:get_distance(enemy_x+ oStrike.next_x, enemy_y+ oStrike.next_y)
-            --print("distance : ", distance)
-            if distance < oStrike.distance_max and not enemy:test_obstacles(oStrike.next_x, oStrike.next_y) then
-                print('new strike')
-                enemy:new_strike()
-            else
-                print('remove')
-                sol.timer.start(enemy, 500, function()
-                    enemy:remove()
-                end)
-            end
-        --end)
+        local enemy_x, enemy_y = enemy:get_position()
+        local distance = enemy:get_distance(enemy_x+ oStrike.next_x, enemy_y+ oStrike.next_y)
+        --print("distance : ", distance)
+        if distance > oStrike.distance_max or enemy:test_obstacles(oStrike.next_x, oStrike.next_y) then
+            bNewStrike = false
+        end
+    end
+
+    -- if all strikes are ok to continue, we continue, but if only one must stop, we stop all of them...
+    if bNewStrike then
+        enemy:new_strike()
+    else
+        sol.timer.start(enemy, 500, function()
+            enemy:remove()
+        end)
     end
 end
 
@@ -165,6 +171,7 @@ function enemy:on_restarted()
     
     aStrikes[1] = {
         from_direction = nil, 
+        step = 0,
         next_x = 0, -- used to know where will be the next part of the strike
         next_y = 0,
         origin_x = origin_x, -- used to know where the enemy origin is
