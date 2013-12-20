@@ -1,4 +1,10 @@
 local enemy = ...
+local aSplits = {
+    {lowest = 1, middle = 3, highest = 6},
+    {lowest = 0, middle = 3, highest = 5},
+    {lowest = 1, middle = 4, highest = 7},
+    {lowest = 2, middle = 5, highest = 7}
+}
 local aStrikes = {}
 
 function getNextProp(pnRandDir)
@@ -46,19 +52,27 @@ function enemy:new_strike()
         
         local rand_direction = math.random(direction-1, direction+1)
         
-        -- If rand_direction == from_direction in the case of the hero being on the other side of the new strike,
-        -- we can't do a real 80 turn : no animation can do that. So we have to get a random direction with a step
-        -- of 1 to go to the hero position.
-        while rand_direction == oStrike.from_direction do
-            rand_direction = math.random(direction-1, direction+1)
-        end
-        
         -- Specific case of the direction near the east one (0)
         if rand_direction == 8 then
             rand_direction = 0
         elseif rand_direction == -1 then
             rand_direction = 7
         end
+        
+        -- If rand_direction == from_direction in the case of the hero being on the other side of the new strike,
+        -- we can't do a real 80 turn : no animation can do that. So we have to get a random direction with a step
+        -- of 1 to go to the hero position.
+        while rand_direction == oStrike.from_direction do
+            rand_direction = math.random(direction-1, direction+1)
+            
+            -- Specific case of the direction near the east one (0)
+            if rand_direction == 8 then
+                rand_direction = 0
+            elseif rand_direction == -1 then
+                rand_direction = 7
+            end
+        end
+        
         
         --print(rand_direction, direction, from_direction)
         if rand_direction < oStrike.from_direction then
@@ -72,33 +86,38 @@ function enemy:new_strike()
         end
         
         print(lowestdir, highestdir)
-        if lowestdir == 1 and (highestdir == 3 or highestdir == 6) then
-            animation = 'direction136'
+        if (math.random(1, 100) < 20) then
             
-            local split_dir
-            if oStrike.from_direction == 1 then
-                split_dir = 6
-                rand_direction = 3
-            elseif oStrike.from_direction == 3 then
-                split_dir = 1
-                rand_direction = 6
-            else
-                split_dir = 1
-                rand_direction = 3
+            for j = 1, #aSplits do
+                if lowestdir == aSplits[j].lowest and (highestdir == aSplits[j].middle or highestdir == aSplits[j].highest) then
+                    animation = 'direction' .. aSplits[j].lowest .. aSplits[j].middle .. aSplits[j].highest
+                    
+                    local split_dir
+                    if oStrike.from_direction == aSplits[j].lowest then
+                        split_dir = aSplits[j].highest
+                        rand_direction = aSplits[j].middle
+                    elseif oStrike.from_direction == aSplits[j].middle then
+                        split_dir = aSplits[j].lowest
+                        rand_direction = aSplits[j].highest
+                    else
+                        split_dir = aSplits[j].lowest
+                        rand_direction = aSplits[j].middle
+                    end
+                    
+                    local splitFromDir, splitX, splitY = getNextProp(split_dir)
+                    
+                    aStrikes[#aStrikes+1] = {
+                        from_direction = splitFromDir, 
+                        next_x = oStrike.next_x + splitX, -- used to know where will be the next part of the strike
+                        next_y = oStrike.next_y + splitY,
+                        origin_x = oStrike.origin_x, -- used to know where the enemy origin is
+                        origin_y = oStrike.origin_y,
+                        hero_x = oStrike.hero_x, -- used to know where was the hero when the enemy was created
+                        hero_y = oStrike.hero_y,
+                        distance_max = oStrike.distance_max -- used to know what distance max should be done by the strikes
+                    }
+                end
             end
-            
-            local splitFromDir, splitX, splitY = getNextProp(split_dir)
-            
-            aStrikes[#aStrikes+1] = {
-                from_direction = splitFromDir, 
-                next_x = oStrike.next_x + splitX, -- used to know where will be the next part of the strike
-                next_y = oStrike.next_y + splitY,
-                origin_x = oStrike.origin_x, -- used to know where the enemy origin is
-                origin_y = oStrike.origin_y,
-                hero_x = oStrike.hero_x, -- used to know where was the hero when the enemy was created
-                hero_y = oStrike.hero_y,
-                distance_max = oStrike.distance_max -- used to know what distance max should be done by the strikes
-            }
         end
         
         local sprite = enemy:create_sprite("enemies/thunder_strike")
