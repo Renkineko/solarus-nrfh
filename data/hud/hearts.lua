@@ -47,6 +47,12 @@ function hearts:check()
   local nb_max_hearts = self.game:get_max_life() / 4
   if nb_max_hearts ~= self.nb_max_hearts_displayed then
     need_rebuild = true
+
+    if nb_max_hearts < self.nb_max_hearts_displayed then
+      -- Decrease immediately if the max life is reduced.
+      self.nb_current_hearts_displayed = self.game:get_life()
+    end
+
     self.nb_max_hearts_displayed = nb_max_hearts
   end
 
@@ -55,7 +61,6 @@ function hearts:check()
   if nb_current_hearts ~= self.nb_current_hearts_displayed then
 
     need_rebuild = true
-    
     if nb_current_hearts < self.nb_current_hearts_displayed then
       self.nb_current_hearts_displayed = self.nb_current_hearts_displayed - 1
     else
@@ -65,13 +70,8 @@ function hearts:check()
         sol.audio.play_sound("heart")
       end
     end
-    
-    if self.nb_current_hearts_displayed > nb_max_hearts*4 then
-      self.nb_current_hearts_displayed = nb_max_hearts*4
-    end
   end
 
-    
   -- If we are in-game, play an animation and a sound if the life is low.
   if self.game:is_started() then
 
@@ -119,6 +119,8 @@ function hearts:repeat_danger_sound()
 end
 
 function hearts:rebuild_surface()
+
+  self.surface:clear()
 
   -- Display the hearts.
   for i = 0, self.nb_max_hearts_displayed - 1 do
