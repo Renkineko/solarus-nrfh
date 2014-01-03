@@ -1316,48 +1316,66 @@ destructible{
   layer = 1,
   x = 56,
   y = 61,
-  subtype = "pot",
   treasure_name = "magic_flask",
+  sprite = "entities/pot",
+  destruction_sound = "stone",
+  can_be_cut = true,
+  damage_on_enemies = 2,
 }
 
 destructible{
   layer = 1,
   x = 56,
   y = 77,
-  subtype = "pot",
   treasure_name = "magic_flask",
+  sprite = "entities/pot",
+  destruction_sound = "stone",
+  can_be_cut = true,
+  damage_on_enemies = 2,
 }
 
 destructible{
   layer = 1,
   x = 56,
   y = 93,
-  subtype = "pot",
   treasure_name = "magic_flask",
+  sprite = "entities/pot",
+  destruction_sound = "stone",
+  can_be_cut = true,
+  damage_on_enemies = 2,
 }
 
 destructible{
   layer = 1,
   x = 56,
   y = 109,
-  subtype = "pot",
   treasure_name = "magic_flask",
+  sprite = "entities/pot",
+  destruction_sound = "stone",
+  can_be_cut = true,
+  damage_on_enemies = 2,
 }
 
 destructible{
   layer = 1,
   x = 56,
   y = 125,
-  subtype = "pot",
   treasure_name = "magic_flask",
+  sprite = "entities/pot",
+  destruction_sound = "stone",
+  can_be_cut = true,
+  damage_on_enemies = 2,
 }
 
 destructible{
   layer = 1,
   x = 56,
   y = 141,
-  subtype = "pot",
   treasure_name = "magic_flask",
+  sprite = "entities/pot",
+  destruction_sound = "stone",
+  can_be_cut = true,
+  damage_on_enemies = 2,
 }
 
 tile{
