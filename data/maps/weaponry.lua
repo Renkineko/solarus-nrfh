@@ -86,6 +86,7 @@ function chest_equipment:on_empty()
             new_equipment = true
             if item == "magic_bar" then
                 game:set_max_magic(42 * variant)
+                game:get_item(item):set_variant(variant)
             elseif item == "life" then
                 game:set_max_life(4 * variant)
                 game:set_life(4*variant)
