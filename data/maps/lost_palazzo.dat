@@ -5175,7 +5175,7 @@ teletransporter{
   height = 16,
   name = "tp_hole",
   sound = "warp",
-  transition = 1,
+  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "tp_hole_dest",
 }
@@ -5188,7 +5188,7 @@ teletransporter{
   height = 16,
   name = "tp_hole_back",
   sound = "warp",
-  transition = 1,
+  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "tp_hole_back_dest",
 }
@@ -5557,7 +5557,7 @@ teletransporter{
   height = 16,
   name = "tp_mini_boss_room_from",
   sprite = "entities/teletransporter",
-  transition = 1,
+  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "dst_from_mini_boss_room",
 }
@@ -9884,7 +9884,7 @@ teletransporter{
   width = 16,
   height = 16,
   name = "teleport_out",
-  transition = 1,
+  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }
@@ -10131,7 +10131,7 @@ teletransporter{
   name = "tp-_mini_boss_room_to",
   sprite = "entities/teletransporter",
   sound = "warp",
-  transition = 1,
+  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "dst_to_mini_boss_room",
 }

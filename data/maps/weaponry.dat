@@ -476,7 +476,7 @@ teletransporter{
   y = 256,
   width = 16,
   height = 16,
-  transition = 1,
+  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }
@@ -488,7 +488,7 @@ teletransporter{
   width = 16,
   height = 16,
   name = "teleporter_trial_lost_palazzo",
-  transition = 1,
+  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "from_weaponry",
 }
@@ -509,7 +509,7 @@ teletransporter{
   width = 16,
   height = 16,
   name = "teleporter_trial_hole_clearer",
-  transition = 1,
+  transition = "fade",
   destination_map = "hole_clearer",
   destination = "from_weaponry",
 }
@@ -529,7 +529,7 @@ teletransporter{
   width = 16,
   height = 16,
   name = "teleporter_trial_monty_hall",
-  transition = 1,
+  transition = "fade",
   destination_map = "monty_hall",
 }
 
@@ -540,7 +540,7 @@ teletransporter{
   width = 16,
   height = 16,
   name = "teleporter_trial_pike_boss",
-  transition = 1,
+  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }

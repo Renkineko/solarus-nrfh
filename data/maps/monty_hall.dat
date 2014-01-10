@@ -600,7 +600,7 @@ teletransporter{
   y = 224,
   width = 16,
   height = 16,
-  transition = 1,
+  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }

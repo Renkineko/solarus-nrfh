@@ -836,7 +836,7 @@ teletransporter{
   y = 120,
   width = 16,
   height = 16,
-  transition = 1,
+  transition = "fade",
   destination_map = "weaponry",
   destination = "from_hub",
 }
@@ -847,7 +847,7 @@ teletransporter{
   y = 120,
   width = 16,
   height = 16,
-  transition = 1,
+  transition = "fade",
   destination_map = "weaponry",
   destination = "from_hub",
 }
@@ -876,7 +876,7 @@ teletransporter{
   y = 120,
   width = 16,
   height = 16,
-  transition = 1,
+  transition = "fade",
   destination_map = "weaponry",
   destination = "from_hub",
 }
@@ -887,7 +887,7 @@ teletransporter{
   y = 120,
   width = 16,
   height = 16,
-  transition = 1,
+  transition = "fade",
   destination_map = "weaponry",
   destination = "from_hub",
 }
