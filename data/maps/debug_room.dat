@@ -256,7 +256,6 @@ teletransporter{
   width = 16,
   height = 16,
   sprite = "entities/teletransporter",
-  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }

@@ -7,6 +7,7 @@ local holes_to_clear = {}
 local hole_disabled = 0
 local next_angle = 2
 local movement
+local timer = nil
 local angles = {
     right = 0,
     up = 2,
@@ -27,10 +28,9 @@ local function check_next_hole(x, y)
     
     for i, entity in pairs(holes_to_clear) do
         -- check if the next step is a hole
-        local hole_x, hole_y, _ = entity:get_position()
+        local hole_x, hole_y = entity:get_position()
         
         if entity:is_enabled() and hole_x == next_x and hole_y == next_y then
-            
             return true
         end
     end
@@ -46,16 +46,18 @@ local function trial_failed()
     hole_eater_moving = false
 end
 
-function separator_entrance_trial:on_activated()
+function separator_entrance_trial:on_activating()
     if not game:get_value("hole_clearer") then
-        local hole_eater = map:get_entity("hole_eater")
         -- restart the trial
         map:set_entities_enabled("hole_to_clear", true)
         hole_eater:set_enabled(true)
         hole_eater:set_position(hole_eater_coord.x, hole_eater_coord.y)
         hole_disabled = 0
+        sol.timer.stop_all(hole_eater)
+        hole_eater:get_sprite():set_animation("unlit")
     else
         map:remove_entities("hole_to_clear")
+        hole_eater:set_enabled(false)
     end
 end
 
@@ -65,7 +67,6 @@ local function movement_finished(m)
     local x, y = m:get_xy()
     x = x - origin_x
     y = y - origin_y
-    
     local is_hole_next = check_next_hole(x, y)
     
     -- destroy the hole we're on
@@ -92,6 +93,7 @@ local function movement_finished(m)
     if hole_eater:get_sprite():get_animation() ~= "lit" then
         hero:unfreeze()
         hole_eater_moving = false
+        map:get_entity("hole_eater_launcher"):set_enabled(false)
         return
     end
     
@@ -113,10 +115,13 @@ function hole_eater:on_interaction()
 end
 
 function hole_eater:on_collision_fire()
-    hole_eater:get_sprite():set_animation("lit")
-    sol.timer.start(10000, function()
-        hole_eater:get_sprite():set_animation("unlit")
-    end)
+    local torch_sprite = hole_eater:get_sprite()
+    if torch_sprite:get_animation() == "unlit" then
+        torch_sprite:set_animation("lit")
+        sol.timer.start(hole_eater, 10000, function()
+            hole_eater:get_sprite():set_animation("unlit")
+        end)
+    end
 end
 
 function hole_eater_controller:on_interaction()
