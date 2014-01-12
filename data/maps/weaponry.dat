@@ -476,21 +476,8 @@ teletransporter{
   y = 256,
   width = 16,
   height = 16,
-  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
-}
-
-teletransporter{
-  layer = 1,
-  x = 152,
-  y = 0,
-  width = 16,
-  height = 16,
-  name = "teleporter_trial_lost_palazzo",
-  transition = "fade",
-  destination_map = "lost_palazzo",
-  destination = "from_weaponry",
 }
 
 destination{
@@ -500,18 +487,6 @@ destination{
   name = "from_hub",
   direction = 1,
   default = true,
-}
-
-teletransporter{
-  layer = 1,
-  x = 152,
-  y = 0,
-  width = 16,
-  height = 16,
-  name = "teleporter_trial_hole_clearer",
-  transition = "fade",
-  destination_map = "hole_clearer",
-  destination = "from_weaponry",
 }
 
 chest{
@@ -528,21 +503,9 @@ teletransporter{
   y = 0,
   width = 16,
   height = 16,
-  name = "teleporter_trial_monty_hall",
-  transition = "fade",
-  destination_map = "monty_hall",
-}
-
-teletransporter{
-  layer = 1,
-  x = 152,
-  y = 0,
-  width = 16,
-  height = 16,
-  name = "teleporter_trial_pike_boss",
-  transition = "fade",
-  destination_map = "the_hub",
-  destination = "default_dest",
+  name = "teleporter_trial",
+  destination_map = "lost_palazzo",
+  destination = "from_weaponry",
 }
 
 tile{

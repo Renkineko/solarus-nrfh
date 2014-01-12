@@ -73,8 +73,7 @@ local equipment_available = {
 
 function map:on_started()
     local trial_dest = game:get_value("trial_destination")
-    map:set_entities_enabled("teleporter_trial", false)
-    map:get_entity("teleporter_trial_"..trial_dest):set_enabled(true)
+    map:get_entity("teleporter_trial"):set_destination_map(trial_dest)
 end
 
 function chest_equipment:on_empty()

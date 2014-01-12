@@ -590,6 +590,7 @@ destination{
   layer = 1,
   x = 160,
   y = 205,
+  name = "from_weaponry",
   direction = 1,
   default = true,
 }
@@ -600,7 +601,6 @@ teletransporter{
   y = 224,
   width = 16,
   height = 16,
-  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }
