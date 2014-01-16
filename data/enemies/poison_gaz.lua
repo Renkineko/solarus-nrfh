@@ -31,5 +31,7 @@ end
 
 function enemy:on_attacking_hero()
     local hero = enemy:get_map():get_entity("hero")
-    hero:start_poison(2, 5000, 5)
+    if not hero:is_physical_condition_active("poison") then
+        hero:start_poison(2, 5000, 5)
+    end
 end
