@@ -99,6 +99,10 @@ function enemy:attack_thunder_blast()
             enemy:restart()
         end
     end
+    
+    function thunder_strike:on_attacking_hero()
+        
+    end
 end
 
 function enemy:attack_punch_floor()
@@ -111,12 +115,11 @@ function enemy:attack_punch_floor()
 end
 
 function enemy:attack_poison_gaz()
-    print('[TODO] Poison Gaz - when enemy:attack_custom will be available in the engine')
     enemy:stop_movement()
     sprite:set_animation("spitting")
     
     local step = 500
-    local nb_gaz = 5
+    local nb_gaz = 1
     local enemy_x, enemy_y = enemy:get_position()
     
     for i = 1, nb_gaz do
@@ -166,7 +169,7 @@ function enemy:choose_attack()
     
     --if distance > 150 then
     --    if math.random(1, 2) == 1 then
-            enemy:attack_thunder_blast()
+    --        enemy:attack_thunder_blast()
     --        return
     --    end
     --elseif distance < 100 then
@@ -177,7 +180,7 @@ function enemy:choose_attack()
     --end
     --
     --if math.random(1, 2) == 1 then
-    --    enemy:attack_poison_gaz()
+        enemy:attack_poison_gaz()
     --else
     --    enemy:attack_invoke_monster()
     --end

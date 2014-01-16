@@ -71,3 +71,8 @@ function enemy:set_properties(prop)
     
     return true
 end
+
+-- Don't hurt the hero if he touch the summoning circle...
+function enemy:on_attacking_hero()
+    
+end
