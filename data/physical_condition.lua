@@ -1,13 +1,13 @@
-local game = ...
-local hero = nil
-local timers = {
+local physical_condition_manager = {}
+
+physical_condition_manager.timers = {
     poison = nil,
     slow = nil,
     confusion = nil,
 }
 
-function game:initialize_physical_condition()
-    hero = game:get_hero()
+function physical_condition_manager:initialize(game)
+    local hero = game:get_hero()
     hero.physical_condition = {
         poison = false,
         slow = false,
@@ -23,8 +23,8 @@ function game:initialize_physical_condition()
     end
     
     function hero:start_poison(damage, delay, max_iteration)
-        if hero:is_physical_condition_active('poison') and timers['poison'] ~= nil then
-            timers['poison']:stop()
+        if hero:is_physical_condition_active('poison') and physical_condition_manager.timers['poison'] ~= nil then
+            physical_condition_manager.timers['poison']:stop()
         end
         
         local iteration_poison = 0
@@ -35,7 +35,7 @@ function game:initialize_physical_condition()
                 print("do_poison")
                 sol.audio.play_sound("hero_hurt")
                 game:remove_life(damage)
-                timers['poison'] = sol.timer.start(hero, delay, do_poison)
+                physical_condition_manager.timers['poison'] = sol.timer.start(hero, delay, do_poison)
             else
                 print("fin_poison")
                 hero:set_physical_condition('poison', false)
@@ -46,3 +46,5 @@ function game:initialize_physical_condition()
         do_poison()
     end
 end
+
+return physical_condition_manager
