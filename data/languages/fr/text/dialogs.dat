@@ -505,8 +505,11 @@ dialog{
   skip = "all",
   text = [[
 Mange des Pommes
-pour récupérer des
-Luains.
+pour récupérer un
+Luain. Son doux jus
+te guérira du
+poison dont tu
+pourrais souffrir.
 ]]
 }
 --------------------
@@ -1272,9 +1275,25 @@ blocs et t'accrocher
 }
 --------------------
 
--- 3 Pommes
+-- 1 Pomme
 dialog{
   id = "_treasure.apple.1",
+  icon = 16,
+  text = [[
+Tu as trouvé 1
+Pomme !$0
+
+Consomme-les plus
+tard pour récupérer
+des Luains et
+arrêter le poison !
+]]
+}
+--------------------
+
+-- 3 Pommes
+dialog{
+  id = "_treasure.apple.2",
   icon = 16,
   text = [[
 Tu as trouvé 3

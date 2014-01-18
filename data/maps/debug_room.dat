@@ -270,6 +270,62 @@ switch{
   inactivate_when_leaving = false,
 }
 
+enemy{
+  layer = 1,
+  x = 480,
+  y = 549,
+  direction = 3,
+  breed = "debugger",
+}
+
+wall{
+  layer = 1,
+  x = 392,
+  y = 472,
+  width = 176,
+  height = 8,
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 392,
+  y = 576,
+  width = 176,
+  height = 8,
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 392,
+  y = 480,
+  width = 8,
+  height = 96,
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 560,
+  y = 480,
+  width = 8,
+  height = 96,
+  stops_hero = false,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+}
+
 tile{
   layer = 2,
   x = 0,

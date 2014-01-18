@@ -25,7 +25,7 @@ function enemy:mega_generation()
     if generation_iteration < 10 then
         local generate_breed = 'tentacle'
         for i = 1, 5 do
-            enemy:create_enemy({breed = generate_breed, x = -8*i, y = -8})
+            enemy:create_enemy({breed = generate_breed, x = -8*i, y = -8, treasure_name = "random"})
         end
         for i = 1, 5 do
             enemy:create_enemy({breed = generate_breed, x = 8*i, y = -8})

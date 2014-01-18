@@ -31,7 +31,7 @@ function physical_condition_manager:initialize(game)
         function do_poison()
             iteration_poison = iteration_poison + 1
             print(iteration_poison)
-            if iteration_poison <= max_iteration then
+            if hero:is_physical_condition_active("poison") and iteration_poison <= max_iteration then
                 print("do_poison")
                 sol.audio.play_sound("hero_hurt")
                 game:remove_life(damage)

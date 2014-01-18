@@ -18,6 +18,8 @@ local probabilities = {
   [{ "magic_flask", 2}] = 8,    -- Big magic jar.
   [{ "heart", 1}]       = 100,  -- Heart.
   [{ "fairy", 1}]       = 2,    -- Fairy.
+  [{ "apple", 1}]       = 100,  -- Apple (cure poison)
+  [{ "apple", 2}]       = 2,    -- 3 Apples (cure poison)
 }
 
 function item:on_pickable_created(pickable)
