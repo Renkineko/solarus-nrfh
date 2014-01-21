@@ -15,7 +15,7 @@ function item:on_using()
   else
     self:remove_amount(1)
     self:get_game():add_life(4)
-    hero:set_physical_condition("poison", false)
+    item:get_game():get_hero():set_physical_condition("poison", false)
   end
   self:set_finished()
 end

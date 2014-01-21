@@ -30,14 +30,11 @@ function physical_condition_manager:initialize(game)
         local iteration_poison = 0
         function do_poison()
             iteration_poison = iteration_poison + 1
-            print(iteration_poison)
             if hero:is_physical_condition_active("poison") and iteration_poison <= max_iteration then
-                print("do_poison")
                 sol.audio.play_sound("hero_hurt")
                 game:remove_life(damage)
                 physical_condition_manager.timers['poison'] = sol.timer.start(hero, delay, do_poison)
             else
-                print("fin_poison")
                 hero:set_physical_condition('poison', false)
             end
         end
