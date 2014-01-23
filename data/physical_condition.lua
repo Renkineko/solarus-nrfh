@@ -42,6 +42,27 @@ function physical_condition_manager:initialize(game)
         hero:set_physical_condition('poison', true)
         do_poison()
     end
+    
+    function hero:stop_slow()
+        if hero:is_physical_condition_active('slow') and physical_condition_manager.timers['slow'] ~= nil then
+            physical_condition_manager.timers['slow']:stop()
+        end
+        
+        hero:set_physical_condition('slow', false)
+        hero:set_walking_speed(88)
+    end
+    
+    function hero:start_slow(delay)
+        if hero:is_physical_condition_active('slow') and physical_condition_manager.timers['slow'] ~= nil then
+            physical_condition_manager.timers['slow']:stop()
+        end
+        
+        hero:set_physical_condition('slow', true)
+        hero:set_walking_speed(48)
+        physical_condition_manager.timers['slow'] = sol.timer.start(hero, delay, function()
+            hero:stop_slow()
+        end)
+    end
 end
 
 return physical_condition_manager

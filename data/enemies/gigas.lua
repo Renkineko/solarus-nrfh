@@ -99,10 +99,6 @@ function enemy:attack_thunder_blast()
             enemy:restart()
         end
     end
-    
-    function thunder_strike:on_attacking_hero()
-        
-    end
 end
 
 function enemy:attack_punch_floor()
@@ -169,7 +165,7 @@ function enemy:choose_attack()
     
     --if distance > 150 then
     --    if math.random(1, 2) == 1 then
-    --        enemy:attack_thunder_blast()
+            enemy:attack_thunder_blast()
     --        return
     --    end
     --elseif distance < 100 then
@@ -180,7 +176,7 @@ function enemy:choose_attack()
     --end
     --
     --if math.random(1, 2) == 1 then
-        enemy:attack_poison_gaz()
+    --    enemy:attack_poison_gaz()
     --else
     --    enemy:attack_invoke_monster()
     --end
