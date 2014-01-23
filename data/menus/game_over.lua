@@ -170,7 +170,7 @@ function game_over_menu:on_command_pressed(command)
   elseif command == "action" or command == "attack" then
 
     state = "finished"
-    sol.audio.play_sound("danger")
+    sol.audio.play_sound("validate_menu")
     game:set_hud_enabled(false)
     game:add_life(7 * 4)  -- Restore 7 hearts.
 
