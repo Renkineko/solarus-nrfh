@@ -74,8 +74,13 @@ function hearts:check()
 
   -- If we are in-game, play an animation and a sound if the life is low.
   if self.game:is_started() then
-
-    if self.game:get_life() <= self.game:get_max_life() / 4
+    if self.game:get_hero():is_physical_condition_active("poison")
+        and not self.game:is_suspended() then
+      need_rebuild = true
+      if self.empty_heart_sprite:get_animation() ~= "poison" then
+        self.empty_heart_sprite:set_animation("poison")
+      end
+    elseif self.game:get_life() <= self.game:get_max_life() / 4
         and not self.game:is_suspended() then
       need_rebuild = true
       if self.empty_heart_sprite:get_animation() ~= "danger" then

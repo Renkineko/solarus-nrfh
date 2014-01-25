@@ -6,8 +6,8 @@ sol.main.load_file("equipment")(game)
 sol.main.load_file("menus/pause")(game)
 sol.main.load_file("menus/dialog_box")(game)
 sol.main.load_file("menus/game_over")(game)
-sol.main.load_file("hud/hud")(game)
 local physical_condition_manager = require("physical_condition")
+sol.main.load_file("hud/hud")(game)
 
 -- Useful functions for this specific quest.
 
@@ -15,8 +15,8 @@ function game:on_started()
 
   -- Set up the dialog box and the HUD.
   self:initialize_dialog_box()
-  self:initialize_hud()
   physical_condition_manager:initialize(self)
+  self:initialize_hud()
 end
 
 function game:on_finished()
