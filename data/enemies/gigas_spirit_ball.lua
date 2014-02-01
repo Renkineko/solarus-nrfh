@@ -43,9 +43,8 @@ end
 
 function enemy:on_created()
     enemy:set_life(1000000)
-    enemy:set_damage(4)
-    enemy:set_magic_damage(10)
     enemy:set_invincible()
+    enemy:set_can_hurt_hero_running(true)
     enemy:create_sprite("enemies/gigas_spirit_ball")
     --self:set_obstacle_behavior("flying")
     enemy:set_layer_independent_collisions()
@@ -84,4 +83,18 @@ end
 function enemy:appear(pos_x, pos_y)
     enemy:set_position(pos_x, pos_y)
     enemy:set_enabled(true)
+end
+
+-- Gigas Spirit have a specific attack which drain magic.
+function enemy:on_attacking_hero(hero)
+  local game = enemy:get_game()
+  
+  -- In any case, we do the hurt animation as usual
+  hero:start_hurt(enemy, 4)
+  
+  -- If hero has magic, it is drained.
+  if game:get_magic() > 0 then
+    game:remove_magic(10)
+    --sol.audio.play_sound("magic_bar")
+  end
 end
