@@ -31,47 +31,73 @@ function physical_condition_manager:initialize(game)
             return false
         end
         
-        in_command_pressed = true
         if command == "left" then
             print("go to right instead of left")
+            game:simulate_command_released("left")
+            in_command_pressed = true
             game:simulate_command_pressed("right")
+            in_command_pressed = false
+            return true                       
         elseif command == "right" then
             print("go to left instead of right")
+            game:simulate_command_released("right")
+            in_command_pressed = true
             game:simulate_command_pressed("left")
+            in_command_pressed = false
+            return true                       
         elseif command == "up" then
             print("go down instead of up")
+            game:simulate_command_released("up")
+            in_command_pressed = true
             game:simulate_command_pressed("down")
+            in_command_pressed = false
+            return true                       
         elseif command == "down" then
             print("go up instead of down")
+            game:simulate_command_released("down")
+            in_command_pressed = true
             game:simulate_command_pressed("up")
+            in_command_pressed = false
+            return true
         end
         
-        in_command_pressed = false
+	return false
     end
     
     function game:on_command_released(command)
-        
-        if not hero:is_physical_condition_active('confusion') or not in_command_release or game:is_paused() then
+        -- maybe bugged with the last condition, but not sure...
+        if not hero:is_physical_condition_active('confusion') or not in_command_release or game:is_paused() or not in_command_pressed then
             print("not confused")
             return false
         end
         
-        in_command_release = true
         if command == "left" then
             print("stop to right instead of left")
+            in_command_release = true
             game:on_command_released("right")
+            in_command_release = false
+            return true
         elseif command == "right" then
             print("stop to left instead of right")
+            in_command_release = true
             game:on_command_released("left")
+            in_command_release = false
+            return true
         elseif command == "up" then
             print("stop down instead of up")
+            in_command_release = true
             game:on_command_released("down")
+            in_command_release = false
+            return true
         elseif command == "down" then
             print("stop up instead of down")
+            in_command_release = true
             game:on_command_released("up")
+            in_command_release = false
+            return true
         end
-        
-        in_command_release = false
+
+        return false
     end
         
     function hero:start_confusion(delay)
