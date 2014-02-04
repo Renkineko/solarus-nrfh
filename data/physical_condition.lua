@@ -25,9 +25,8 @@ function physical_condition_manager:initialize(game)
     end
     
     function game:on_command_pressed(command)
-        
         if not hero:is_physical_condition_active('confusion') or in_command_pressed or game:is_paused() then
-            print("not confused")
+            print("not confused (press)", command)
             return false
         end
         
@@ -65,9 +64,10 @@ function physical_condition_manager:initialize(game)
     end
     
     function game:on_command_released(command)
+        print(command, "is released")
         -- maybe bugged with the last condition, but not sure...
-        if not hero:is_physical_condition_active('confusion') or not in_command_release or game:is_paused() or not in_command_pressed then
-            print("not confused")
+        if not hero:is_physical_condition_active('confusion') or not in_command_release or game:is_paused() then
+            print("not confused (release)", command)
             return false
         end
         
