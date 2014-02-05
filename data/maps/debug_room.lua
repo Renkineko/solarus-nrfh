@@ -43,3 +43,7 @@ function switch_walk:on_activated()
     
     m:start(hero)
 end
+
+function confusion_sensor:on_activated()
+    hero:start_confusion(2500)
+end

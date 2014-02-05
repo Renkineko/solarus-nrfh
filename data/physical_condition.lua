@@ -26,33 +26,28 @@ function physical_condition_manager:initialize(game)
     
     function game:on_command_pressed(command)
         if not hero:is_physical_condition_active('confusion') or in_command_pressed or game:is_paused() then
-            print("not confused (press)", command)
             return false
         end
         
         if command == "left" then
-            print("go to right instead of left")
             game:simulate_command_released("left")
             in_command_pressed = true
             game:simulate_command_pressed("right")
             in_command_pressed = false
             return true                       
         elseif command == "right" then
-            print("go to left instead of right")
             game:simulate_command_released("right")
             in_command_pressed = true
             game:simulate_command_pressed("left")
             in_command_pressed = false
             return true                       
         elseif command == "up" then
-            print("go down instead of up")
             game:simulate_command_released("up")
             in_command_pressed = true
             game:simulate_command_pressed("down")
             in_command_pressed = false
             return true                       
         elseif command == "down" then
-            print("go up instead of down")
             game:simulate_command_released("down")
             in_command_pressed = true
             game:simulate_command_pressed("up")
@@ -64,35 +59,28 @@ function physical_condition_manager:initialize(game)
     end
     
     function game:on_command_released(command)
-        print(command, "is released")
-        -- maybe bugged with the last condition, but not sure...
-        if not hero:is_physical_condition_active('confusion') or not in_command_release or game:is_paused() then
-            print("not confused (release)", command)
+        if not hero:is_physical_condition_active('confusion') or in_command_release or game:is_paused() then
             return false
         end
         
         if command == "left" then
-            print("stop to right instead of left")
             in_command_release = true
-            game:on_command_released("right")
+            game:simulate_command_released("right")
             in_command_release = false
             return true
         elseif command == "right" then
-            print("stop to left instead of right")
             in_command_release = true
-            game:on_command_released("left")
+            game:simulate_command_released("left")
             in_command_release = false
             return true
         elseif command == "up" then
-            print("stop down instead of up")
             in_command_release = true
-            game:on_command_released("down")
+            game:simulate_command_released("down")
             in_command_release = false
             return true
         elseif command == "down" then
-            print("stop up instead of down")
             in_command_release = true
-            game:on_command_released("up")
+            game:simulate_command_released("up")
             in_command_release = false
             return true
         end
@@ -101,8 +89,25 @@ function physical_condition_manager:initialize(game)
     end
         
     function hero:start_confusion(delay)
+        local aDirectionPressed = {
+            right = false,
+            left = false,
+            up = false,
+            down = false
+        }
+        local bAlreadyConfused = hero:is_physical_condition_active('confusion')
+        
         if hero:is_physical_condition_active('confusion') and physical_condition_manager.timers['confusion'] ~= nil then
             physical_condition_manager.timers['confusion']:stop()
+        end
+        
+        if not bAlreadyConfused then
+            for key, value in pairs(aDirectionPressed) do
+                if game:is_command_pressed(key) then
+                    aDirectionPressed[key] = true
+                    game:simulate_command_released(key)
+                end
+            end
         end
         
         hero:set_physical_condition('confusion', true)
@@ -110,6 +115,14 @@ function physical_condition_manager:initialize(game)
         physical_condition_manager.timers['confusion'] = sol.timer.start(hero, delay, function()
             hero:stop_confusion()
         end)
+        
+        if not bAlreadyConfused then
+            for key, value in pairs(aDirectionPressed) do
+                if value then
+                    game:simulate_command_pressed(key)
+                end
+            end
+        end
     end
     
     function hero:start_poison(damage, delay, max_iteration)
@@ -149,11 +162,31 @@ function physical_condition_manager:initialize(game)
     end
     
     function hero:stop_confusion()
+        local aDirectionPressed = {
+            right = {"left", false},
+            left = {"right", false},
+            up = {"down", false},
+            down = {"up", false}
+        }
+        
         if hero:is_physical_condition_active('confusion') and physical_condition_manager.timers['confusion'] ~= nil then
             physical_condition_manager.timers['confusion']:stop()
         end
         
+        for key, value in pairs(aDirectionPressed) do
+            if game:is_command_pressed(key) then
+                aDirectionPressed[key][2] = true
+                game:simulate_command_released(key)
+            end
+        end
+        
         hero:set_physical_condition('confusion', false)
+        
+        for key, value in pairs(aDirectionPressed) do
+            if value[2] then
+                game:simulate_command_pressed(value[1])
+            end
+        end
     end
     
     function hero:stop_slow()
