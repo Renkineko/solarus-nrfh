@@ -4388,10 +4388,7 @@ wall{
   width = 112,
   height = 16,
   name = "wall_doors_7",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4401,10 +4398,7 @@ wall{
   width = 112,
   height = 16,
   name = "wall_doors_6",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 npc{
@@ -4659,10 +4653,7 @@ wall{
   y = 496,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4671,10 +4662,7 @@ wall{
   y = 496,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4683,10 +4671,7 @@ wall{
   y = 512,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4695,10 +4680,7 @@ wall{
   y = 496,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4707,10 +4689,7 @@ wall{
   y = 512,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4719,10 +4698,7 @@ wall{
   y = 416,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4731,10 +4707,7 @@ wall{
   y = 432,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4743,10 +4716,7 @@ wall{
   y = 432,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4755,10 +4725,7 @@ wall{
   y = 416,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4767,10 +4734,7 @@ wall{
   y = 592,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4779,10 +4743,7 @@ wall{
   y = 592,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4791,10 +4752,7 @@ wall{
   y = 592,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4803,10 +4761,7 @@ wall{
   y = 480,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4815,10 +4770,7 @@ wall{
   y = 480,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4827,10 +4779,7 @@ wall{
   y = 608,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4839,10 +4788,7 @@ wall{
   y = 416,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4851,10 +4797,7 @@ wall{
   y = 432,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4863,10 +4806,7 @@ wall{
   y = 432,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4875,10 +4815,7 @@ wall{
   y = 608,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4887,10 +4824,7 @@ wall{
   y = 416,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4899,10 +4833,7 @@ wall{
   y = 752,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -4911,10 +4842,7 @@ wall{
   y = 752,
   width = 16,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 switch{
@@ -5175,7 +5103,6 @@ teletransporter{
   height = 16,
   name = "tp_hole",
   sound = "warp",
-  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "tp_hole_dest",
 }
@@ -5188,7 +5115,6 @@ teletransporter{
   height = 16,
   name = "tp_hole_back",
   sound = "warp",
-  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "tp_hole_back_dest",
 }
@@ -5557,7 +5483,6 @@ teletransporter{
   height = 16,
   name = "tp_mini_boss_room_from",
   sprite = "entities/teletransporter",
-  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "dst_from_mini_boss_room",
 }
@@ -5568,10 +5493,7 @@ wall{
   y = 256,
   width = 16,
   height = 112,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -5580,10 +5502,7 @@ wall{
   y = 560,
   width = 16,
   height = 112,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 destination{
@@ -5621,10 +5540,7 @@ wall{
   width = 16,
   height = 112,
   name = "wall_doors_5",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 door{
@@ -9832,10 +9748,7 @@ wall{
   width = 64,
   height = 16,
   name = "wall_doors_4",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -9845,10 +9758,7 @@ wall{
   width = 16,
   height = 64,
   name = "wall_doors_3",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -9858,10 +9768,7 @@ wall{
   width = 64,
   height = 16,
   name = "wall_doors",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -9871,10 +9778,7 @@ wall{
   width = 16,
   height = 64,
   name = "wall_doors_2",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 teletransporter{
@@ -9884,7 +9788,6 @@ teletransporter{
   width = 16,
   height = 16,
   name = "teleport_out",
-  transition = "fade",
   destination_map = "the_hub",
   destination = "default_dest",
 }
@@ -10131,7 +10034,6 @@ teletransporter{
   name = "tp-_mini_boss_room_to",
   sprite = "entities/teletransporter",
   sound = "warp",
-  transition = "fade",
   destination_map = "lost_palazzo",
   destination = "dst_to_mini_boss_room",
 }
@@ -10300,9 +10202,6 @@ wall{
   height = 32,
   name = "no_shortcut_wall",
   stops_hero = true,
-  stops_enemies = false,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 crystal_block{
@@ -10463,10 +10362,7 @@ wall{
   y = 1368,
   width = 64,
   height = 16,
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 switch{
@@ -11618,10 +11514,7 @@ wall{
   width = 8,
   height = 56,
   name = "wall_high_bubbles",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11631,10 +11524,7 @@ wall{
   width = 8,
   height = 56,
   name = "wall_high_bubbles_2",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11644,10 +11534,7 @@ wall{
   width = 8,
   height = 200,
   name = "wall_high_bubbles_3",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11657,10 +11544,7 @@ wall{
   width = 32,
   height = 8,
   name = "wall_high_bubbles_5",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11670,10 +11554,7 @@ wall{
   width = 80,
   height = 8,
   name = "wall_high_bubbles_7",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 enemy{
@@ -11746,10 +11627,7 @@ wall{
   width = 96,
   height = 8,
   name = "wall_high_bubbles_8",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 enemy{
@@ -11795,10 +11673,7 @@ wall{
   width = 32,
   height = 8,
   name = "wall_high_bubbles_11",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 enemy{
@@ -11844,10 +11719,7 @@ wall{
   width = 32,
   height = 8,
   name = "wall_high_bubbles_14",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 dynamic_tile{
@@ -11924,10 +11796,7 @@ wall{
   width = 8,
   height = 200,
   name = "wall_high_bubbles_4",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11937,10 +11806,7 @@ wall{
   width = 240,
   height = 8,
   name = "boss_wall_4",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11950,10 +11816,7 @@ wall{
   width = 8,
   height = 152,
   name = "boss_wall_3",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11963,10 +11826,7 @@ wall{
   width = 320,
   height = 8,
   name = "boss_wall",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -11976,10 +11836,7 @@ wall{
   width = 8,
   height = 152,
   name = "boss_wall_2",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 npc{
@@ -11998,10 +11855,7 @@ wall{
   y = 552,
   width = 8,
   height = 32,
-  stops_hero = false,
-  stops_enemies = false,
   stops_npcs = true,
-  stops_blocks = false,
 }
 
 wall{
@@ -12010,10 +11864,7 @@ wall{
   y = 552,
   width = 8,
   height = 32,
-  stops_hero = false,
-  stops_enemies = false,
   stops_npcs = true,
-  stops_blocks = false,
 }
 
 wall{
@@ -12023,10 +11874,7 @@ wall{
   width = 8,
   height = 80,
   name = "boss_wall_5",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -12036,10 +11884,7 @@ wall{
   width = 8,
   height = 80,
   name = "boss_wall_6",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -12049,10 +11894,7 @@ wall{
   width = 32,
   height = 8,
   name = "boss_wall_7",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
 wall{
@@ -12062,9 +11904,6 @@ wall{
   width = 32,
   height = 8,
   name = "boss_wall_8",
-  stops_hero = false,
   stops_enemies = true,
-  stops_npcs = false,
-  stops_blocks = false,
 }
 
