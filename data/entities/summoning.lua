@@ -29,7 +29,7 @@ function custent:summon()
         end
         
         local enemy = custent:get_map():create_enemy({name = name, x = x, y = y, layer = l, breed = breed_to_create, direction = 3})
-        enemy:restart()
+        -- enemy:restart()
     end
     
     custent:remove()

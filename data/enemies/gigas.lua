@@ -146,7 +146,7 @@ function enemy:attack_invoke_monster()
         max_number_monster = 4
     })
     
-    local summon2 = enemy:get_map():create_enemy({x = 1056, y = 160, layer = 0, breed = 'summoning', direction = 0})
+    local summon2 = enemy:get_map():create_custom_entity({x = 1056, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon2:set_properties({
         sprite = "effects/cast1",
         breed_to_create = "bee_guard",
@@ -194,12 +194,10 @@ function enemy:on_created()
         pos_layer = pos_layer + 1
     end
     
-    sol.timer.start(enemy:get_map(), 50, function()
-        for n = 1, #spirit_balls_pos do
-            spirit_balls[n] = enemy:create_enemy({name = "gigas_spirit_" .. n, direction = 0, breed = "gigas_spirit_ball", layer = pos_layer})
-            spirit_balls[n]:set_enabled(false)
-        end
-    end)
+    for n = 1, #spirit_balls_pos do
+        spirit_balls[n] = enemy:create_enemy({name = "gigas_spirit_" .. n, direction = 0, breed = "gigas_spirit_ball", layer = pos_layer})
+        spirit_balls[n]:set_enabled(false)
+    end
 end
 
 function enemy:on_restarted()
