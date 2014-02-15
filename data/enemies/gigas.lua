@@ -139,14 +139,14 @@ function enemy:attack_invoke_monster()
     enemy:stop_movement()
     sprite:set_animation("hands_up")
     
-    local summon1 = enemy:get_map():create_enemy({x = 880, y = 160, layer = 0, breed = 'summoning', direction = 0})
+    local summon1 = enemy:get_map():create_custom_entity({x = 880, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon1:set_properties({
         sprite = "effects/cast1",
         breed_to_create = "bee_guard",
         max_number_monster = 4
     })
     
-    local summon2 = enemy:get_map():create_enemy({x = 1056, y = 160, layer = 0, breed = 'summoning', direction = 0})
+    local summon2 = enemy:get_map():create_custom_entity({x = 1056, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon2:set_properties({
         sprite = "effects/cast1",
         breed_to_create = "bee_guard",
@@ -165,7 +165,7 @@ function enemy:choose_attack()
     
     --if distance > 150 then
     --    if math.random(1, 2) == 1 then
-            enemy:attack_thunder_blast()
+    --        enemy:attack_thunder_blast()
     --        return
     --    end
     --elseif distance < 100 then
@@ -178,7 +178,7 @@ function enemy:choose_attack()
     --if math.random(1, 2) == 1 then
     --    enemy:attack_poison_gaz()
     --else
-    --    enemy:attack_invoke_monster()
+        enemy:attack_invoke_monster()
     --end
 end
 
@@ -193,7 +193,7 @@ function enemy:on_created()
     if pos_layer < 2 then
         pos_layer = pos_layer + 1
     end
-
+    
     for n = 1, #spirit_balls_pos do
         spirit_balls[n] = enemy:create_enemy({name = "gigas_spirit_" .. n, direction = 0, breed = "gigas_spirit_ball", layer = pos_layer})
         spirit_balls[n]:set_enabled(false)

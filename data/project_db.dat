@@ -26,44 +26,6 @@ tileset{ id = "15", description = "Final dungeon" }
 tileset{ id = "16", description = "Old school dungeon" }
 tileset{ id = "6", description = "Intro" }
 
-music{ id = "agahnim", description = "Agahnim theme" }
-music{ id = "beginning", description = "Beginning" }
-music{ id = "boss", description = "Boss" }
-music{ id = "castle", description = "Castle" }
-music{ id = "cave", description = "Cave" }
-music{ id = "credits", description = "Credits" }
-music{ id = "dark_mountain", description = "Dark Mountain" }
-music{ id = "dark_world", description = "Dark World" }
-music{ id = "light_world_dungeon", description = "Dungeon (light world)" }
-music{ id = "dark_world_dungeon", description = "Dungeon (dark world)" }
-music{ id = "tloz_dungeon", description = "Dungeon (old school)" }
-music{ id = "dungeon_finished", description = "Dungeon finished" }
-music{ id = "eagle_tower", description = "Eagle's Tower" }
-music{ id = "excalibur", description = "Excalibur" }
-music{ id = "fanfare", description = "Fanfare" }
-music{ id = "fortune_teller", description = "Fortune Teller" }
-music{ id = "ganon_appears", description = "Ganon appears" }
-music{ id = "ganon_battle", description = "Ganon battle" }
-music{ id = "ganon_theme", description = "Ganon theme" }
-music{ id = "great_fairy", description = "Great Fairy" }
-music{ id = "village", description = "Kakariko Village" }
-music{ id = "legend", description = "Legend" }
-music{ id = "lost_woods", description = "Lost Woods" }
-music{ id = "mini_game", description = "Mini game" }
-music{ id = "la_mountains", description = "Mountains (LA)" }
-music{ id = "overworld", description = "Overworld" }
-music{ id = "sanctuary", description = "Sanctuary" }
-music{ id = "game_over", description = "Selection menu & Game Over" }
-music{ id = "soldiers", description = "Soldiers" }
-music{ id = "southern_shrine", description = "Southern Shrine (LA)" }
-music{ id = "rabbit", description = "Turned into a rabbit" }
-music{ id = "title_screen", description = "Title screen" }
-music{ id = "triforce", description = "Triforce" }
-music{ id = "victory", description = "Victory" }
-music{ id = "witch_hut", description = "Witch (LA)" }
-music{ id = "zelda", description = "Zelda theme" }
-music{ id = "lost_palazzo", description = "Lost Palazzo" }
-
 sprite{ id = "npc/agahnim", description = "Agahnim" }
 sprite{ id = "npc/billy", description = "Billy" }
 sprite{ id = "npc/black_knight_soldier", description = "Black Knight Soldier" }
@@ -268,6 +230,44 @@ sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
 sprite{ id = "enemies/gigas_spirit_ball", description = "Enemy: Gigas Spirit Ball" }
 sprite{ id = "enemies/poison_gaz", description = "Enemy: Poison Gaz" }
 sprite{ id = "enemies/thunder_strike", description = "Enemy: Thunder Strike" }
+
+music{ id = "agahnim", description = "Agahnim theme" }
+music{ id = "beginning", description = "Beginning" }
+music{ id = "boss", description = "Boss" }
+music{ id = "castle", description = "Castle" }
+music{ id = "cave", description = "Cave" }
+music{ id = "credits", description = "Credits" }
+music{ id = "dark_mountain", description = "Dark Mountain" }
+music{ id = "dark_world", description = "Dark World" }
+music{ id = "light_world_dungeon", description = "Dungeon (light world)" }
+music{ id = "dark_world_dungeon", description = "Dungeon (dark world)" }
+music{ id = "tloz_dungeon", description = "Dungeon (old school)" }
+music{ id = "dungeon_finished", description = "Dungeon finished" }
+music{ id = "eagle_tower", description = "Eagle's Tower" }
+music{ id = "excalibur", description = "Excalibur" }
+music{ id = "fanfare", description = "Fanfare" }
+music{ id = "fortune_teller", description = "Fortune Teller" }
+music{ id = "ganon_appears", description = "Ganon appears" }
+music{ id = "ganon_battle", description = "Ganon battle" }
+music{ id = "ganon_theme", description = "Ganon theme" }
+music{ id = "great_fairy", description = "Great Fairy" }
+music{ id = "village", description = "Kakariko Village" }
+music{ id = "legend", description = "Legend" }
+music{ id = "lost_woods", description = "Lost Woods" }
+music{ id = "mini_game", description = "Mini game" }
+music{ id = "la_mountains", description = "Mountains (LA)" }
+music{ id = "overworld", description = "Overworld" }
+music{ id = "sanctuary", description = "Sanctuary" }
+music{ id = "game_over", description = "Selection menu & Game Over" }
+music{ id = "soldiers", description = "Soldiers" }
+music{ id = "southern_shrine", description = "Southern Shrine (LA)" }
+music{ id = "rabbit", description = "Turned into a rabbit" }
+music{ id = "title_screen", description = "Title screen" }
+music{ id = "triforce", description = "Triforce" }
+music{ id = "victory", description = "Victory" }
+music{ id = "witch_hut", description = "Witch (LA)" }
+music{ id = "zelda", description = "Zelda theme" }
+music{ id = "lost_palazzo", description = "Lost Palazzo" }
 
 sound{ id = "arrow_hit", description = "arrow_hit" }
 sound{ id = "bomb", description = "bomb" }
@@ -485,6 +485,7 @@ enemy{ id = "thunder_strike_target", description = "Thunder Strike Target" }
 enemy{ id = "debugger", description = "Debugger" }
 enemy{ id = "thunder_strike_circle", description = "Thunder Strike Circle" }
 
+entity{ id = "summoning", description = "Summoning" }
 
 language{ id = "de", description = "Deutsch" }
 language{ id = "en", description = "English" }
