@@ -141,14 +141,14 @@ function enemy:attack_invoke_monster()
     
     local summon1 = enemy:get_map():create_custom_entity({x = 880, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon1:set_properties({
-        sprite = "effects/cast1",
+        sprite = "custent/cast1",
         breed_to_create = "bee_guard",
         max_number_monster = 4
     })
     
     local summon2 = enemy:get_map():create_custom_entity({x = 1056, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon2:set_properties({
-        sprite = "effects/cast1",
+        sprite = "custent/cast1",
         breed_to_create = "bee_guard",
         max_number_monster = 4
     })

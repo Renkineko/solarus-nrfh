@@ -2,10 +2,13 @@ local physical_condition_manager = {}
 local in_command_pressed = false
 local in_command_release = false
 
+local custent_frozen
+
 physical_condition_manager.timers = {
     poison = nil,
     slow = nil,
     confusion = nil,
+    frozen = nil,
 }
 
 function physical_condition_manager:initialize(game)
@@ -13,7 +16,8 @@ function physical_condition_manager:initialize(game)
     hero.physical_condition = {
         poison = false,
         slow = false,
-        confusion = false
+        confusion = false,
+        frozen = false
     }
     
     function hero:is_physical_condition_active(physical_condition)
@@ -125,6 +129,20 @@ function physical_condition_manager:initialize(game)
         end
     end
     
+    function hero:start_frozen(delay)
+        if hero:is_physical_condition_active('frozen') then
+            return
+        end
+        
+        -- reverse the comment of the two lines to fix the bug
+        hero:get_map():create_custom_entity({x = 0, y = 0, layer = 0, model = 'frozen_state', direction = 0})
+        --custent_frozen = hero:get_map():create_custom_entity({x = 0, y = 0, layer = 0, model = 'frozen_state', direction = 0})
+        
+        physical_condition_manager.timers['frozen'] = sol.timer.start(hero, delay, function()
+            hero:stop_frozen()
+        end)
+    end
+    
     function hero:start_poison(damage, delay, max_iteration)
         if hero:is_physical_condition_active('poison') and physical_condition_manager.timers['poison'] ~= nil then
             physical_condition_manager.timers['poison']:stop()
@@ -187,6 +205,16 @@ function physical_condition_manager:initialize(game)
                 game:simulate_command_pressed(value[1])
             end
         end
+    end
+    
+        
+    function hero:stop_frozen()
+        if hero:is_physical_condition_active('frozen') and physical_condition_manager.timers['frozen'] ~= nil then
+            physical_condition_manager.timers['frozen']:stop()
+        end
+        
+        hero:set_physical_condition('frozen', false)
+        custent_frozen:melt()
     end
     
     function hero:stop_slow()

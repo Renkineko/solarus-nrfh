@@ -130,7 +130,8 @@ sprite{ id = "hero/ground1", description = "Grass under hero" }
 sprite{ id = "hero/ground2", description = "Shallow water under hero" }
 sprite{ id = "hero/trail", description = "Hero trail" }
 sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
-sprite{ id = "effects/cast1", description = "Effects: Cast1" }
+sprite{ id = "custent/cast1", description = "Custent: Cast1" }
+sprite{ id = "custent/frozen_state", description = "Custent: Frozen State" }
 sprite{ id = "enemies/black_knight_soldier_sword", description = "Enemy: Black knight soldier sword" }
 sprite{ id = "enemies/khorneth_left_blade", description = "Enemy: Khorneth left blade" }
 sprite{ id = "enemies/khorneth_right_blade", description = "Enemy: Khorneth right blade" }
@@ -486,6 +487,7 @@ enemy{ id = "debugger", description = "Debugger" }
 enemy{ id = "thunder_strike_circle", description = "Thunder Strike Circle" }
 
 entity{ id = "summoning", description = "Summoning" }
+entity{ id = "frozen_state", description = "Frozen State" }
 
 language{ id = "de", description = "Deutsch" }
 language{ id = "en", description = "English" }
