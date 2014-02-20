@@ -480,7 +480,6 @@ enemy{ id = "fire_dragonsnake", description = "Dragonsnake (feu)" }
 enemy{ id = "wiznake", description = "Wiznake" }
 enemy{ id = "gigas", description = "Gigas" }
 enemy{ id = "gigas_spirit_ball", description = "Gigas Spirit Ball" }
-enemy{ id = "summoning", description = "Summoning" }
 enemy{ id = "poison_gaz", description = "Poison Gaz" }
 enemy{ id = "thunder_strike_target", description = "Thunder Strike Target" }
 enemy{ id = "debugger", description = "Debugger" }

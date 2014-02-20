@@ -186,10 +186,6 @@ end
 
 function enemy:on_attacking_hero(hero, attacking_sprite)
     local enemy_x, enemy_y = enemy:get_position()
-    local offset_x, offset_y = attacking_sprite:get_xy()
-    
-    local source_x = enemy_x + offset_x
-    local source_y = enemy_y + offset_y
-    hero:start_hurt(source_x, source_y, 40, 0)
+    hero:start_hurt(enemy, attacking_sprite, 40)
     hero:start_slow(10000)
 end

@@ -1,6 +1,6 @@
 local custent = ...
 local hero = custent:get_map():get_entity('hero')
---local sprite -- uncomment this to fix the bug
+local sprite
 
 function custent:on_created()
     local hero_x, hero_y, hero_l = hero:get_position()
@@ -12,8 +12,7 @@ function custent:on_created()
     custent:set_drawn_in_y_order(true)
     custent:set_traversable_by('enemy', true)
     
-    -- remove the local to fix the bug
-    local sprite = custent:create_sprite("custent/frozen_state")
+    sprite = custent:create_sprite("custent/frozen_state")
     
     sprite:set_animation('freeze')
     function sprite:on_animation_finished()
@@ -21,8 +20,8 @@ function custent:on_created()
     end
     
     custent:add_collision_test('sprite', function(me, collider, custent_sprite, collider_sprite)
-        if collider:get_type() == 'enemy' then
-            
+        if collider:get_type() == 'enemy' and collider:get_damage() > 0 and not hero:is_invincible() then
+            hero:start_hurt(collider, collider_sprite, collider:get_damage())
         end
     end)
     

@@ -91,6 +91,31 @@ function physical_condition_manager:initialize(game)
 
         return false
     end
+    
+    function hero:on_taking_damage(in_damage)
+        local damage = in_damage
+        
+        if hero:is_physical_condition_active('frozen') then
+            damage = damage * 3
+            hero:stop_frozen()
+        end
+        
+        if damage == 0 then
+            return
+        end
+        
+        local shield_level = game:get_ability('shield')
+        local tunic_level = game:get_ability('tunic')
+        
+        local protection_divider = tunic_level * math.ceil(shield_level / 2)
+        damage = math.floor(damage / protection_divider)
+        
+        if damage < 1 then
+            damage = 1
+        end
+        print(damage,in_damage,protection_divider,tunic_level,shield_level)
+        game:remove_life(damage)
+    end
         
     function hero:start_confusion(delay)
         local aDirectionPressed = {
@@ -134,10 +159,9 @@ function physical_condition_manager:initialize(game)
             return
         end
         
-        -- reverse the comment of the two lines to fix the bug
-        hero:get_map():create_custom_entity({x = 0, y = 0, layer = 0, model = 'frozen_state', direction = 0})
-        --custent_frozen = hero:get_map():create_custom_entity({x = 0, y = 0, layer = 0, model = 'frozen_state', direction = 0})
+        custent_frozen = hero:get_map():create_custom_entity({x = 0, y = 0, layer = 0, model = 'frozen_state', direction = 0})
         
+        hero:set_physical_condition('frozen', true)
         physical_condition_manager.timers['frozen'] = sol.timer.start(hero, delay, function()
             hero:stop_frozen()
         end)
