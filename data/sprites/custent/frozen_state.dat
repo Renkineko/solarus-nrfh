@@ -11,7 +11,7 @@ animation{
   name = "frozen",
   src_image = "custent/frozen_state.png",
   directions = {
-    { x = 256, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 48, num_frames = 5 },
+    { x = 256, y = 0, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 48 },
   },
 }
 

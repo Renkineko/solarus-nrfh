@@ -10,7 +10,6 @@ function custent:on_created()
     custent:set_size(hero_size_width, hero_size_height)
     custent:set_origin(8, 8)
     custent:set_drawn_in_y_order(true)
-    custent:set_traversable_by('enemy', true)
     
     sprite = custent:create_sprite("custent/frozen_state")
     
@@ -20,8 +19,9 @@ function custent:on_created()
     end
     
     custent:add_collision_test('sprite', function(me, collider, custent_sprite, collider_sprite)
-        if collider:get_type() == 'enemy' and collider:get_damage() > 0 and not hero:is_invincible() then
+        if collider:get_type() == 'enemy' and collider:get_damage() > 0 then
             hero:start_hurt(collider, collider_sprite, collider:get_damage())
+            me:clear_collision_tests()
         end
     end)
     
