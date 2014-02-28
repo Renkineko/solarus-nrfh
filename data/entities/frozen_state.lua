@@ -13,7 +13,8 @@ function custent:on_created()
     
     sprite = custent:create_sprite("custent/frozen_state")
     
-    sprite:set_animation('freeze')
+    sprite:set_animation('freezing')
+    sol.audio.play_sound('frozen_state_freezing')
     function sprite:on_animation_finished()
         sprite:set_animation('frozen')
     end
@@ -30,7 +31,17 @@ end
 
 function custent:melt()
     
-    sprite:set_animation('melt')
+    sprite:set_animation('melting')
+    sol.audio.play_sound('frozen_state_melting')
+    function sprite:on_animation_finished()
+        custent:remove()
+        hero:unfreeze()
+    end
+end
+
+function custent:shatter()
+    sprite:set_animation('shattering')
+    sol.audio.play_sound('frozen_state_shattering')
     function sprite:on_animation_finished()
         custent:remove()
         hero:unfreeze()

@@ -1,5 +1,5 @@
 animation{
-  name = "freeze",
+  name = "freezing",
   src_image = "custent/frozen_state.png",
   frame_delay = 50,
   directions = {
@@ -16,10 +16,20 @@ animation{
 }
 
 animation{
-  name = "melt",
+  name = "melting",
   src_image = "custent/frozen_state.png",
   frame_delay = 50,
   directions = {
     { x = 0, y = 64, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 48, num_frames = 5 },
   },
 }
+
+animation{
+  name = "shattering",
+  src_image = "custent/frozen_state.png",
+  frame_delay = 50,
+  directions = {
+    { x = 0, y = 64, frame_width = 64, frame_height = 64, origin_x = 32, origin_y = 48, num_frames = 5 },
+  },
+}
+

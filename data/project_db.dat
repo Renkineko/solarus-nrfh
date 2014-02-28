@@ -294,6 +294,9 @@ sound{ id = "enemy_killed", description = "enemy_killed" }
 sound{ id = "explosion", description = "explosion" }
 sound{ id = "external_stairs_down", description = "external_stairs_down" }
 sound{ id = "external_stairs_up", description = "external_stairs_up" }
+sound{ id = "frozen_state_freezing", description = "Frozen State: Freezing" }
+sound{ id = "frozen_state_melting", description = "Frozen State: Melting" }
+sound{ id = "frozen_state_shattering", description = "Frozen State: Shattering" }
 sound{ id = "heart_container", description = "heart_container" }
 sound{ id = "heart", description = "heart" }
 sound{ id = "hero_dying", description = "hero_dying" }

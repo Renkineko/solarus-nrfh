@@ -97,7 +97,7 @@ function physical_condition_manager:initialize(game)
         
         if hero:is_physical_condition_active('frozen') then
             damage = damage * 3
-            hero:stop_frozen()
+            hero:stop_frozen(true)
         end
         
         if damage == 0 then
@@ -163,7 +163,7 @@ function physical_condition_manager:initialize(game)
         
         hero:set_physical_condition('frozen', true)
         physical_condition_manager.timers['frozen'] = sol.timer.start(hero, delay, function()
-            hero:stop_frozen()
+            hero:stop_frozen(false)
         end)
     end
     
@@ -232,13 +232,17 @@ function physical_condition_manager:initialize(game)
     end
     
         
-    function hero:stop_frozen()
+    function hero:stop_frozen(shatter)
         if hero:is_physical_condition_active('frozen') and physical_condition_manager.timers['frozen'] ~= nil then
             physical_condition_manager.timers['frozen']:stop()
         end
         
         hero:set_physical_condition('frozen', false)
-        custent_frozen:melt()
+        if shatter then
+            custent_frozen:shatter()
+        else
+            custent_frozen:melt()
+        end
     end
     
     function hero:stop_slow()
