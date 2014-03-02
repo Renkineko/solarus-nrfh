@@ -122,10 +122,12 @@ function map:on_started()
     end
     
     if map:get_game():get_value("lost_palazzo_mini_boss_killed") then
+        print("bouh")
         map:remove_entities("close_mb_sensor")
         map:open_doors("mb_door")
         map:set_entities_enabled("tp_mini_boss_room", true)
     else
+        print("dafuq")
         mini_boss_gigas:set_enabled(false)
         map:set_entities_enabled("tp_mini_boss_room", false)
     end

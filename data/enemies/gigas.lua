@@ -115,7 +115,7 @@ function enemy:attack_poison_gaz()
     sprite:set_animation("spitting")
     
     local step = 500
-    local nb_gaz = 1
+    local nb_gaz = 3
     local enemy_x, enemy_y = enemy:get_position()
     
     for i = 1, nb_gaz do
@@ -141,14 +141,14 @@ function enemy:attack_invoke_monster()
     
     local summon1 = enemy:get_map():create_custom_entity({x = 880, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon1:set_properties({
-        sprite = "effects/cast1",
+        sprite = "custent/cast1",
         breed_to_create = "bee_guard",
         max_number_monster = 4
     })
     
     local summon2 = enemy:get_map():create_custom_entity({x = 1056, y = 160, layer = 0, model = 'summoning', direction = 0})
     summon2:set_properties({
-        sprite = "effects/cast1",
+        sprite = "custent/cast1",
         breed_to_create = "bee_guard",
         max_number_monster = 4
     })
@@ -176,9 +176,9 @@ function enemy:choose_attack()
     --end
     --
     --if math.random(1, 2) == 1 then
-    --    enemy:attack_poison_gaz()
+        enemy:attack_poison_gaz()
     --else
-        enemy:attack_invoke_monster()
+    --    enemy:attack_invoke_monster()
     --end
 end
 
@@ -209,7 +209,9 @@ function enemy:on_restarted()
         move:set_speed(48)
         move:start(enemy)
         sol.timer.start(enemy, math.random(2000, 5000), function()
-            enemy:choose_attack()
+            if enemy:is_enabled() then
+                enemy:choose_attack()
+            end
         end)
     end
 end

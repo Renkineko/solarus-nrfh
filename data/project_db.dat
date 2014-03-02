@@ -130,7 +130,8 @@ sprite{ id = "hero/ground1", description = "Grass under hero" }
 sprite{ id = "hero/ground2", description = "Shallow water under hero" }
 sprite{ id = "hero/trail", description = "Hero trail" }
 sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
-sprite{ id = "effects/cast1", description = "Effects: Cast1" }
+sprite{ id = "custent/cast1", description = "Custent: Cast1" }
+sprite{ id = "custent/frozen_state", description = "Custent: Frozen State" }
 sprite{ id = "enemies/black_knight_soldier_sword", description = "Enemy: Black knight soldier sword" }
 sprite{ id = "enemies/khorneth_left_blade", description = "Enemy: Khorneth left blade" }
 sprite{ id = "enemies/khorneth_right_blade", description = "Enemy: Khorneth right blade" }
@@ -293,6 +294,9 @@ sound{ id = "enemy_killed", description = "enemy_killed" }
 sound{ id = "explosion", description = "explosion" }
 sound{ id = "external_stairs_down", description = "external_stairs_down" }
 sound{ id = "external_stairs_up", description = "external_stairs_up" }
+sound{ id = "frozen_state_freezing", description = "Frozen State: Freezing" }
+sound{ id = "frozen_state_melting", description = "Frozen State: Melting" }
+sound{ id = "frozen_state_shattering", description = "Frozen State: Shattering" }
 sound{ id = "heart_container", description = "heart_container" }
 sound{ id = "heart", description = "heart" }
 sound{ id = "hero_dying", description = "hero_dying" }
@@ -479,13 +483,13 @@ enemy{ id = "fire_dragonsnake", description = "Dragonsnake (feu)" }
 enemy{ id = "wiznake", description = "Wiznake" }
 enemy{ id = "gigas", description = "Gigas" }
 enemy{ id = "gigas_spirit_ball", description = "Gigas Spirit Ball" }
-enemy{ id = "summoning", description = "Summoning" }
 enemy{ id = "poison_gaz", description = "Poison Gaz" }
 enemy{ id = "thunder_strike_target", description = "Thunder Strike Target" }
 enemy{ id = "debugger", description = "Debugger" }
 enemy{ id = "thunder_strike_circle", description = "Thunder Strike Circle" }
 
 entity{ id = "summoning", description = "Summoning" }
+entity{ id = "frozen_state", description = "Frozen State" }
 
 language{ id = "de", description = "Deutsch" }
 language{ id = "en", description = "English" }

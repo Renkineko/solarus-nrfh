@@ -99,6 +99,12 @@ function sol.main:debug_on_key_pressed(key, modifiers)
       game:add_magic(10)
     elseif key == "k" then
       game:remove_magic(4)
+    elseif key == "f4" then
+      hero:start_frozen(10000)
+    elseif key == "f9" then
+      hero:stop_frozen(false)
+    elseif key == "f8" then
+      hero:stop_frozen(true)
     elseif key == "kp 7" then
       game:set_max_magic(0)
     elseif key == "kp 8" then

@@ -2,19 +2,6 @@ local enemy = ...
 local iteration_poison = 0
 local max_iteration_poison = 10
 
-local function do_poison()
-    local hero = enemy:get_map():get_entity("hero")
-    iteration_poison = iteration_poison + 1
-    if iteration_poison <= max_iteration_poison then
-        sol.audio.play_sound("hero_hurt")
-        enemy:get_game():remove_life(1)
-        sol.timer.start(hero, 1000, do_poison)
-    else
-        iteration_poison = 0
-        hero.physical_condition["poison"] = false
-    end
-end
-
 function enemy:on_created()
     enemy:set_life(1)
     enemy:set_damage(0)
@@ -29,9 +16,9 @@ function enemy:on_created()
     end
 end
 
-function enemy:on_attacking_hero()
-    local hero = enemy:get_map():get_entity("hero")
-    if not hero:is_physical_condition_active("poison") then
+function enemy:on_attacking_hero(hero)
+    -- if the hero is not already poisoned and he is not frozen (because in the case of frozen, a poison GAZ can't access thru you)
+    if not hero:is_physical_condition_active("poison") and not hero:is_physical_condition_active("frozen") then
         hero:start_poison(2, 5000, 5)
     end
 end

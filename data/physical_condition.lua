@@ -2,10 +2,13 @@ local physical_condition_manager = {}
 local in_command_pressed = false
 local in_command_release = false
 
+local custent_frozen
+
 physical_condition_manager.timers = {
     poison = nil,
     slow = nil,
     confusion = nil,
+    frozen = nil,
 }
 
 function physical_condition_manager:initialize(game)
@@ -13,7 +16,8 @@ function physical_condition_manager:initialize(game)
     hero.physical_condition = {
         poison = false,
         slow = false,
-        confusion = false
+        confusion = false,
+        frozen = false
     }
     
     function hero:is_physical_condition_active(physical_condition)
@@ -87,6 +91,31 @@ function physical_condition_manager:initialize(game)
 
         return false
     end
+    
+    function hero:on_taking_damage(in_damage)
+        local damage = in_damage
+        
+        if hero:is_physical_condition_active('frozen') then
+            damage = damage * 3
+            hero:stop_frozen(true)
+        end
+        
+        if damage == 0 then
+            return
+        end
+        
+        local shield_level = game:get_ability('shield')
+        local tunic_level = game:get_ability('tunic')
+        
+        local protection_divider = tunic_level * math.ceil(shield_level / 2)
+        damage = math.floor(damage / protection_divider)
+        
+        if damage < 1 then
+            damage = 1
+        end
+        print(damage,in_damage,protection_divider,tunic_level,shield_level)
+        game:remove_life(damage)
+    end
         
     function hero:start_confusion(delay)
         local aDirectionPressed = {
@@ -123,6 +152,19 @@ function physical_condition_manager:initialize(game)
                 end
             end
         end
+    end
+    
+    function hero:start_frozen(delay)
+        if hero:is_physical_condition_active('frozen') then
+            return
+        end
+        
+        custent_frozen = hero:get_map():create_custom_entity({x = 0, y = 0, layer = 0, model = 'frozen_state', direction = 0})
+        
+        hero:set_physical_condition('frozen', true)
+        physical_condition_manager.timers['frozen'] = sol.timer.start(hero, delay, function()
+            hero:stop_frozen(false)
+        end)
     end
     
     function hero:start_poison(damage, delay, max_iteration)
@@ -186,6 +228,20 @@ function physical_condition_manager:initialize(game)
             if value[2] then
                 game:simulate_command_pressed(value[1])
             end
+        end
+    end
+    
+        
+    function hero:stop_frozen(shatter)
+        if hero:is_physical_condition_active('frozen') and physical_condition_manager.timers['frozen'] ~= nil then
+            physical_condition_manager.timers['frozen']:stop()
+        end
+        
+        hero:set_physical_condition('frozen', false)
+        if shatter then
+            custent_frozen:shatter()
+        else
+            custent_frozen:melt()
         end
     end
     
