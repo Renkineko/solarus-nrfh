@@ -163,23 +163,24 @@ function enemy:choose_attack()
     local hero = enemy:get_map():get_entity("hero")
     local distance = enemy:get_distance(hero)
     
+    -- Thunder blast is too much instable...
     --if distance > 150 then
     --    if math.random(1, 2) == 1 then
     --        enemy:attack_thunder_blast()
     --        return
     --    end
-    --elseif distance < 100 then
-    --    if math.random(1, 2) == 1 then
-    --        enemy:attack_punch_floor()
-    --        return
-    --    end
-    --end
-    --
-    --if math.random(1, 2) == 1 then
+    if distance < 100 then
+        if math.random(1, 2) == 1 then
+            enemy:attack_punch_floor()
+            return
+        end
+    end
+    
+    if math.random(1, 2) == 1 then
         enemy:attack_poison_gaz()
-    --else
-    --    enemy:attack_invoke_monster()
-    --end
+    else
+        enemy:attack_invoke_monster()
+    end
 end
 
 function enemy:on_created()
@@ -209,9 +210,10 @@ function enemy:on_restarted()
         move:set_speed(48)
         move:start(enemy)
         sol.timer.start(enemy, math.random(2000, 5000), function()
-            if enemy:is_enabled() then
+            --if enemy:is_enabled() then
                 enemy:choose_attack()
-            end
+                print('should not be launched if enemy is disabled...')
+            --end
         end)
     end
 end
