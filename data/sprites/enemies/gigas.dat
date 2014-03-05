@@ -66,8 +66,8 @@ animation{
   src_image = "enemies/gigas.png",
   frame_delay = 150,
   directions = {
-    { x = 0, y = 368, frame_width = 72, frame_height = 80, origin_x = 36, origin_y = 44, num_frames = 7 },
-    { x = 0, y = 368, frame_width = 72, frame_height = 80, origin_x = 36, origin_y = 44, num_frames = 7 },
+    { x = 0, y = 352, frame_width = 72, frame_height = 80, origin_x = 36, origin_y = 44, num_frames = 7 },
+    { x = 0, y = 352, frame_width = 72, frame_height = 80, origin_x = 36, origin_y = 44, num_frames = 7 },
   },
 }
 
