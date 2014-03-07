@@ -80,7 +80,6 @@ function enemy:teleport()
         for n = 1, #spirit_balls_pos do
             spirit_balls[n]:appear(pos_x + spirit_balls_pos[n].x, pos_y + spirit_balls_pos[n].y)
         end
-        
         sol.timer.start(enemy, math.random(4000, 8000), function()
             enemy:reappear()
         end)
@@ -88,7 +87,6 @@ function enemy:teleport()
 end
 
 function enemy:attack_thunder_blast()
-    print('[TODO] Thunder Blast - todo when enemy:attack_custom will be available in the engine')
     enemy:stop_movement()
     sprite:set_animation("hands_up_infinite")
     
@@ -163,23 +161,24 @@ function enemy:choose_attack()
     local hero = enemy:get_map():get_entity("hero")
     local distance = enemy:get_distance(hero)
     
+    -- Thunder blast is too much instable...
     --if distance > 150 then
     --    if math.random(1, 2) == 1 then
     --        enemy:attack_thunder_blast()
     --        return
     --    end
-    --elseif distance < 100 then
-    --    if math.random(1, 2) == 1 then
-    --        enemy:attack_punch_floor()
-    --        return
-    --    end
-    --end
-    --
-    --if math.random(1, 2) == 1 then
+    if distance < 100 then
+        if math.random(1, 2) == 1 then
+            enemy:attack_punch_floor()
+            return
+        end
+    end
+    
+    if math.random(1, 2) == 1 then
         enemy:attack_poison_gaz()
-    --else
-    --    enemy:attack_invoke_monster()
-    --end
+    else
+        enemy:attack_invoke_monster()
+    end
 end
 
 function enemy:on_created()
@@ -189,6 +188,7 @@ function enemy:on_created()
     sprite = enemy:create_sprite("enemies/gigas")
     enemy:set_size(72, 32)
     enemy:set_origin(36, 29)
+    enemy:set_optimization_distance(0)
     pos_x, pos_y, pos_layer = enemy:get_position()
     if pos_layer < 2 then
         pos_layer = pos_layer + 1
@@ -209,9 +209,7 @@ function enemy:on_restarted()
         move:set_speed(48)
         move:start(enemy)
         sol.timer.start(enemy, math.random(2000, 5000), function()
-            if enemy:is_enabled() then
-                enemy:choose_attack()
-            end
+            enemy:choose_attack()
         end)
     end
 end
