@@ -130,6 +130,7 @@ function enemy:new_strike()
         sprite:set_animation(animation)
         sprite:set_frame(enemy:get_sprite():get_frame())
         sprite:set_xy(oStrike.next_x, oStrike.next_y)
+        sol.audio.play_sound('electricity')
         
         --print(next_x, next_y)
         local from_dir, nextx, nexty = getNextProp(rand_direction)
