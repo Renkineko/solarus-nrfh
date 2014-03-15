@@ -362,6 +362,7 @@ sound{ id = "zora", description = "zora" }
 sound{ id = "validate_menu", description = "Validate Menu" }
 sound{ id = "running_obstacle", description = "running_obstacle" }
 sound{ id = "electricity", description = "Electricity" }
+sound{ id = "bubble_pop", description = "Effect: Bubble Pop" }
 
 item{ id = "random", description = "(Random)" }
 item{ id = "feather", description = "Feather" }

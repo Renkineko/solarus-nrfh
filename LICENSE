@@ -136,7 +136,7 @@ sprites/npc/alttp.png
 sprites/npc/black_knight_soldier.png
 sprites/npc/witch.png
 
-Files that include content from Nintendo:
+Files that include content from Squaresoft:
 -----------------------------------------
 sprites/enemies/fire_dragonsnake.png
 sprites/enemies/flower_chomp*.png
@@ -147,6 +147,8 @@ Found on dogsounds.com
 sounds/frozen_state*.ogg
 
 Attributions
+------------
 sounds/electricity.ogg : Thanks to Iwan 'qubodup' Gabovitch for Ice and Electricity Magic ( http://opengameart.org/users/qubodup )
 sprites/custent/frozen_state.png : Thanks to Daniel Eddeland for his magic pack ( http://opengameart.org/content/extended-lpc-magic-pack )
 sprites/custent/cast1.png : public domain, but thanks to MrBeast ( http://opengameart.org/content/73-patterns )
+sounds/poison.ogg, sounds/warp.ogg : Thanks to p0ss ( http://opengameart.org/content/spell-sounds-starter-pack )
