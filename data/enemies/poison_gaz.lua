@@ -11,6 +11,7 @@ function enemy:on_created()
     
     local sprite = enemy:create_sprite('enemies/poison_gaz')
     sprite:set_animation('poping')
+    sol.audio.play_sound('bubble_pop')
     function sprite:on_animation_finished()
         enemy:remove()
     end
