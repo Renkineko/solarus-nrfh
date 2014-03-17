@@ -122,7 +122,7 @@ function enemy:attack_poison_gaz()
             local x = hero_x - enemy_x
             local y = hero_y - enemy_y
             
-            sol.timer.start(enemy, 100, function()
+            sol.timer.start(enemy, 150, function()
                 poison_gaz = enemy:create_enemy({breed = 'poison_gaz', direction = 0, x = x, y = y})
             end)
         end)
@@ -174,11 +174,11 @@ function enemy:choose_attack()
         end
     end
     
-    if math.random(1, 2) == 1 then
+    --if math.random(1, 2) == 1 then
         enemy:attack_poison_gaz()
-    else
-        enemy:attack_invoke_monster()
-    end
+    --else
+    --    enemy:attack_invoke_monster()
+    --end
 end
 
 function enemy:on_created()
