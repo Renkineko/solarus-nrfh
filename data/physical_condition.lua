@@ -108,6 +108,9 @@ function physical_condition_manager:initialize(game)
         local tunic_level = game:get_ability('tunic')
         
         local protection_divider = tunic_level * math.ceil(shield_level / 2)
+        if protection_divider == 0 then
+            protection_divider = 1
+        end
         damage = math.floor(damage / protection_divider)
         
         if damage < 1 then
