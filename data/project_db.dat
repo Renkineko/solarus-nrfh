@@ -221,7 +221,6 @@ sprite{ id = "menus/hero_head", description = "Menu: Hero head" }
 sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
 sprite{ id = "menus/solarus_logo", description = "Menu: Solarus logo" }
 sprite{ id = "enemies/flower_chomp", description = "Enemy: Chomper (test)" }
-sprite{ id = "enemies/red_dragon", description = "Enemy: Dragon Rouge (BOSS)" }
 sprite{ id = "enemies/fire_dragonsnake", description = "Enemy: Dragonsnake (feu)" }
 sprite{ id = "enemies/fire_dragonsnake_ball", description = "Enemy: Dragonsnake (feu) - Boule" }
 sprite{ id = "enemies/fire_dragonsnake_bigball", description = "Enemy: Dragonsnake (feu) - Grosse Boule" }
@@ -231,6 +230,9 @@ sprite{ id = "enemies/gigas", description = "Enemy: Gigas" }
 sprite{ id = "enemies/gigas_spirit_ball", description = "Enemy: Gigas Spirit Ball" }
 sprite{ id = "enemies/poison_gaz", description = "Enemy: Poison Gaz" }
 sprite{ id = "enemies/thunder_strike", description = "Enemy: Thunder Strike" }
+sprite{ id = "enemies/boss/red_dragon", description = "Enemy: Red Dragon" }
+sprite{ id = "enemies/boss/red_dragon_head", description = "Enemy: Red Dragon Head" }
+sprite{ id = "enemies/boss/red_dragon_tail", description = "Enemy: Red Dragon Tail" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -422,6 +424,9 @@ item{ id = "red_potion", description = "Red potion" }
 item{ id = "green_potion", description = "Green potion" }
 item{ id = "blue_potion", description = "Blue potion" }
 
+enemy{ id = "boss/red_dragon", description = "BOSS: Red Dragon" }
+enemy{ id = "boss/red_dragon_head", description = "BOSS: Red Dragon Head" }
+enemy{ id = "boss/red_dragon_tail", description = "BOSS: Red Dragon Tail" }
 enemy{ id = "bee_guard", description = "Bee Guard" }
 enemy{ id = "bubble", description = "Bubble" }
 enemy{ id = "blue_bullblin", description = "Bullblin (blue)" }
@@ -480,7 +485,6 @@ enemy{ id = "billy", description = "Billy" }
 enemy{ id = "ganon", description = "Ganon" }
 enemy{ id = "fire_bat", description = "Fire bat" }
 enemy{ id = "flower_chomp", description = "Chomper (test)" }
-enemy{ id = "red_dragon", description = "Red Dragon (BOSS)" }
 enemy{ id = "fire_dragonsnake", description = "Dragonsnake (feu)" }
 enemy{ id = "wiznake", description = "Wiznake" }
 enemy{ id = "gigas", description = "Gigas" }
@@ -493,10 +497,6 @@ enemy{ id = "thunder_strike_circle", description = "Thunder Strike Circle" }
 entity{ id = "summoning", description = "Summoning" }
 entity{ id = "frozen_state", description = "Frozen State" }
 
-language{ id = "de", description = "Deutsch" }
 language{ id = "en", description = "English" }
-language{ id = "es", description = "Espa?" }
-language{ id = "fr", description = "Fran?s" }
-language{ id = "zh_CN", description = "??????" }
-language{ id = "zh_TW", description = "??????" }
+language{ id = "fr", description = "Français" }
 

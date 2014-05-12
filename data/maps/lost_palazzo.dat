@@ -5515,7 +5515,7 @@ destination{
 
 enemy{
   layer = 0,
-  x = 968,
+  x = 964,
   y = 141,
   name = "mini_boss_gigas",
   direction = 0,
@@ -9793,25 +9793,21 @@ teletransporter{
 }
 
 stream{
-  sprite = "entities/conveyor_belt",
-  allow_movement = false,
-  allow_attack = false,
-  allow_item = false,
   layer = 1,
   x = 584,
   y = 1477,
   direction = 6,
+  sprite = "entities/conveyor_belt",
+  speed = 1,
 }
 
 stream{
-  sprite = "entities/conveyor_belt",
-  allow_movement = false,
-  allow_attack = false,
-  allow_item = false,
   layer = 1,
   x = 584,
   y = 1285,
   direction = 6,
+  sprite = "entities/conveyor_belt",
+  speed = 1,
 }
 
 npc{
@@ -10796,8 +10792,8 @@ dynamic_tile{
 
 destination{
   layer = 1,
-  x = 200,
-  y = 1509,
+  x = 584,
+  y = 557,
   name = "from_weaponry",
   direction = 1,
 }
@@ -11913,5 +11909,13 @@ wall{
   height = 8,
   name = "boss_wall_8",
   stops_enemies = true,
+}
+
+enemy{
+  layer = 2,
+  x = 584,
+  y = 392,
+  direction = 3,
+  breed = "boss/red_dragon",
 }
 

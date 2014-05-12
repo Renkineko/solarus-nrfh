@@ -1,0 +1,98 @@
+animation{
+  name = "walking",
+  src_image = "enemies/boss/red_dragon.png",
+  frame_delay = 300,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 0, y = 0, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+    { x = 0, y = 0, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+    { x = 0, y = 120, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+    { x = 0, y = 0, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+  },
+}
+
+animation{
+  name = "hurt",
+  src_image = "enemies/boss/red_dragon.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 0, y = 240, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+    { x = 0, y = 240, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+    { x = 0, y = 360, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+    { x = 0, y = 240, frame_width = 160, frame_height = 120, origin_x = 80, origin_y = 80, num_frames = 4 },
+  },
+}
+
+animation{
+  name = "head_ball",
+  src_image = "enemies/boss/red_dragon.png",
+  directions = {
+    { x = 0, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 0, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 48, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 0, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+  },
+}
+
+animation{
+  name = "head_ball_hurt",
+  src_image = "enemies/boss/red_dragon.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 448, y = 480, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 448, y = 480, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 512, y = 480, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 448, y = 480, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+  },
+}
+
+animation{
+  name = "big_tail_ball",
+  src_image = "enemies/boss/red_dragon.png",
+  directions = {
+    { x = 16, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 16, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 64, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 16, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+  },
+}
+
+animation{
+  name = "big_tail_ball_hurt",
+  src_image = "enemies/boss/red_dragon.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 448, y = 496, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 448, y = 496, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 512, y = 496, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 448, y = 496, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+  },
+}
+
+animation{
+  name = "small_tail_ball",
+  src_image = "enemies/boss/red_dragon.png",
+  directions = {
+    { x = 32, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 32, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 80, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+    { x = 32, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+  },
+}
+
+animation{
+  name = "small_tail_ball_hurt",
+  src_image = "enemies/boss/red_dragon.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 448, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 448, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 512, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+    { x = 448, y = 512, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8, num_frames = 4 },
+  },
+}
+
