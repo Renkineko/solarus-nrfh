@@ -157,7 +157,7 @@ tous tes Luains.
 }
 --------------------
 
--- Potion verte / Red potion
+-- Potion verte / Green potion
 dialog{
   id = "_item_description.bottle_1.4",
   icon = 10,
@@ -170,7 +170,7 @@ toute ta magie.
 }
 --------------------
 
--- Potion bleue / Red potion
+-- Potion bleue / Blue potion
 dialog{
   id = "_item_description.bottle_1.5",
   icon = 11,
@@ -242,7 +242,7 @@ tous tes Luains.
 }
 --------------------
 
--- Potion verte / Red potion
+-- Potion verte / Green potion
 dialog{
   id = "_item_description.bottle_2.4",
   icon = 10,
@@ -255,7 +255,7 @@ toute ta magie.
 }
 --------------------
 
--- Potion bleue / Red potion
+-- Potion bleue / Blue potion
 dialog{
   id = "_item_description.bottle_2.5",
   icon = 11,
@@ -327,7 +327,7 @@ tous tes Luains.
 }
 --------------------
 
--- Potion verte / Red potion
+-- Potion verte / Green potion
 dialog{
   id = "_item_description.bottle_3.4",
   icon = 10,
@@ -340,7 +340,7 @@ toute ta magie.
 }
 --------------------
 
--- Potion bleue / Red potion
+-- Potion bleue / Blue potion
 dialog{
   id = "_item_description.bottle_3.5",
   icon = 11,
@@ -412,7 +412,7 @@ tous tes Luains.
 }
 --------------------
 
--- Potion verte / Red potion
+-- Potion verte / Green potion
 dialog{
   id = "_item_description.bottle_4.4",
   icon = 10,
@@ -425,7 +425,7 @@ toute ta magie.
 }
 --------------------
 
--- Potion bleue / Red potion
+-- Potion bleue / Blue potion
 dialog{
   id = "_item_description.bottle_4.5",
   icon = 11,
@@ -2669,21 +2669,21 @@ Monty Hall
 But : Mini-jeu inspiré
 du problème de proba
 de Monty Hall.
-Trois coffres, une
+Trois portes, une
 récompense intéressante
 et deux moins bonnes.
-Choisissez un coffre,
+Choisissez une porte,
 et le NPC ouvrira
-un des deux coffres les
-moins intéressants.
+une des deux portes les
+moins intéressantes.
 Vous pourrez alors
 soit changer votre
 décision, soit rester
-sur le premier coffre
-choisi. A vous de faire
+sur la première porte
+choisie. A vous de faire
 le choix vous donnant
 les meilleures chances.
-EN TRAVAUX.
+Bonne chance.
 ]]
 }
 -----------------------
