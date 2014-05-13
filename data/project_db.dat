@@ -499,4 +499,3 @@ entity{ id = "frozen_state", description = "Frozen State" }
 
 language{ id = "en", description = "English" }
 language{ id = "fr", description = "Français" }
-
