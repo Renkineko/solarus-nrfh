@@ -32,10 +32,9 @@ function enemy:on_created()
     -- Create the head.
     local my_name = enemy:get_name()
     head = enemy:create_enemy{
-        name = my_name .. "_head",
         breed = "boss/red_dragon_head",
-        x = 16,
-        y = 24,
+        x = 8,
+        y = -16,
     }
     head_ball_sprite = sol.sprite.create("enemies/boss/red_dragon")
     head_ball_sprite:set_animation("head_ball")
@@ -43,15 +42,14 @@ function enemy:on_created()
     -- Create the tail.
     local my_name = enemy:get_name()
     tail = enemy:create_enemy{
-        name = my_name .. "_tail",
         breed = "boss/red_dragon_tail",
         x = 0,
-        y = -112,
+        y = 56,
     }
     big_tail_ball_sprite = sol.sprite.create("enemies/boss/red_dragon")
     big_tail_ball_sprite:set_animation("big_tail_ball")
     small_tail_ball_sprite = sol.sprite.create("enemies/boss/red_dragon")
-    small_tail_ball_sprite:set_animation("big_tail_ball")
+    small_tail_ball_sprite:set_animation("small_tail_ball")
     
     initial_xy.x, initial_xy.y = enemy:get_position()
 end
@@ -59,7 +57,6 @@ end
 function enemy:on_restarted()
     
     local sprite = enemy:get_sprite()
-    sprite:set_animation("walking")
     local m = sol.movement.create("random")
     m:set_speed(32)
     m:start(enemy)
@@ -67,11 +64,15 @@ function enemy:on_restarted()
 end
 
 function enemy:on_pre_draw()
-
     if tail:exists() then
         local x, y = enemy:get_position()
         local tail_x, tail_y = tail:get_position()
-        enemy:display_balls(tail_ball_sprite, 2, x, y - 48, tail_x, tail_y)
+        y = y + 8
+        local part_1_x = (tail_x - x) / 2
+        local part_1_y = (tail_y - y) / 2
+        -- print(x, y, part_1_x, part_1_y, tail_x, tail_y)
+        enemy:display_balls(big_tail_ball_sprite, 3, x, y, x+part_1_x, y+part_1_y)
+        enemy:display_balls(small_tail_ball_sprite, 3, x+part_1_x, y+part_1_y, tail_x, tail_y)
     end
 end
 
@@ -80,7 +81,8 @@ function enemy:on_post_draw()
     if head:exists() then
         local x, y = enemy:get_position()
         local head_x, head_y = head:get_position()
-        enemy:display_balls(head_ball_sprite, 2, x, y + 8, head_x, head_y - 16)
+        enemy:display_balls(head_ball_sprite, 2, x, y-24, head_x, head_y)
+        head:bring_to_front()
     end
 end
 

@@ -104,6 +104,15 @@ local function stop_jump_sensor()
     map:remove_entities("jump_room_close_door_sensor")
 end
 
+local function init_stream_jump_room()
+    local nDirection = 0
+    for stream in map:get_entities('stream_jump_room') do
+        stream:set_speed(16)
+        nDirection = math.random(0,7)
+        stream:set_direction(nDirection)
+    end
+end 
+
 -- Initiate the map
 function map:on_started()
     -- Enable light features for the torch puzzle
@@ -122,12 +131,10 @@ function map:on_started()
     end
     
     if map:get_game():get_value("lost_palazzo_mini_boss_killed") then
-        print("bouh")
         map:remove_entities("close_mb_sensor")
         map:open_doors("mb_door")
         map:set_entities_enabled("tp_mini_boss_room", true)
     else
-        print("dafuq")
         mini_boss_gigas:set_enabled(false)
         map:set_entities_enabled("tp_mini_boss_room", false)
     end
@@ -159,6 +166,8 @@ function map:on_started()
     for enemy in map:get_entities("flying_bubble") do
         enemy:set_obstacle_behavior("flying")
     end
+
+    init_stream_jump_room()
 
 end
 
@@ -251,6 +260,7 @@ function sensor_jump_room_1:on_activated()
     if jump_good_sensor == 0 or jump_good_sensor == 6 then
         jump_good_sensor = jump_good_sensor + 1
     elseif jump_good_sensor ~= 0 then
+        init_stream_jump_room()
         sol.audio.play_sound("wrong")
         jump_good_sensor = 1
     end
@@ -260,6 +270,7 @@ function sensor_jump_room_2:on_activated()
     if jump_good_sensor == 1 or jump_good_sensor == 5 then
         jump_good_sensor = jump_good_sensor + 1
     elseif jump_good_sensor ~= 0 then
+        init_stream_jump_room()
         sol.audio.play_sound("wrong")
         jump_good_sensor = 0
     end
@@ -269,6 +280,7 @@ function sensor_jump_room_3:on_activated()
     if jump_good_sensor == 2 or jump_good_sensor == 4 then
         jump_good_sensor = jump_good_sensor + 1
     elseif jump_good_sensor ~= 0 then
+        init_stream_jump_room()
         sol.audio.play_sound("wrong")
         jump_good_sensor = 0
     end
@@ -283,6 +295,7 @@ function sensor_jump_room_4:on_activated()
         map:open_doors("door_jump")
         map:get_game():set_value("lost_palazzo_jump_room_ok", true)
     elseif jump_good_sensor ~= 0 then
+        init_stream_jump_room()
         sol.audio.play_sound("wrong")
         jump_good_sensor = 0
     end
@@ -292,6 +305,7 @@ function sensor_jump_room_5:on_activated()
     if jump_good_sensor == 8 or jump_good_sensor == 10 then
         jump_good_sensor = jump_good_sensor + 1
     elseif jump_good_sensor ~= 0 then
+        init_stream_jump_room()
         sol.audio.play_sound("wrong")
         jump_good_sensor = 0
     end
@@ -301,6 +315,7 @@ function sensor_jump_room_6:on_activated()
     if jump_good_sensor == 9 then
         jump_good_sensor = jump_good_sensor + 1
     elseif jump_good_sensor ~= 0 then
+        init_stream_jump_room()
         sol.audio.play_sound("wrong")
         jump_good_sensor = 0
     end
