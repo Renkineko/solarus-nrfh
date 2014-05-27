@@ -1,0 +1,3 @@
+[submodule "data/lstd"]
+	path = data/lstd
+	url = https://github.com/Renkineko/solarus-lstd.git
