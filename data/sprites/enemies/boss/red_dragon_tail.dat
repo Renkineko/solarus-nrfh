@@ -1,45 +1,42 @@
-animation{
+animation {
   name = "walking",
   src_image = "enemies/boss/red_dragon.png",
   directions = {
-    { x = 0, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 0, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 40, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 0, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
+    { x = 0, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 0, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 40, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 0, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
   },
 }
-
-animation{
+animation {
   name = "hurt",
   src_image = "enemies/boss/red_dragon.png",
   frame_delay = 50,
   frame_to_loop_on = 0,
   directions = {
-    { x = 192, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4 },
-    { x = 192, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4 },
-    { x = 256, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4 },
-    { x = 192, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4 },
+    { x = 192, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4, num_columns = 4 },
+    { x = 192, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4, num_columns = 4 },
+    { x = 256, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4, num_columns = 4 },
+    { x = 192, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16, num_frames = 4, num_columns = 4 },
   },
 }
-
-animation{
+animation {
   name = "preparing_stab",
   src_image = "enemies/boss/red_dragon.png",
   directions = {
-    { x = 56, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 56, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 16, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 56, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
+    { x = 56, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 56, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 16, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 56, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
   },
 }
-
-animation{
+animation {
   name = "stabbing",
   src_image = "enemies/boss/red_dragon.png",
   directions = {
-    { x = 16, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 16, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 56, y = 512, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16 },
-    { x = 16, y = 528, frame_width = 16, frame_height = 32, origin_x = 8, origin_y = 16},
+    { x = 16, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 16, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 56, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
+    { x = 16, y = 528, frame_width = 24, frame_height = 32, origin_x = 8, origin_y = 16, num_columns = 1 },
   },
 }

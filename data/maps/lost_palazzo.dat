@@ -12685,7 +12685,7 @@ wall{
 enemy{
   layer = 2,
   x = 584,
-  y = 408,
+  y = 392,
   name = "boss",
   direction = 3,
   breed = "boss/red_dragon",
