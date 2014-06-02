@@ -17,7 +17,12 @@ function item:on_using()
     sol.timer.start(300, function()
       self:remove_amount(1)
     end)
-    self:get_map():get_entity("hero"):start_bow()
+    local hero = self:get_map():get_entity('hero')
+    local x,y,l = hero:get_position()
+    local direction = hero:get_direction()
+    -- self:get_map():get_entity("hero"):start_bow()
+    local arrow = self:get_map():create_custom_entity({model='lstd/builtin/arrow',x=x,y=y,layer=l,direction=direction})
+    -- arrow:set_origin_entity(hero) -- Maybe for later, when we'll allow enemies to have arrow too, hurting the hero.
   end
   self:set_finished()
 end
