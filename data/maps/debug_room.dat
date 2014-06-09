@@ -375,7 +375,6 @@ wall{
   y = 472,
   width = 176,
   height = 8,
-  stops_hero = false,
   stops_enemies = true,
   stops_npcs = true,
   stops_blocks = true,
@@ -387,7 +386,6 @@ wall{
   y = 576,
   width = 176,
   height = 8,
-  stops_hero = false,
   stops_enemies = true,
   stops_npcs = true,
   stops_blocks = true,
@@ -399,7 +397,6 @@ wall{
   y = 480,
   width = 8,
   height = 96,
-  stops_hero = false,
   stops_enemies = true,
   stops_npcs = true,
   stops_blocks = true,
@@ -411,7 +408,6 @@ wall{
   y = 480,
   width = 8,
   height = 96,
-  stops_hero = false,
   stops_enemies = true,
   stops_npcs = true,
   stops_blocks = true,
@@ -424,6 +420,123 @@ sensor{
   width = 208,
   height = 16,
   name = "confusion_sensor",
+}
+
+destination{
+  layer = 1,
+  x = 96,
+  y = 557,
+  name = "dest_test",
+  direction = 3,
+  sprite = "entities/destination",
+}
+
+teletransporter{
+  layer = 1,
+  x = 88,
+  y = 520,
+  width = 16,
+  height = 16,
+  sprite = "entities/teletransporter",
+  destination_map = "debug_room",
+  destination = "dest_test",
+}
+
+pickable{
+  layer = 1,
+  x = 96,
+  y = 509,
+  treasure_name = "lamp",
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 485,
+  sprite = "entities/pot",
+}
+
+chest{
+  layer = 1,
+  x = 96,
+  y = 461,
+  sprite = "entities/chest",
+}
+
+jumper{
+  layer = 1,
+  x = 96,
+  y = 408,
+  width = 8,
+  height = 32,
+  direction = 4,
+  jump_length = 16,
+}
+
+enemy{
+  layer = 1,
+  x = 96,
+  y = 397,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+npc{
+  layer = 1,
+  x = 96,
+  y = 373,
+  direction = 3,
+  subtype = "1",
+  sprite = "npc/newlink1",
+}
+
+block{
+  layer = 1,
+  x = 96,
+  y = 341,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+wall{
+  layer = 1,
+  x = 88,
+  y = 304,
+  width = 16,
+  height = 16,
+}
+
+sensor{
+  layer = 1,
+  x = 96,
+  y = 293,
+  width = 16,
+  height = 16,
+}
+
+crystal{
+  layer = 1,
+  x = 96,
+  y = 269,
+}
+
+crystal_block{
+  layer = 1,
+  x = 88,
+  y = 232,
+  width = 16,
+  height = 16,
+  subtype = "0",
+}
+
+stream{
+  layer = 1,
+  x = 96,
+  y = 221,
+  direction = 0,
 }
 
 tile{
