@@ -2,3 +2,4 @@
 *.kpf
 data.1.1.back/*
 /changeauthor.sh
+/editor.sh
