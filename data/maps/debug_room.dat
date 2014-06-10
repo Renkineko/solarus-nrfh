@@ -260,6 +260,15 @@ tile{
   pattern = 69,
 }
 
+tile{
+  layer = 1,
+  x = 304,
+  y = 472,
+  width = 32,
+  height = 32,
+  pattern = 323,
+}
+
 switch{
   layer = 1,
   x = 184,
@@ -519,14 +528,14 @@ sensor{
 
 crystal{
   layer = 1,
-  x = 96,
-  y = 269,
+  x = 280,
+  y = 501,
 }
 
 crystal_block{
   layer = 1,
-  x = 88,
-  y = 232,
+  x = 296,
+  y = 416,
   width = 16,
   height = 16,
   subtype = "0",
@@ -537,6 +546,42 @@ stream{
   x = 96,
   y = 221,
   direction = 0,
+}
+
+switch{
+  layer = 1,
+  x = 312,
+  y = 488,
+  subtype = "2",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+switch{
+  layer = 1,
+  x = 344,
+  y = 488,
+  subtype = "3",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+crystal_block{
+  layer = 1,
+  x = 328,
+  y = 416,
+  width = 16,
+  height = 16,
+  subtype = "0",
+}
+
+crystal_block{
+  layer = 1,
+  x = 312,
+  y = 416,
+  width = 16,
+  height = 16,
+  subtype = "1",
 }
 
 tile{
