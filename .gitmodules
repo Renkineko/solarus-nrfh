@@ -1,0 +1,3 @@
+[submodule "data/entities/lib-mudora"]
+	path = data/entities/lib-mudora
+	url = git@github.com:Renkineko/libsolarus-mudora.git

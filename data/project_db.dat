@@ -496,7 +496,7 @@ enemy{ id = "thunder_strike_circle", description = "Thunder Strike Circle" }
 
 entity{ id = "summoning", description = "Summoning" }
 entity{ id = "frozen_state", description = "Frozen State" }
-entity{ id = "lstd/builtin/arrow", description = "Builtin-arrow" }
+entity{ id = "lib-mudora/builtin/arrow", description = "Builtin-arrow" }
 
 language{ id = "en", description = "English" }
 language{ id = "fr", description = "Français" }
