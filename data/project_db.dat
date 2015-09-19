@@ -494,4 +494,12 @@ entity{ id = "summoning", description = "Summoning" }
 entity{ id = "frozen_state", description = "Frozen State" }
 
 language{ id = "en", description = "English" }
-language{ id = "fr", description = "Français" }
+language{ id = "fr", description = "Français" }sprite{ id = "entities/solid_switch", description = "Solid switch" }
+sprite{ id = "entities/crystal_block", description = "Crystal block" }
+font{ id = "green_digits", description = "green_digits" }
+font{ id = "la", description = "la" }
+font{ id = "minecraftia", description = "minecraftia" }
+font{ id = "small_green_digits", description = "small_green_digits" }
+font{ id = "small_white_digits", description = "small_white_digits" }
+font{ id = "white_digits", description = "white_digits" }
+font{ id = "wqy-zenhei", description = "wqy-zenhei" }
