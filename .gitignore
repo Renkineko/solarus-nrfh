@@ -1,5 +1,7 @@
 *.komodoproject
 *.kpf
-data.1.1.back/*
+data.*.back/*
+data.*.bak
 /changeauthor.sh
 /editor.sh
+error.txt
