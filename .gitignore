@@ -1,7 +1,8 @@
 *.komodoproject
 *.kpf
-data.1.1.back/*
+data.*.back/*
+data.*.bak
 /changeauthor.sh
 data/*sublime-*
 /editor.sh
-/error.txt
+error.txt

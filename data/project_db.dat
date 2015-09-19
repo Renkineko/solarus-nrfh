@@ -499,5 +499,4 @@ entity{ id = "frozen_state", description = "Frozen State" }
 entity{ id = "lib-mudora/builtin/arrow", description = "Builtin-arrow" }
 
 language{ id = "en", description = "English" }
-language{ id = "fr", description = "Français" }
-
+language{ id = "fr", description = "FranÃ§ais" }
